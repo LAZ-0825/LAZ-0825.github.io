@@ -157,7 +157,29 @@
 <p><strong>stack：</strong>**</p>
 <p><strong>（1） <a target="_blank" rel="noopener" href="https://www.javatpoint.com/java-stack">https://www.javatpoint.com/java-stack</a>  来源：某Java文档</strong></p>
 <p><strong>（2） <a target="_blank" rel="noopener" href="https://blog.csdn.net/YQYnsmile/article/details/78457539">https://blog.csdn.net/YQYnsmile/article/details/78457539</a>  来源：屑C某某N</strong></p>
-<p><strong>（3） <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Stack.html">https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Stack.html</a>  来源：某全英文Java文档</strong><img src="C:\Users\hp\AppData\Roaming\Typora\typora-user-images\image-20210726140256800.png" alt="image-20210726140256800"></p>
+<p><strong>（3） <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Stack.html">https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Stack.html</a>  来源：某全英文Java文档</strong></p>
+<p>Deque可以作为堆栈（LIFO后进先出），此接口优于传统Stack类的使用。</p>
+<p><strong>Stack和Deque方法的比较</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">栈方法</th>
+<th align="center">等效Deque方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">push(e)</td>
+<td align="center">addFirst(e)</td>
+</tr>
+<tr>
+<td align="left">pop()</td>
+<td align="center">removeFirst()</td>
+</tr>
+<tr>
+<td align="left">peek()</td>
+<td align="center">peekFirst()</td>
+</tr>
+</tbody></table>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;(); <span class="comment">// 新建List来保存数据</span></span><br><span class="line">        Deque&lt;TreeNode&gt; stk = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;(); <span class="comment">// 新建栈</span></span><br><span class="line">        <span class="keyword">while</span> (root != <span class="keyword">null</span> || !stk.isEmpty()) &#123; <span class="comment">// 节点有数值 或 栈不为空</span></span><br><span class="line">            <span class="keyword">while</span> (root != <span class="keyword">null</span>) &#123; <span class="comment">// 节点有数值时</span></span><br><span class="line">                stk.push(root); <span class="comment">// 将数据放入栈</span></span><br><span class="line">                root = root.left; <span class="comment">// 访问左子树</span></span><br><span class="line">            &#125;</span><br><span class="line">            root = stk.pop(); <span class="comment">// pop()：弹出栈顶元素。</span></span><br><span class="line">            res.add(root.val); <span class="comment">// 在List末尾添加当前节点数据</span></span><br><span class="line">            root = root.right; <span class="comment">// 访问右子树</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res; <span class="comment">// 返回结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -191,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/15/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" data-id="ckrkh9xnd0003d07ie5k6hsop" data-title="二叉树的中序遍历" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/07/15/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" data-id="ckrkizzrl0003y47i54aj2o8l" data-title="二叉树的中序遍历" class="article-share-link">Share</a>
       
       
       
@@ -236,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/12/First-Blog/" data-id="ckrkh9xn60000d07i0vh392za" data-title="First Blog" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/07/12/First-Blog/" data-id="ckrkizzrf0000y47idhs0c15k" data-title="First Blog" class="article-share-link">Share</a>
       
       
       
@@ -289,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/12/hello-world/" data-id="ckrkh9xna0001d07i9q2v13n2" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/07/12/hello-world/" data-id="ckrkizzrj0001y47ihnb38ngj" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
