@@ -230,7 +230,7 @@
         
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A/" rel="tag">算法作业</a></li></ul>
 
-        <a data-url="http://example.com/2021/07/19/%E7%88%AC%E6%A5%BC%E6%A2%AF/" data-id="cks47q9ld0006907ieo5k6024" class="article-share-link">Share</a>
+        <a data-url="http://example.com/2021/07/19/%E7%88%AC%E6%A5%BC%E6%A2%AF/" data-id="cks4aj2ex0006wk7ibxti9ru1" class="article-share-link">Share</a>
         
       </div>
     </footer>
@@ -373,6 +373,16 @@
 
 
 </div>
-{% include '_custom/custom.swig' %}
+{% include '_third-party/exturl.swig' %}
+{% include '_third-party/bookmark.swig' %}
+{% include '_third-party/copy-code.swig' %}
+
++     {% include '_custom/custom.swig' %}
 </body>
 </html>
+
+
+<!-- 樱花特效 -->
+{% if theme.sakura.enable %}
+<script async src="/js/src/fairyDustCursor.js"></script>
+{% endif %}
