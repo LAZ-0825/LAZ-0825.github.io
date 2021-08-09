@@ -1,283 +1,34 @@
+extends _partial/layout.pug
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  
-  <title>太平洋大西洋水流问题 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="太平洋大西洋水流问题​        大一 -&gt; 大二暑期算法作业 看到题目的感想​        刚看到这个题目的时候感觉他不是很熟悉，没有见过类似的题目，也没有见过类似的场景，感觉有点意思。 ​        题目不算很长，但感觉难度不小。 题目描述给定一个 m x n 的非负整数矩阵来表示一片大陆上各个单元格的高度。“太平洋”处于大陆的左边界和上边界，而“大西洋”处于大陆的右边界和下边">
-<meta property="og:type" content="article">
-<meta property="og:title" content="太平洋大西洋水流问题">
-<meta property="og:url" content="http://example.com/2021/08/05/%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="太平洋大西洋水流问题​        大一 -&gt; 大二暑期算法作业 看到题目的感想​        刚看到这个题目的时候感觉他不是很熟悉，没有见过类似的题目，也没有见过类似的场景，感觉有点意思。 ​        题目不算很长，但感觉难度不小。 题目描述给定一个 m x n 的非负整数矩阵来表示一片大陆上各个单元格的高度。“太平洋”处于大陆的左边界和上边界，而“大西洋”处于大陆的右边界和下边">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-08-05T11:30:57.000Z">
-<meta property="article:modified_time" content="2021-08-06T10:37:40.051Z">
-<meta property="article:author" content="John Doe">
-<meta property="article:tag" content="算法作业">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+block content
+  - var post = page
+  - var post_type = getPropertyByType(post.type)
 
-  
-    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-  
-  
+  #post
+    article.hty-card.post-block(itemscope, itemtype='https://schema.org/Article')
+      include _partial/post/post-schema.pug
+      header.post-header
+        h1.post-title(itemprop='name headline', style=post.type ? `color: ${post_type.color}` : '')
+          if post.type
+            +icon(post_type.icon)
+          | #{post.title}
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+          if theme.post_edit.enable
+            include _partial/post/post-edit.pug
 
-<body>
-<div id="container">
-  <div id="wrap">
-    <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <nav id="upper-nav" class="inner">
-      <a id="main-nav-toggle" class="nav-icon"></a>
-      <div class="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        
-          <a id="nav-github" class="nav-icon" target="_blank" rel="noopener" href="https://github.com/myname"></a>
-        
-      </div>
-    </nav>
-    <div id="header-title">
-      
-        <h1 id="blog-title-wrap">
-          <a href="/" id="blog-title">My Blog</a>
-        </h1>
-      
-    </div>
-    <div id="contenedor">
-      <ul class="cube">
-        <li class="cara">MyLogo</li>
-        <li class="cara"></li>
-        <li class="cara"></li>
-        <li class="cara"></li>
-        <li class="cara"></li>
-        <li class="cara"></li>
-      </ul>
-    </div>
-    <nav id="main-nav">
-      
-        <a class="main-nav-link" href="/">Home</a>
-      
-        <a class="main-nav-link" href="/archives">Archives</a>
-      
-        <a class="main-nav-link" href="/about">About</a>
-      
-      <a class="main-nav-link st-search-show-outputs">Search</a>
-    </nav>
-  </div>
-</header>
+        include _partial/post/post-meta.pug
 
-    <div class="outer">
-      <section id="main"><article id="post-太平洋大西洋水流问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <h3 href="/2021/08/05/%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98/" class="article-date">
-  <time datetime="2021-08-05T11:30:57.000Z" itemprop="datePublished">2021-08-05</time>
-</h3>
-    
-  </div>
-  <div class="article-inner">
-  <div class="curve-down">
-  <div class="fill-content">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      太平洋大西洋水流问题
-    </h1>
-  
+        if post.url
+          a.hty-button.hty-button--raised(href=url_for(post.url), style=`margin-top: 1rem;background-color:${post_type.color}`)=__('post.view_link')
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-        <h1 id="太平洋大西洋水流问题"><a href="#太平洋大西洋水流问题" class="headerlink" title="太平洋大西洋水流问题"></a>太平洋大西洋水流问题</h1><p>​        大一 -&gt; 大二暑期算法作业</p>
-<h2 id="看到题目的感想"><a href="#看到题目的感想" class="headerlink" title="看到题目的感想"></a>看到题目的感想</h2><p>​        刚看到这个题目的时候感觉他不是很熟悉，没有见过类似的题目，也没有见过类似的场景，感觉有点意思。</p>
-<p>​        题目不算很长，但感觉难度不小。</p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个 m x n 的非负整数矩阵来表示一片大陆上各个单元格的高度。“太平洋”处于大陆的左边界和上边界，而“大西洋”处于大陆的右边界和下边界。</p>
-<p><strong>规定水流只能按照上、下、左、右四个方向流动，且只能从高到低或者在同等高度上流动。</strong></p>
-<p>请找出那些水流<strong>既可以</strong>流动到“太平洋”，<strong>又能</strong>流动到“大西洋”的陆地单元的坐标。</p>
-<p>提示：</p>
-<p>输出坐标的<strong>顺序不重要</strong><br>m 和 n 都<strong>小于150</strong></p>
-<p>示例：</p>
-<p>给定下面的 5x5 矩阵:</p>
-<p>  太平洋 ~   ~   ~   ~   ~<br>       ~  1   2   2   3  (5) /<br>       ~  3   2   3  (4) (4) /<br>       ~  2   4  (5)  3   1  /<br>       ~ (6) (7)  1   4   5  /<br>       ~ (5)  1   1   2   4  /</p>
-<p>​            /    /    /    /    /   大西洋</p>
-<p>返回:</p>
-<p>[[0, 4], [1, 3], [1, 4], [2, 2], [3, 0], [3, 1], [4, 0]] (上图中带括号的单元). （序号先左后上）</p>
-<h2 id="题目解答"><a href="#题目解答" class="headerlink" title="题目解答"></a>题目解答</h2><h3 id="1-逆流而上"><a href="#1-逆流而上" class="headerlink" title="1.逆流而上"></a>1.逆流而上</h3><p>​        最开始的名字叫<strong>逆着水流向上找</strong>，后面才想起来有<strong>逆流而上</strong>这个成语，才改了名字。</p>
-<p>​        最开始浮现的思路是想暴力解题，后来发现暴力解题太过于麻烦，效率也不高，索性就放弃了。之后才有的现在这个想法。</p>
-<h3 id="（1）解题思路"><a href="#（1）解题思路" class="headerlink" title="（1）解题思路"></a>（1）解题思路</h3><p>​        本题找的是<strong>能够让水流留到两片水域</strong>的陆地单元的位置坐标，那么既然水能过去，那我们反过来找，<strong>分别找到两个水域的水能流到的地方，之后取交集</strong>，就得到了我们想要的答案。</p>
-<h3 id="（2）代码"><a href="#（2）代码" class="headerlink" title="（2）代码"></a>（2）代码</h3><p><strong>配合题目链接食用</strong></p>
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><p><strong>注：</strong>这个代码在idea上可以正常运行，但在力扣上会有报错。报错如下：</p>
-<p>error: incompatible types: List&lt;int[]&gt; cannot be converted to List&lt;List<Integer>&gt; [in <strong>Driver</strong>.java]      </p>
-<p>List&lt;List<Integer>&gt; ret = new Solution().pacificAtlantic(param_1);</p>
-<p><strong>List &amp; ArrayList：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/25aa92f8d681">https://www.jianshu.com/p/25aa92f8d681</a> 来源：简书</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">public</span> List&lt;<span class="keyword">int</span>[]&gt; pacificAtlantic(<span class="keyword">int</span>[][] matrix) &#123;</span><br><span class="line">                List&lt;<span class="keyword">int</span>[]&gt; ret = <span class="keyword">new</span> ArrayList&lt;&gt;(); <span class="comment">// 储存最终数据</span></span><br><span class="line">                <span class="keyword">int</span> m = matrix.length; <span class="comment">// 获取矩阵一边的长度</span></span><br><span class="line">                <span class="keyword">if</span>(m &lt; <span class="number">1</span>) <span class="keyword">return</span> ret; <span class="comment">// 矩阵大小为0时</span></span><br><span class="line">                <span class="keyword">int</span> n = matrix[<span class="number">0</span>].length; <span class="comment">// 获取矩阵另一边的长度</span></span><br><span class="line">                <span class="keyword">boolean</span>[][] Pacific = <span class="keyword">new</span> <span class="keyword">boolean</span>[m][n]; <span class="comment">// 太平洋的</span></span><br><span class="line">                <span class="keyword">boolean</span>[][] Atlantic = <span class="keyword">new</span> <span class="keyword">boolean</span>[m][n]; <span class="comment">// 大西洋的</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123; <span class="comment">// 递归判断一条边</span></span><br><span class="line">                    dfs(matrix, i, <span class="number">0</span>, Pacific, matrix[i][<span class="number">0</span>]);</span><br><span class="line">                    dfs(matrix, i, n-<span class="number">1</span>, Atlantic, matrix[i][n-<span class="number">1</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123; <span class="comment">// 递归判断另一条边</span></span><br><span class="line">                    dfs(matrix, <span class="number">0</span>, i, Pacific, matrix[<span class="number">0</span>][i]);</span><br><span class="line">                    dfs(matrix, m-<span class="number">1</span>, i, Atlantic, matrix[m-<span class="number">1</span>][i]);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123; <span class="comment">// 取交集得到最终结果</span></span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">                        <span class="keyword">if</span>(Pacific[i][j] &amp;&amp; Atlantic[i][j])</span><br><span class="line">                            ret.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i, j&#125;); <span class="comment">// 放入数据</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> ret; <span class="comment">// 返回结果</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span>[][] m, <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">boolean</span>[][] visited, <span class="keyword">int</span> pre)</span> </span>&#123;</span><br><span class="line">                <span class="comment">// 超出边界 或 判断过是可以的 或 不能继续向上流动，则返回</span></span><br><span class="line">                <span class="keyword">if</span>(x &lt; <span class="number">0</span> || y &lt; <span class="number">0</span> || x &gt;= m.length || y &gt;= m[<span class="number">0</span>].length || visited[x][y] || m[x][y] &lt; pre)</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                visited[x][y] = <span class="keyword">true</span>; <span class="comment">// 可以向上流</span></span><br><span class="line">                dfs(m, x+<span class="number">1</span>, y, visited, m[x][y]); <span class="comment">// 递归判断相邻行或列</span></span><br><span class="line">                dfs(m, x-<span class="number">1</span>, y, visited, m[x][y]); <span class="comment">// 递归判断相邻行或列</span></span><br><span class="line">                dfs(m, x, y+<span class="number">1</span>, visited, m[x][y]); <span class="comment">// 递归判断相邻行或列</span></span><br><span class="line">                dfs(m, x, y-<span class="number">1</span>, visited, m[x][y]); <span class="comment">// 递归判断相邻行或列</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+      section.post-body(itemprop='articleBody')
+        .post-content.markdown-body(style=`--smc-primary:${theme.colors.primary};`)!=post.content
 
+        if theme.reward.enable && page.reward !== false
+          include _partial/post/reward.pug
 
+        if theme.creative_commons.license && theme.creative_commons.post
+          include _partial/post/post-copyright.pug
 
-<h3 id="（3）总结"><a href="#（3）总结" class="headerlink" title="（3）总结"></a>（3）总结</h3><p>​        这个解题思路来看的话感觉还是可以的，就是会有一些<strong>奇怪的bug</strong>，不知道怎么肥四。</p>
-<h2 id="题目总结"><a href="#题目总结" class="headerlink" title="题目总结"></a>题目总结</h2><p>​        这个题目难度比之前的大一些，不好做，包括写的时候也查了一些资料（<strong>运用不熟练</strong>），好在最后搞出来了（虽然有一些奇怪的bug）。</p>
-<p>​        （<strong>递归真香</strong>）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <div class="article-footer-content">
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A/" rel="tag">算法作业</a></li></ul>
-
-        <a data-url="http://example.com/2021/08/05/%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98/" data-id="cks4bhl0q0005rs7igeipdph7" class="article-share-link">Share</a>
-        
-      </div>
-    </footer>
-  </div>
-  </div>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2021/07/24/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">罗马数字转整数</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-      
-      <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/08/05/%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98/">太平洋大西洋水流问题</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/24/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">罗马数字转整数</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/19/%E7%88%AC%E6%A5%BC%E6%A2%AF/">爬楼梯</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/15/%E4%BB%8B%E7%BB%8D/">介绍</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/15/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/">二叉树的中序遍历</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A/" rel="tag">算法作业</a><span class="tag-list-count">4</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">6</span></li></ul>
-    </div>
-  </div>
-
-  
-</aside>
-      
-    </div>
-    <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2021 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-      .
-      Theme by <a href="https://github.com/sun11/hexo-theme-paperbox" target="_blank">Paperbox</a>
-    </div>
-  </div>
-</footer>
-  </div>
-  <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/about" class="mobile-nav-link">About</a>
-  
-  <a href="#search" class="mobile-nav-link st-search-show-outputs">Search</a>
-</nav>
-
-  
-
-<!-- totop start -->
-<div id="totop">
-	<a title="To Top"></a>
-</div>
-<!-- totop end -->
-
-<!-- swiftype search start -->
-
-<!-- swiftype search end -->
-
-
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/lrsjng.jquery-qrcode/0.12.0/jquery.qrcode.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-</div>
-</body>
-</html>
+    if post.prev || post.next
+      include _partial/post/post-nav.pug
