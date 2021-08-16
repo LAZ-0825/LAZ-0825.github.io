@@ -572,7 +572,7 @@
 &lt;p&gt;&lt;img src=&#34;https://water-boiled-fish.github.io/2020/09/03/hexo/2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;可以顺带检查一下它们俩的版本，按下键盘的 win + R 键，在弹出面板输入 cmd，打开 dos 命令窗口。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://water-boiled-fish.github.io/2020/09/03/hexo/3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;输入 npm -v 和 code -v&lt;/p&gt;
+&lt;p&gt;输入 npm -v 和 node -v&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://water-boiled-fish.github.io/2020/09/03/hexo/4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;我们需要利用 npm 安装镜像包，但是因为国内的下载速度比较慢，所以我们需要下载一个 cnpm 淘宝的源&lt;/p&gt;
 &lt;p&gt;在 dos 命令窗口中输入&lt;/p&gt;
