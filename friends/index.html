@@ -6,7 +6,7 @@
   <meta name="author" content="LAZ" />
   
   
-  <title>标签 | Hexo</title>
+  <title>友链 | Hexo</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -47,7 +47,7 @@
     author: "LAZ",
     share: {"twitter":true,"facebook":true,"weibo":true,"qq":true,"wechat":true},
     mathjax: true,
-    page_type: "tags",
+    page_type: "friends",
     root: "/"
   };
 </script>
@@ -165,15 +165,54 @@
 <div id="site-process"></div>
     <main>
       
-  <div class="set">
-  <h3 style="text-align: center;">
-    <i class="fa fa-tags"></i>
-    标签云
-  </h3>
-  <a href="/tags/%E6%9D%82%E8%AE%B0/" style="font-size: 14px; color: #9e9e9e">杂记</a> <a href="/tags/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A/" style="font-size: 36px; color: #212121">算法作业</a>
+  <div class="friend">
+  
+    <div class="friend-card-container">
+      
+        
+        <div class="friend-card">
+          <div class="friend-card-layer">
+            <div class="friend-card-meta">
+              <p>主题作者</p>
+            </div>
+            <img class="friend-card-avatar" src="/images/friends/godbmw.jpeg"/>
+          </div>
+          <div class="friend-card-content">
+            <div class="friend-card-content-title">GodBMW</div>
+            <a href="https://godbmw.com/" target="_blank" class="friend-card-content-site">
+              godbmw.com
+            </a>
+          </div>
+        </div>
+      
+    </div>
+  
+  <article class="passage-article">
+    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">friends:</span><br><span class="line">  -</span><br><span class="line">    nickname: GodBMW # 友链名称</span><br><span class="line">    friends_avatar_cdn: &quot;https://godbmw.com/blog-static&quot;</span><br><span class="line">    site: https://godbmw.com/ # 友链地址</span><br><span class="line">    meta: 主题作者 # 友链介绍</span><br><span class="line">    show: true # 是否展示此友链</span><br></pre></td></tr></table></figure>
+
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    
+  </div>
+</aside>
 </div>
 
     </main>
+    
+      
+<div class="site-comment-contanier" data-plateform="leancloud">
+  
+    <p id="site-comment-info">
+      <i class="fa fa-spinner fa-spin"></i> 评论加载中
+    </p>
+    <div id="site-comment"></div>
+  
+</div>
     
     <div class="site-footer-wrapper">
   <footer class="site-footer">
@@ -289,11 +328,11 @@
     </a>
   </div>
   <div class="bottom-bar-right">
-    <a href="javascript:void(0);" data-enable="false" id="site-toc-show-btn">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
       <i class="fa fa-bars"></i>
     </a>
     
-      <a href="javascript:void(0);" data-enable="false">
+      <a href="#site-comment" data-enable="true">
         <i class="fa fa-commenting"></i>
       </a>
     

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="LAZ" />
+  
+  
+  <title>二叉树的中序遍历 | Hexo</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="算法作业," />
+  
+
+  
+  <meta name="description" content="LAZ的小站">
+
+  
+
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
+  
+
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+
+  
+    <script src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+  
+
+  
+
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz","appkey":"WaR7nrzhliHj9aVwdQzkdlGd","comment":true,"count":true},
+    welcome: {"enable":false,"interval":30},
+    start_time: "2020-07-12",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: true,
+    lock: false,
+    author: "LAZ",
+    share: {"twitter":true,"facebook":true,"weibo":true,"qq":true,"wechat":true},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
+
+  
+<script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
+    
+      <span class="site-header-brand-title">
+        <a href="/">HELLO,GUYS</a>
+      </span>
+    
+    
+      <span class="site-header-brand-motto"> | 安静写些东西</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+        <a href="/friends/" target="_self">友链</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/LAZ-0825" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+    </div>
+  </div>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc">
+      
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/friends/" target="_self">
+            友链
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</nav>
+<div id="site-process"></div>
+    <main>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2021-07-15
+    </span>
+    
+    
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
+    
+  </div>
+  <h1 class="passage-title">
+    二叉树的中序遍历
+  </h1>
+  
+  <article class="passage-article">
+    <h1 id="二叉树的中序遍历"><a class="markdownIt-Anchor" href="#二叉树的中序遍历">#</a> 二叉树的中序遍历</h1>
+<p>​		大一 -&gt; 大二暑期算法作业</p>
+<h2 id="看到题目的感想"><a class="markdownIt-Anchor" href="#看到题目的感想">#</a> 看到题目的感想</h2>
+<p>​		被离散数学<strong>折磨</strong>之后看见树就会想到离散数学，虽然学习离散数学的时候老师<strong>教过中序遍历</strong>，但是看到这个题的时候还是<strong>没有想起来</strong>中序遍历是个啥，索性就去搜索了一下（快进到被老师打死）。</p>
+<p>​		附上百度百科链接：</p>
+<p>​		** 中序遍历：**<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86">https://baike.baidu.com/item/ 中序遍历</a></p>
+<h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述">#</a> 题目描述</h2>
+<p>给定一个二叉树的根节点 root ，返回它的 中序 遍历。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/15/inorder_1.jpg" alt="img"></p>
+<p>输入：root = [1,null,2,3]<br>
+ 输出：[1,3,2]</p>
+<p><strong>示例 2：</strong></p>
+<p>输入：root = []<br>
+ 输出：[]</p>
+<p><strong>示例 3：</strong></p>
+<p>输入：root = [1]<br>
+ 输出：[1]</p>
+<p><strong>示例 4：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/15/inorder_5.jpg" alt="img"></p>
+<p>输入：root = [1,2]<br>
+ 输出：[2,1]</p>
+<p><strong>示例 5：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/15/inorder_4.jpg" alt="img"></p>
+<p>输入：root = [1,null,2]<br>
+ 输出：[1,2]</p>
+<p>提示：</p>
+<p>树中节点数目在范围 [0, 100] 内<br>
+ - 100 &lt;= Node.val &lt;= 100</p>
+<p>进阶：递归算法很简单，你可以通过迭代算法完成吗？</p>
+<p>来源：力扣（LeetCode）<br>
+链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal">https://leetcode-cn.com/problems/binary-tree-inorder-traversal</a></p>
+<h2 id="题目解答"><a class="markdownIt-Anchor" href="#题目解答">#</a> 题目解答</h2>
+<h3 id="1递归算法"><a class="markdownIt-Anchor" href="#1递归算法">#</a> 1. 递归算法</h3>
+<p>利用递归的思想解题也是老朋友了，在之前的算法题里面有过接触，所以并不是很难理解。</p>
+<h4 id="1解题思路"><a class="markdownIt-Anchor" href="#1解题思路">#</a> （1）解题思路</h4>
+<p>​		在解题的时候，了解到了一个名叫 <strong>vector</strong> 的对象，可以理解为 C++ 和 Java 中的一种动态数组。记得第一次听到这个名词的时候还是在翁恺老师的《C 语言程序设计》这门课上听到的，想想还真是怀念。（跑远了</p>
+<p>附上一些链接（<strong>配合梯子一起食用</strong>）：</p>
+<p><strong>vector：内存在堆上</strong></p>
+<p><strong>注意：vector 每添加一次都会把之前的全复制一遍，所以效率并不高。</strong></p>
+<p><strong>（1）</strong> <strong><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/cpp/standard-library/vector-class?view=msvc-160">https://docs.microsoft.com/zh-cn/cpp/standard-library/vector-class?view=msvc-160</a>  来源：Microsoft C++、C 和汇编程序文档</strong></p>
+<p><strong>（2） <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/16/docs/api/jdk.incubator.vector/jdk/incubator/vector/package-summary.html">https://docs.oracle.com/en/java/javase/16/docs/api/jdk.incubator.vector/jdk/incubator/vector/package-summary.html</a>  来源：Java 官方文档里的包（纯英文比较难顶</strong></p>
+<p><strong>（3） <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Vector/3330482">https://baike.baidu.com/item/Vector/3330482</a> 来源：百度百科</strong></p>
+<p><strong>（4） <a target="_blank" rel="noopener" href="https://www.w3cschool.cn/cpp/cpp-i6da2pq0.html">https://www.w3cschool.cn/cpp/cpp-i6da2pq0.html</a>  来源：某不知名 C++ 教程</strong></p>
+<p><strong>《C 语言程序设计》：<a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/ZJU-9001?tid=9001#/learn/announce">https://www.icourse163.org/learn/ZJU-9001?tid=9001#/learn/announce</a>  来源：中国大学 MOOC</strong></p>
+<p>​		本题可以通过递归思想对给出的二叉树的<strong>左子树、根节点、右子树依次进行遍历（中序遍历）</strong>，并将各个数据存放在设置好的 vector<int>中（由于 vector 是<strong>动态分配内存</strong>的，所以比用担心大小会不够用），最后即可得到该二叉树的中序遍历。</p>
+<h4 id="2代码"><a class="markdownIt-Anchor" href="#2代码">#</a> （2）代码</h4>
+<p>​		解题代码如下（<strong>配合题目链接食用</strong>）：</p>
+<h5 id="c"><a class="markdownIt-Anchor" href="#c">#</a> <strong>C++</strong></h5>
+<p><strong>有一种比较好用的 C++ 容器，比 vector 好用，只是不能自增。（本题未使用）</strong></p>
+<p><strong>array：内存在栈上</strong></p>
+<p><strong>array： <a target="_blank" rel="noopener" href="http://c.biancheng.net/view/6688.html">http://c.biancheng.net/view/6688.html</a> 来源：C 语言中文网</strong></p>
+<p><strong>array： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV18b4y1X7EB?from=search&amp;seid=11718690349134275715">https://www.bilibili.com/video/BV18b4y1X7EB?from=search&amp;seid=11718690349134275715</a> 来源：哔哩哔哩（是一个油管的小哥哥，讲的很棒，圈粉了）</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">inorder</span><span class="params">(TreeNode* root, vector&lt;<span class="keyword">int</span>&gt;&amp; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) &#123; <span class="comment">// 如果碰到空节点，说明该部分遍历已完成，return出去</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">inorder</span>(root-&gt;left, res); <span class="comment">// 递归遍历左子树</span></span><br><span class="line">        res.<span class="built_in">push_back</span>(root-&gt;val); <span class="comment">// 将该节点的值增加在动态数组末尾</span></span><br><span class="line">        <span class="built_in">inorder</span>(root-&gt;right, res); <span class="comment">// 递归遍历右子树</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt; res; <span class="comment">// 新建一个int类型的vector,用来存放遍历结果</span></span><br><span class="line">        <span class="built_in">inorder</span>(root, res); <span class="comment">// 从根节点root开始遍历，依次放入值</span></span><br><span class="line">        <span class="keyword">return</span> res; <span class="comment">// 返回遍历结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="java"><a class="markdownIt-Anchor" href="#java">#</a> <strong>Java</strong></h5>
+<p>List &amp; ArrayList 是 Java 中的一种列表。</p>
+<p><strong>List &amp; ArrayList：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/25aa92f8d681">https://www.jianshu.com/p/25aa92f8d681</a> 来源：简书</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;(); <span class="comment">// 新建Integer的List来存放数值</span></span><br><span class="line">        inorder(root, res); <span class="comment">// 从根节点root开始遍历，依次将数值放入</span></span><br><span class="line">        <span class="keyword">return</span> res; <span class="comment">// 返回遍历结果</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">inorder</span><span class="params">(TreeNode root, List&lt;Integer&gt; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123; <span class="comment">// 如果碰到空节点，说明该部分遍历已完成，return出去</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        inorder(root.left, res); <span class="comment">// 递归遍历左子树</span></span><br><span class="line">        res.add(root.val); <span class="comment">// 将该节点的值增加在末尾</span></span><br><span class="line">        inorder(root.right, res); <span class="comment">// 递归遍历右子树</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="c来自题解"><a class="markdownIt-Anchor" href="#c来自题解">#</a> <strong>C（来自题解）</strong></h5>
+<p>（C 语言中的动态数组不会玩，于是把题解拿过来）</p>
+<p><strong>C 语言动态数组 <a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/c-dynamic-array.html">https://www.runoob.com/w3cnote/c-dynamic-array.html</a> 来源：菜鸟教程</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *right;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Note: The returned array must be malloced, assume caller calls free().</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inorder</span><span class="params">(struct TreeNode* root, <span class="keyword">int</span>* res, <span class="keyword">int</span>* resSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!root) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    inorder(root-&gt;left, res, resSize);</span><br><span class="line">    res[(*resSize)++] = root-&gt;val;</span><br><span class="line">    inorder(root-&gt;right, res, resSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">inorderTraversal</span><span class="params">(struct TreeNode* root, <span class="keyword">int</span>* returnSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>* res = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * <span class="number">501</span>);</span><br><span class="line">    *returnSize = <span class="number">0</span>;</span><br><span class="line">    inorder(root, res, returnSize);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+<h4 id="3总结"><a class="markdownIt-Anchor" href="#3总结">#</a> （3）总结</h4>
+<p>​		利用递归思想来解题还是比较舒服的，也很好用，适合我这种菜鸡。</p>
+<h3 id="2迭代算法"><a class="markdownIt-Anchor" href="#2迭代算法">#</a> 2. 迭代算法</h3>
+<p><strong>关于迭代算法的基本思想：</strong></p>
+<p><strong>迭代算法 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/cs-whut/p/11024564.html">https://www.cnblogs.com/cs-whut/p/11024564.html</a> 来源：博客园</strong></p>
+<p>​		迭代算法之前没有接触过，上手有点看不懂。</p>
+<h4 id="1解题思路-2"><a class="markdownIt-Anchor" href="#1解题思路-2">#</a> （1）解题思路</h4>
+<p>​		通过迭代 + 栈模型来清楚的展现解题流程（题解中有动画展示，配合食用比较好理解）。</p>
+<h4 id="2代码-2"><a class="markdownIt-Anchor" href="#2代码-2">#</a> （2）代码</h4>
+<p>​		解题代码如下（<strong>配合题目链接食用</strong>）：</p>
+<h5 id="c-2"><a class="markdownIt-Anchor" href="#c-2">#</a> <strong>C++</strong></h5>
+<p>C++ 的栈：</p>
+<p><strong>stack <a target="_blank" rel="noopener" href="http://c.biancheng.net/view/478.html">http://c.biancheng.net/view/478.html</a> 来源：C 语言中文网</strong></p>
+<p><strong>stack <a target="_blank" rel="noopener" href="https://www.apiref.com/cpp-zh/cpp/container/stack.html">https://www.apiref.com/cpp-zh/cpp/container/stack.html</a> 来源：C++ 文档</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt; res; <span class="comment">// 新建一个int类型的vector,用来存放遍历结果</span></span><br><span class="line">        stack&lt;TreeNode*&gt; stk; <span class="comment">// 新建栈</span></span><br><span class="line">        <span class="keyword">while</span> (root != <span class="literal">nullptr</span> || !stk.<span class="built_in">empty</span>()) &#123; <span class="comment">// 节点有数值 或 栈不为空</span></span><br><span class="line">            <span class="keyword">while</span> (root != <span class="literal">nullptr</span>) &#123; <span class="comment">// 当节点有值时</span></span><br><span class="line">                stk.<span class="built_in">push</span>(root); <span class="comment">// 数据入栈</span></span><br><span class="line">                root = root-&gt;left; <span class="comment">// 访问左子树</span></span><br><span class="line">            &#125;</span><br><span class="line">            root = stk.<span class="built_in">top</span>(); <span class="comment">// 找到栈顶数据的节点</span></span><br><span class="line">            <span class="comment">// top()：返回一个栈顶元素的引用，类型为 T&amp;。如果栈为空，返回值未定义。</span></span><br><span class="line">            stk.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="comment">// pop()：弹出栈顶元素。</span></span><br><span class="line">            res.<span class="built_in">push_back</span>(root-&gt;val); <span class="comment">// 在vector末尾添加当前节点数据</span></span><br><span class="line">            root = root-&gt;right; <span class="comment">// 访问右子树</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res; <span class="comment">// 返回结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="java-2"><a class="markdownIt-Anchor" href="#java-2">#</a> <strong>Java</strong></h5>
+<p>Java 的栈：</p>
+<p><strong>Deque： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d78a7c982edb">https://www.jianshu.com/p/d78a7c982edb</a> 来源：简书</strong></p>
+<p><strong>stack：</strong>**</p>
+<p><strong>（1） <a target="_blank" rel="noopener" href="https://www.javatpoint.com/java-stack">https://www.javatpoint.com/java-stack</a>  来源：某 Java 文档</strong></p>
+<p><strong>（2） <a target="_blank" rel="noopener" href="https://blog.csdn.net/YQYnsmile/article/details/78457539">https://blog.csdn.net/YQYnsmile/article/details/78457539</a>  来源：屑 C 某某 N</strong></p>
+<p><strong>（3） <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Stack.html">https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Stack.html</a>  来源：某全英文 Java 文档</strong></p>
+<p>Deque 可以作为堆栈（LIFO 后进先出），此接口优于传统 Stack 类的使用。</p>
+<p><strong>Stack 和 Deque 方法的比较</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">栈方法</th>
+<th style="text-align:center">等效 Deque 方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">push(e)</td>
+<td style="text-align:center">addFirst(e)</td>
+</tr>
+<tr>
+<td style="text-align:left">pop()</td>
+<td style="text-align:center">removeFirst()</td>
+</tr>
+<tr>
+<td style="text-align:left">peek()</td>
+<td style="text-align:center">peekFirst()</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;(); <span class="comment">// 新建List来保存数据</span></span><br><span class="line">        Deque&lt;TreeNode&gt; stk = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;(); <span class="comment">// 新建栈</span></span><br><span class="line">        <span class="keyword">while</span> (root != <span class="keyword">null</span> || !stk.isEmpty()) &#123; <span class="comment">// 节点有数值 或 栈不为空</span></span><br><span class="line">            <span class="keyword">while</span> (root != <span class="keyword">null</span>) &#123; <span class="comment">// 节点有数值时</span></span><br><span class="line">                stk.push(root); <span class="comment">// 将数据放入栈</span></span><br><span class="line">                root = root.left; <span class="comment">// 访问左子树</span></span><br><span class="line">            &#125;</span><br><span class="line">            root = stk.pop(); <span class="comment">// pop()：弹出栈顶元素。</span></span><br><span class="line">            res.add(root.val); <span class="comment">// 在List末尾添加当前节点数据</span></span><br><span class="line">            root = root.right; <span class="comment">// 访问右子树</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res; <span class="comment">// 返回结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="c来自题解-2"><a class="markdownIt-Anchor" href="#c来自题解-2">#</a> <strong>C</strong>（来自题解）</h5>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *right;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Note: The returned array must be malloced, assume caller calls free().</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">inorderTraversal</span><span class="params">(struct TreeNode* root, <span class="keyword">int</span>* returnSize)</span> </span>&#123;</span><br><span class="line">    *returnSize = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span>* res = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * <span class="number">501</span>);</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>** <span class="title">stk</span> =</span> <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct TreeNode*) * <span class="number">501</span>);</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">NULL</span> || top &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (root != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            stk[top++] = root;</span><br><span class="line">            root = root-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        root = stk[--top];</span><br><span class="line">        res[(*returnSize)++] = root-&gt;val;</span><br><span class="line">        root = root-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+<h4 id="3总结-2"><a class="markdownIt-Anchor" href="#3总结-2">#</a> （3）总结</h4>
+<p>​		利用迭代算法来解题的思想还没有怎么接触过没上手感觉比较难。（<strong>还是递归香</strong>    <strong>确信</strong>）</p>
+<h3 id="3morris-中序遍历来自题解"><a class="markdownIt-Anchor" href="#3morris-中序遍历来自题解">#</a> 3.Morris 中序遍历（来自题解）</h3>
+<p>​		这个就是真的闻所未闻了，看了题解，决定搬过来</p>
+<h4 id="1思路与算法"><a class="markdownIt-Anchor" href="#1思路与算法">#</a> （1）思路与算法</h4>
+<ol>
+<li>
+<p><strong>Morris 遍历算法</strong>是另一种遍历二叉树的方法，它能将非递归的中序遍历空间复杂度降为 O (1) O (1)。</p>
+<p><strong>Morris 遍历算法</strong>整体步骤如下（假设当前遍历到的节点为 xx）：</p>
+</li>
+<li>
+<p>如果 xx 无左孩子，先将 xx 的值加入答案数组，再访问 xx 的右孩子，即 x  =  x . right。<br>
+如果 xx 有左孩子，则找到 xx 左子树上最右的节点（<strong>即左子树中序遍历的最后一个节点，xx 在中序遍历中的前驱节点</strong>），我们记为 predecessor。根据 predecessor 的右孩子是否为空，进行如下操作。</p>
+<ul>
+<li>如果 predecessor 的右孩子为空，则将其右孩子指向 xx，然后访问 xx 的左孩子，即  x  =  x . left。</li>
+<li>如果 predecessor 的右孩子不为空，则此时其右孩子指向 xx，说明我们已经遍历完 xx 的左子树，我们将 predecessor 的右孩子置空，将 xx 的值加入答案数组，然后访问 xx 的右孩子，即  x  =  x . right。</li>
+</ul>
+</li>
+<li>
+<p>重复上述操作，直至访问完整棵树。</p>
+<p>4. 其实整个过程我们就多做一步：假设当前遍历到的节点为 xx，将 xx 的左子树中最右边的节点的右孩子指向 xx，这样在左子树遍历完成后我们通过这个指向走回了 xx，且能通过这个指向知晓我们已经遍历完成了左子树，而不用再通过栈来维护，省去了栈的空间复杂度。</p>
+</li>
+</ol>
+<h4 id="2代码-3"><a class="markdownIt-Anchor" href="#2代码-3">#</a> （2）代码</h4>
+<p><strong>题解链接： <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/">https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/</a> 来源：力扣</strong></p>
+<p>​		不想搬运代码了，就给出了链接。<strong>Morris 中序遍历</strong>时题解中的第三种解法，题解带有动画教程，可以看看。</p>
+<h4 id="3总结-3"><a class="markdownIt-Anchor" href="#3总结-3">#</a> （3）总结</h4>
+<p>​		一种没听过的中序遍历算法，搬运题解来的。（主要还是太菜了没玩明白）</p>
+<h2 id="题目总结"><a class="markdownIt-Anchor" href="#题目总结">#</a> 题目总结</h2>
+<p>​		此次题目中，出现了<strong>递归算法、迭代算法、Morris 遍历算法</strong>三种解题思路。</p>
+<p>​		总的来说，还是递归较好理解，写起来难度稍微低一些；迭代算法初次了解，试了试水；Morris 遍历算法第一次键，还是看题解叭（还是人菜）。</p>
+
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="toc-text"> 二叉树的中序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%8B%E5%88%B0%E9%A2%98%E7%9B%AE%E7%9A%84%E6%84%9F%E6%83%B3"><span class="toc-text"> 看到题目的感想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text"> 题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94"><span class="toc-text"> 题目解答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95"><span class="toc-text"> 1. 递归算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text"> （1）解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81"><span class="toc-text"> （2）代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#c"><span class="toc-text"> C++</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#java"><span class="toc-text"> Java</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#c%E6%9D%A5%E8%87%AA%E9%A2%98%E8%A7%A3"><span class="toc-text"> C（来自题解）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%80%BB%E7%BB%93"><span class="toc-text"> （3）总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95"><span class="toc-text"> 2. 迭代算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-2"><span class="toc-text"> （1）解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81-2"><span class="toc-text"> （2）代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#c-2"><span class="toc-text"> C++</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#java-2"><span class="toc-text"> Java</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#c%E6%9D%A5%E8%87%AA%E9%A2%98%E8%A7%A3-2"><span class="toc-text"> C（来自题解）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%80%BB%E7%BB%93-2"><span class="toc-text"> （3）总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3morris-%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9D%A5%E8%87%AA%E9%A2%98%E8%A7%A3"><span class="toc-text"> 3.Morris 中序遍历（来自题解）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E6%80%9D%E8%B7%AF%E4%B8%8E%E7%AE%97%E6%B3%95"><span class="toc-text"> （1）思路与算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81-3"><span class="toc-text"> （2）代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%80%BB%E7%BB%93-3"><span class="toc-text"> （3）总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="toc-text"> 题目总结</span></a></li></ol></li></ol>
+  </div>
+</aside>
+  
+    <aside class="passage-copyright">
+      <div>本文作者: LAZ</div>
+      
+        <div>
+          原文链接: 
+          <a href="" target="_blank">http://example.com/passages/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/</a>
+        </div>
+      
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+      </div>
+    </aside>
+  
+  
+    <div class="passage-tags">
+     
+      <a href="/tags/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A/"><i class="fa fa-tags"></i>算法作业</a>
+    
+    </div>
+  
+</div>
+
+    </main>
+    
+      
+<div class="site-comment-contanier" data-plateform="leancloud">
+  
+    <p id="site-comment-info">
+      <i class="fa fa-spinner fa-spin"></i> 评论加载中
+    </p>
+    <div id="site-comment"></div>
+  
+</div>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+      
+        <div class="site-footer-col">
+          <h5 class="site-footer-title">博客推荐</h5>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/" target="_blank">GodBMW</a>
+            </span>
+          
+            <span class="site-footer-item">
+              <a href="http://ruanyifeng.com/" target="_blank">阮一峰的个人网站</a>
+            </span>
+          
+        </div>
+      
+        <div class="site-footer-col">
+          <h5 class="site-footer-title">系列教程</h5>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/categories/webpack4%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/" target="_blank">webpack4系列教程</a>
+            </span>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/design-patterns/" target="_blank">设计模式手册</a>
+            </span>
+          
+        </div>
+      
+        <div class="site-footer-col">
+          <h5 class="site-footer-title">抓到我</h5>
+          
+            <span class="site-footer-item">
+              <a href="https://juejin.im/user/5b91fcf06fb9a05d3c7fd4a5" target="_blank">掘金</a>
+            </span>
+          
+            <span class="site-footer-item">
+              <a href="https://segmentfault.com/" target="_blank">思否</a>
+            </span>
+          
+        </div>
+      
+    
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+      <div class="site-footer-info">
+        <i class="fa fa-at"></i> Email: yuanxin.me@gmail.com
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 <a href="https://github.com/dongyuanxin/theme-ad/" target="_blank">Theme-AD</a>.
+      Created by <a href="https://godbmw.com/" target="_blank">GodBMW</a>.
+      All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+        <div class="site-layer-input-choose">
+          <a href="javascript:void(0);" title="Change Search Engine">Google</a>
+        </div>
+        <input type="text">
+        <i class="fa fa-search"></i>
+      </div>
+      
+        <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+          
+            <div>
+              <img src="/images/wechat.png" alt="WeChat">
+              
+                <p>WeChat</p>
+              
+            </div>
+          
+            <div>
+              <img src="/images/alipay.png" alt="AliPay">
+              
+                <p>AliPay</p>
+              
+            </div>
+          
+        </div>
+      
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+    
+
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="/passages/%E7%88%AC%E6%A5%BC%E6%A2%AF/" data-enable="true">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="/passages/%E4%BB%8B%E7%BB%8D/" data-enable="true">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+      <a href="#site-comment" data-enable="true">
+        <i class="fa fa-commenting"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    
+      <a href="javascript:void(0);" id="site-reward">
+        <i class="fa fa-thumbs-up"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
+  
+    <a id="share-btn-twitter" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-twitter"></i>
+    </a>
+  
+  
+    <a id="share-btn-facebook" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-facebook"></i>
+    </a>
+  
+  
+    <a id="share-btn-weibo" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-weibo"></i>
+    </a>
+  
+  
+    <a id="share-btn-qq" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-qq"></i>
+    </a>
+  
+  
+    <a id="share-btn-wechat" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-wechat"></i>
+    </a>
+  
+</div>
+    
+
+
+
+
+
+    
+  </body>
+</html>

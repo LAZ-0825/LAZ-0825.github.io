@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="LAZ" />
+  
+  
+  <title>爬楼梯 | Hexo</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="算法作业," />
+  
+
+  
+  <meta name="description" content="LAZ的小站">
+
+  
+
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
+  
+
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+
+  
+    <script src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+  
+
+  
+
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz","appkey":"WaR7nrzhliHj9aVwdQzkdlGd","comment":true,"count":true},
+    welcome: {"enable":false,"interval":30},
+    start_time: "2020-07-12",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: true,
+    lock: false,
+    author: "LAZ",
+    share: {"twitter":true,"facebook":true,"weibo":true,"qq":true,"wechat":true},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
+
+  
+<script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
+    
+      <span class="site-header-brand-title">
+        <a href="/">HELLO,GUYS</a>
+      </span>
+    
+    
+      <span class="site-header-brand-motto"> | 安静写些东西</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+        <a href="/friends/" target="_self">友链</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/LAZ-0825" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+    </div>
+  </div>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc">
+      
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/friends/" target="_self">
+            友链
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</nav>
+<div id="site-process"></div>
+    <main>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2021-07-19
+    </span>
+    
+    
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
+    
+  </div>
+  <h1 class="passage-title">
+    爬楼梯
+  </h1>
+  
+  <article class="passage-article">
+    <h1 id="爬楼梯"><a class="markdownIt-Anchor" href="#爬楼梯">#</a> 爬楼梯</h1>
+<p>​		大一 -&gt; 大二暑期算法作业</p>
+<p>​		<strong>本文档中有对动态规划的解读（来自题解）</strong></p>
+<h2 id="看到题目的想法"><a class="markdownIt-Anchor" href="#看到题目的想法">#</a> 看到题目的想法</h2>
+<p>​		这是一道比较经典的题目，之前好像见过类似的题目，所以上手还是有一些思路的。</p>
+<h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述">#</a> 题目描述</h2>
+<p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。</p>
+<p>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
+<p><strong>注意</strong>：给定 n 是一个正整数。</p>
+<p><strong>示例 1：</strong></p>
+<p>输入： 2<br>
+ 输出： 2<br>
+ 解释： 有两种方法可以爬到楼顶。</p>
+<ol>
+<li>1 阶 + 1 阶</li>
+<li>2 阶</li>
+</ol>
+<p><strong>示例 2：</strong></p>
+<p>输入： 3<br>
+ 输出： 3<br>
+ 解释： 有三种方法可以爬到楼顶。</p>
+<ol>
+<li>1 阶 + 1 阶 + 1 阶</li>
+<li>1 阶 + 2 阶</li>
+<li>2 阶 + 1 阶</li>
+<li></li>
+</ol>
+<p>来源：力扣（LeetCode）<br>
+链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs">https://leetcode-cn.com/problems/climbing-stairs</a><br>
+ 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+<h2 id="题目解答"><a class="markdownIt-Anchor" href="#题目解答">#</a> 题目解答</h2>
+<h3 id="1动态规划"><a class="markdownIt-Anchor" href="#1动态规划">#</a> 1. 动态规划</h3>
+<h4 id="1解题思路"><a class="markdownIt-Anchor" href="#1解题思路">#</a> （1）解题思路</h4>
+<p>​		这是一道典型的动态规划题，<strong>由于每步只能走一或两阶台阶，所以到达这一阶的方法数是 跨一阶到达 + 跨两阶到达</strong>。所以走到第一阶有一种方法，走到第二阶有两种方法，<strong>从第三阶开始</strong>，每一阶的方法数等于前两阶的方法数的代数和（跨一阶到达 + 跨两阶到达）。</p>
+<h4 id="2代码"><a class="markdownIt-Anchor" href="#2代码">#</a> （2）代码</h4>
+<p>​		由于思路比较简单，也是顺利的写出了代码。（<strong>配合题目链接食用</strong>）</p>
+<h5 id="c"><a class="markdownIt-Anchor" href="#c">#</a> C++</h5>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> p = <span class="number">0</span>, q = <span class="number">0</span>, r = <span class="number">1</span>; <span class="comment">// 初始化</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123; <span class="comment">// 遍历计算直到算出想要的结果</span></span><br><span class="line">            p = q; </span><br><span class="line">            q = r; </span><br><span class="line">            r = p + q;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r; <span class="comment">// 返回想要的结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="java"><a class="markdownIt-Anchor" href="#java">#</a> Java</h5>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> p = <span class="number">0</span>, q = <span class="number">0</span>, r = <span class="number">1</span>; <span class="comment">// 初始化</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123; <span class="comment">// 遍历计算直到算出想要的结果</span></span><br><span class="line">            p = q; </span><br><span class="line">            q = r; </span><br><span class="line">            r = p + q;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r; <span class="comment">// 返回想要的结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="c-2"><a class="markdownIt-Anchor" href="#c-2">#</a> C</h5>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>, q = <span class="number">0</span>, r = <span class="number">1</span>; <span class="comment">// 初始化</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123; <span class="comment">// 遍历计算直到算出想要的结果</span></span><br><span class="line">        p = q;</span><br><span class="line">        q = r;</span><br><span class="line">        r = p + q;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r; <span class="comment">// 返回想要的结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3总结"><a class="markdownIt-Anchor" href="#3总结">#</a> （3）总结</h4>
+<p>​		这样直接计算的方法思路很简单，但是问题是计算的结果无法保留，用一次就要重新计算一次，十分的不方便。</p>
+<h3 id="2斐波那契数列"><a class="markdownIt-Anchor" href="#2斐波那契数列">#</a> 2. 斐波那契数列</h3>
+<h4 id="1解题思路-2"><a class="markdownIt-Anchor" href="#1解题思路-2">#</a> （1）解题思路</h4>
+<p>​		不难看出，此题的数据就是我们熟悉的<strong>斐波那契数列</strong>，因此我们可以<strong>借助斐波那契数列的通项公式</strong>来快速算出我们想要的结果。</p>
+<p>​		由于不会打根号，所以具体过程就不写了，可以去题解里面看一下。+</p>
+<p><strong>题目链接（去看官方题解）：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs/solution/pa-lou-ti-by-leetcode-solution/">https://leetcode-cn.com/problems/climbing-stairs/solution/pa-lou-ti-by-leetcode-solution/</a></strong></p>
+<h4 id="2代码-2"><a class="markdownIt-Anchor" href="#2代码-2">#</a> （2）代码</h4>
+<h5 id="c-3"><a class="markdownIt-Anchor" href="#c-3">#</a> C++</h5>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> sqrt5 = <span class="built_in">sqrt</span>(<span class="number">5</span>);</span><br><span class="line">        <span class="keyword">double</span> fibn = <span class="built_in">pow</span>((<span class="number">1</span> + sqrt5) / <span class="number">2</span>, n + <span class="number">1</span>) - <span class="built_in">pow</span>((<span class="number">1</span> - sqrt5) / <span class="number">2</span>, n + <span class="number">1</span>); <span class="comment">// 斐波那契数列通项公式</span></span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)<span class="built_in">round</span>(fibn / sqrt5); <span class="comment">// 返回结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="java-2"><a class="markdownIt-Anchor" href="#java-2">#</a> Java</h5>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> sqrt5 = Math.sqrt(<span class="number">5</span>);</span><br><span class="line">        <span class="keyword">double</span> fibn = Math.pow((<span class="number">1</span> + sqrt5) / <span class="number">2</span>, n + <span class="number">1</span>) - Math.pow((<span class="number">1</span> - sqrt5) / <span class="number">2</span>, n + <span class="number">1</span>); <span class="comment">// 斐波那契数列通项公式</span></span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) Math.round(fibn / sqrt5); <span class="comment">// 返回结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="c-4"><a class="markdownIt-Anchor" href="#c-4">#</a> C</h5>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> sqrt5 = <span class="built_in">sqrt</span>(<span class="number">5</span>);</span><br><span class="line">    <span class="keyword">double</span> fibn = <span class="built_in">pow</span>((<span class="number">1</span> + sqrt5) / <span class="number">2</span>, n + <span class="number">1</span>) - <span class="built_in">pow</span>((<span class="number">1</span> - sqrt5) / <span class="number">2</span>, n + <span class="number">1</span>); <span class="comment">// 斐波那契数列通项公式</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>) round(fibn / sqrt5); <span class="comment">// 返回结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3总结-2"><a class="markdownIt-Anchor" href="#3总结-2">#</a> （3）总结</h4>
+<p>​		这种解决办法方便快捷，也不会浪费多余的时间空间来计算，比较好用。<strong>（缺点就是通项公式并不容易记住）</strong></p>
+<h3 id="3矩阵快速幂来自题解"><a class="markdownIt-Anchor" href="#3矩阵快速幂来自题解">#</a> 3. 矩阵快速幂（来自题解）</h3>
+<h4 id="1解题思路-代码"><a class="markdownIt-Anchor" href="#1解题思路-代码">#</a> （1）解题思路 + 代码</h4>
+<p>​		说实话，行看到这种方法的时候<strong>感觉回到了线性代数的课堂上</strong>，又是熟悉的矩阵操作，让人头疼</p>
+<p>​		具体的解题思路和代码就不搬过来了，可以去<strong>官方题解</strong>下查看。</p>
+<p><strong>题目链接（去看官方题解）：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs/solution/pa-lou-ti-by-leetcode-solution/">https://leetcode-cn.com/problems/climbing-stairs/solution/pa-lou-ti-by-leetcode-solution/</a></strong></p>
+<h4 id="2总结"><a class="markdownIt-Anchor" href="#2总结">#</a> （2）总结</h4>
+<p>​		<strong>利用矩阵运算解题</strong>的方法还是没见过的，对我来说比较新奇，还需要认真的研究研究。</p>
+<h2 id="题目总结"><a class="markdownIt-Anchor" href="#题目总结">#</a> 题目总结</h2>
+<p>​		这道题的难度中规中矩，但也会有很奇妙很方便的解决方案，也让我知道了<strong>运用矩阵运算来解题</strong>的方法，很棒。</p>
+<h2 id="拓展动态规划摘自题解"><a class="markdownIt-Anchor" href="#拓展动态规划摘自题解">#</a> 拓展（动态规划）（摘自题解）</h2>
+<p>​		<strong>本部分附带原作者对本题的总结</strong></p>
+<p>不少同学对动态规划还处于朦胧状态，我特意<strong>录了一期视频</strong>，讲一讲<strong>动态规划解题方法论</strong>，这里详细介绍了动规五部曲，相信结合本篇题解，会对你学习动态规划有所帮助。</p>
+<p><strong>视频链接：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV13Q4y197Wg">https://www.bilibili.com/video/BV13Q4y197Wg</a>)</strong></p>
+<p>做动规题目的时候，很多同学会陷入一个误区，就是以为把状态转移公式背下来，照葫芦画瓢改改，就开始写代码，甚至把题目 AC 之后，都不太清楚 dp [i] 表示的是什么。</p>
+<p><strong>这就是一种朦胧的状态，然后就把题给过了，遇到稍稍难一点的，可能直接就不会了，然后看题解，然后继续照葫芦画瓢陷入这种恶性循环中。</strong></p>
+<p>状态转移公式（递推公式）是很重要，但动规<strong>不仅仅只有</strong>递推公式。</p>
+<p><strong>对于动态规划问题，我将拆解为如下五步曲，这五步都搞清楚了，才能说把动态规划真的掌握了！</strong></p>
+<ol>
+<li>确定 dp 数组（dp table）以及下标的含义</li>
+<li>确定递推公式</li>
+<li>dp 数组如何初始化</li>
+<li>确定遍历顺序</li>
+<li>举例推导 dp 数组</li>
+</ol>
+<p>一些同学可能想<strong>为什么要先确定递推公式，然后在考虑初始化</strong>呢？</p>
+<p><strong>因为一些情况是递推公式决定了 dp 数组要如何初始化！</strong></p>
+<p>后面的讲解中我都是围绕着这五点来进行讲解。</p>
+<p>可能刷过动态规划题目的同学可能都知道递推公式的重要性，感觉确定了递推公式这道题目就解出来了。</p>
+<p>其实 确定递推公式 仅仅是解题里的一步而已！</p>
+<p>一些同学知道递推公式，但搞不清楚 dp 数组应该如何初始化，或者正确的遍历顺序，以至于记下来公式，但写的程序怎么改都通过不了。</p>
+<p>后序的讲解的大家就会慢慢感受到这五步的重要性了。</p>
+<h3 id="动态规划应该如何debug"><a class="markdownIt-Anchor" href="#动态规划应该如何debug">#</a> 动态规划应该如何 debug</h3>
+<p>相信动规的题目，很大部分同学都是这样做的。</p>
+<p>看一下题解，感觉看懂了，然后照葫芦画瓢，如果能正好画对了，万事大吉，一旦要是没通过，就怎么改都通过不了，对 dp 数组的初始化，递归公式，遍历顺序，处于一种黑盒的理解状态。</p>
+<p><strong>写动规题目，代码出问题很正常！</strong></p>
+<p><strong>找问题的最好方式就是把 dp 数组打印出来，看看究竟是不是按照自己思路推导的！</strong></p>
+<p>一些同学对于 dp 的学习是黑盒的状态，就是不清楚 dp 数组的含义，不懂为什么这么初始化，递推公式背下来了，遍历顺序靠习惯就是这么写的，然后一鼓作气写出代码，如果代码能通过万事大吉，通过不了的话就凭感觉改一改。</p>
+<p>这是一个很不好的习惯！</p>
+<p><strong>做动规的题目，写代码之前一定要把状态转移在 dp 数组的上具体情况模拟一遍，心中有数，确定最后推出的是想要的结果。</strong></p>
+<p>然后再写代码，如果代码没通过就打印 dp 数组，看看是不是和自己预先推导的哪里不一样。</p>
+<p>如果打印出来和自己预先模拟推导是一样的，那么就是自己的递归公式、初始化或者遍历顺序有问题了。</p>
+<p>如果和自己预先模拟推导的不一样，那么就是代码实现细节有问题。</p>
+<p><strong>这样才是一个完整的思考过程，而不是一旦代码出问题，就毫无头绪的东改改西改改，最后过不了，或者说是稀里糊涂的过了。</strong></p>
+<p>这也是我为什么在动规五步曲里强调推导 dp 数组的重要性。</p>
+<p>举个例子哈：在「代码随想录」刷题小分队微信群里，一些录友可能代码通过不了，会把代码抛到讨论群里问：我这里代码都已经和题解一模一样了，为什么通过不了呢？</p>
+<p>发出这样的问题之前，其实可以自己先思考这三个问题：</p>
+<ul>
+<li>这道题目我举例推导状态转移公式了么？</li>
+<li>我打印 dp 数组的日志了么？</li>
+<li>打印出来了 dp 数组和我想的一样么？</li>
+</ul>
+<p><strong>如果这灵魂三问自己都做到了，基本上这道题目也就解决了</strong>，或者更清晰的知道自己究竟是哪一点不明白，是状态转移不明白，还是实现代码不知道该怎么写，还是不理解遍历 dp 数组的顺序。</p>
+<p>然后在问问题，目的性就很强了，群里的小伙伴也可以快速知道提问者的疑惑了。</p>
+<p><strong>注意这里不是说不让大家问问题哈， 而是说问问题之前要有自己的思考，问题要问到点子上！</strong></p>
+<p><strong>大家工作之后就会发现，特别是大厂，问问题是一个专业活，是的，问问题也要体现出专业！</strong></p>
+<p>如果问同事很不专业的问题，同事们会懒的回答，领导也会认为你缺乏思考能力，这对职场发展是很不利的。</p>
+<p>所以大家在刷题的时候，就锻炼自己养成专业提问的好习惯。</p>
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结">#</a> 总结</h3>
+<p>这一篇是动态规划的整体概述，讲解了什么是动态规划，动态规划的解题步骤，以及如何 debug。</p>
+<p>动态规划是一个很大的领域，今天这一篇讲解的内容是整个动态规划系列中都会使用到的一些理论基础。</p>
+<p>在后序讲解中针对某一具体问题，还会讲解其对应的理论基础，例如背包问题中的 01 背包，leetcode 上的题目都是 01 背包的应用，而没有纯 01 背包的问题，那么就需要在把对应的理论知识讲解一下。</p>
+<p>大家会发现，我讲解的理论基础并不是教科书上各种动态规划的定义，错综复杂的公式。</p>
+<p>这里理论基础篇已经是非常偏实用的了，每个知识点都是在解题实战中非常有用的内容，大家要重视起来哈。</p>
+<h3 id="原作者对本题总结"><a class="markdownIt-Anchor" href="#原作者对本题总结">#</a> 原作者对本题总结</h3>
+<p>这道题目和动态规划：斐波那契数题目基本是一样的，但是会发现本题相比动态规划：斐波那契数难多了，为什么呢？</p>
+<p>关键是 动态规划：斐波那契数 题目描述就已经把动规五部曲里的递归公式和如何初始化都给出来了，剩下几部曲也自然而然的推出来了。</p>
+<p>而本题，就需要逐个分析了，大家现在应该初步感受出关于动态规划，你该了解这些！里给出的动规五部曲了。</p>
+<p>简单题是用来掌握方法论的，例如昨天斐波那契的题目够简单了吧，但昨天和今天可以使用一套方法分析出来的，这就是方法论！</p>
+<p>所以不要轻视简单题，那种凭感觉就刷过去了，其实和没掌握区别不大，只有掌握方法论并说清一二三，才能触类旁通，举一反三哈！</p>
+<h3 id="原作者的题目解答"><a class="markdownIt-Anchor" href="#原作者的题目解答">#</a> 原作者的题目解答</h3>
+<p><strong>原作者的题目解答：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs/solution/dai-ma-sui-xiang-lu-dong-tai-gui-hua-jin-y1hw/">https://leetcode-cn.com/problems/climbing-stairs/solution/dai-ma-sui-xiang-lu-dong-tai-gui-hua-jin-y1hw/</a></strong></p>
+
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%88%AC%E6%A5%BC%E6%A2%AF"><span class="toc-text"> 爬楼梯</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%8B%E5%88%B0%E9%A2%98%E7%9B%AE%E7%9A%84%E6%83%B3%E6%B3%95"><span class="toc-text"> 看到题目的想法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text"> 题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94"><span class="toc-text"> 题目解答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text"> 1. 动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text"> （1）解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81"><span class="toc-text"> （2）代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#c"><span class="toc-text"> C++</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#java"><span class="toc-text"> Java</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#c-2"><span class="toc-text"> C</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%80%BB%E7%BB%93"><span class="toc-text"> （3）总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97"><span class="toc-text"> 2. 斐波那契数列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-2"><span class="toc-text"> （1）解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81-2"><span class="toc-text"> （2）代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#c-3"><span class="toc-text"> C++</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#java-2"><span class="toc-text"> Java</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#c-4"><span class="toc-text"> C</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%80%BB%E7%BB%93-2"><span class="toc-text"> （3）总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%E6%9D%A5%E8%87%AA%E9%A2%98%E8%A7%A3"><span class="toc-text"> 3. 矩阵快速幂（来自题解）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-%E4%BB%A3%E7%A0%81"><span class="toc-text"> （1）解题思路 + 代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E6%80%BB%E7%BB%93"><span class="toc-text"> （2）总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="toc-text"> 题目总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%91%98%E8%87%AA%E9%A2%98%E8%A7%A3"><span class="toc-text"> 拓展（动态规划）（摘自题解）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95debug"><span class="toc-text"> 动态规划应该如何 debug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text"> 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E4%BD%9C%E8%80%85%E5%AF%B9%E6%9C%AC%E9%A2%98%E6%80%BB%E7%BB%93"><span class="toc-text"> 原作者对本题总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E4%BD%9C%E8%80%85%E7%9A%84%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94"><span class="toc-text"> 原作者的题目解答</span></a></li></ol></li></ol></li></ol>
+  </div>
+</aside>
+  
+    <aside class="passage-copyright">
+      <div>本文作者: LAZ</div>
+      
+        <div>
+          原文链接: 
+          <a href="" target="_blank">http://example.com/passages/%E7%88%AC%E6%A5%BC%E6%A2%AF/</a>
+        </div>
+      
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+      </div>
+    </aside>
+  
+  
+    <div class="passage-tags">
+     
+      <a href="/tags/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A/"><i class="fa fa-tags"></i>算法作业</a>
+    
+    </div>
+  
+</div>
+
+    </main>
+    
+      
+<div class="site-comment-contanier" data-plateform="leancloud">
+  
+    <p id="site-comment-info">
+      <i class="fa fa-spinner fa-spin"></i> 评论加载中
+    </p>
+    <div id="site-comment"></div>
+  
+</div>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+      
+        <div class="site-footer-col">
+          <h5 class="site-footer-title">博客推荐</h5>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/" target="_blank">GodBMW</a>
+            </span>
+          
+            <span class="site-footer-item">
+              <a href="http://ruanyifeng.com/" target="_blank">阮一峰的个人网站</a>
+            </span>
+          
+        </div>
+      
+        <div class="site-footer-col">
+          <h5 class="site-footer-title">系列教程</h5>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/categories/webpack4%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/" target="_blank">webpack4系列教程</a>
+            </span>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/design-patterns/" target="_blank">设计模式手册</a>
+            </span>
+          
+        </div>
+      
+        <div class="site-footer-col">
+          <h5 class="site-footer-title">抓到我</h5>
+          
+            <span class="site-footer-item">
+              <a href="https://juejin.im/user/5b91fcf06fb9a05d3c7fd4a5" target="_blank">掘金</a>
+            </span>
+          
+            <span class="site-footer-item">
+              <a href="https://segmentfault.com/" target="_blank">思否</a>
+            </span>
+          
+        </div>
+      
+    
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+      <div class="site-footer-info">
+        <i class="fa fa-at"></i> Email: yuanxin.me@gmail.com
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 <a href="https://github.com/dongyuanxin/theme-ad/" target="_blank">Theme-AD</a>.
+      Created by <a href="https://godbmw.com/" target="_blank">GodBMW</a>.
+      All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+        <div class="site-layer-input-choose">
+          <a href="javascript:void(0);" title="Change Search Engine">Google</a>
+        </div>
+        <input type="text">
+        <i class="fa fa-search"></i>
+      </div>
+      
+        <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+          
+            <div>
+              <img src="/images/wechat.png" alt="WeChat">
+              
+                <p>WeChat</p>
+              
+            </div>
+          
+            <div>
+              <img src="/images/alipay.png" alt="AliPay">
+              
+                <p>AliPay</p>
+              
+            </div>
+          
+        </div>
+      
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+    
+
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="/passages/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/" data-enable="true">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="/passages/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" data-enable="true">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+      <a href="#site-comment" data-enable="true">
+        <i class="fa fa-commenting"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    
+      <a href="javascript:void(0);" id="site-reward">
+        <i class="fa fa-thumbs-up"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
+  
+    <a id="share-btn-twitter" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-twitter"></i>
+    </a>
+  
+  
+    <a id="share-btn-facebook" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-facebook"></i>
+    </a>
+  
+  
+    <a id="share-btn-weibo" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-weibo"></i>
+    </a>
+  
+  
+    <a id="share-btn-qq" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-qq"></i>
+    </a>
+  
+  
+    <a id="share-btn-wechat" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-wechat"></i>
+    </a>
+  
+</div>
+    
+
+
+
+
+
+    
+  </body>
+</html>

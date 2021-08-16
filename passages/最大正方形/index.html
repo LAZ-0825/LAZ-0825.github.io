@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="LAZ" />
+  
+  
+  <title>最大正方形 | Hexo</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="算法作业," />
+  
+
+  
+  <meta name="description" content="LAZ的小站">
+
+  
+
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
+  
+
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+
+  
+    <script src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+  
+
+  
+
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz","appkey":"WaR7nrzhliHj9aVwdQzkdlGd","comment":true,"count":true},
+    welcome: {"enable":false,"interval":30},
+    start_time: "2020-07-12",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: true,
+    lock: false,
+    author: "LAZ",
+    share: {"twitter":true,"facebook":true,"weibo":true,"qq":true,"wechat":true},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
+
+  
+<script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
+    
+      <span class="site-header-brand-title">
+        <a href="/">HELLO,GUYS</a>
+      </span>
+    
+    
+      <span class="site-header-brand-motto"> | 安静写些东西</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+        <a href="/friends/" target="_self">友链</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/LAZ-0825" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+    </div>
+  </div>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc">
+      
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/friends/" target="_self">
+            友链
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</nav>
+<div id="site-process"></div>
+    <main>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2021-08-12
+    </span>
+    
+    
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
+    
+  </div>
+  <h1 class="passage-title">
+    最大正方形
+  </h1>
+  
+  <article class="passage-article">
+    <h1 id="最大正方形"><a class="markdownIt-Anchor" href="#最大正方形">#</a> <strong>最大正方形</strong></h1>
+<p>​		大一 -&gt; 大二暑期算法作业</p>
+<h2 id="看到题目的感想"><a class="markdownIt-Anchor" href="#看到题目的感想">#</a> <strong>看到题目的感想</strong></h2>
+<p>​		寻找最大正方形是小时候经常玩的一种游戏，说是可以锻炼观察力与判断力什么的，现在也会有家长带着小孩玩这个游戏，不过不是很多。</p>
+<h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述">#</a> <strong>题目描述</strong></h2>
+<p>在一个由 ‘0’ 和 ‘1’ 组成的二维矩阵内，找到只包含 ‘1’ 的最大正方形，并返回其面积。</p>
+<p>示例 1：</p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/26/max1grid.jpg" alt=""></p>
+<p>输入：matrix = [[“1”,“0”,“1”,“0”,“0”],[“1”,“0”,“1”,“1”,“1”],[“1”,“1”,“1”,“1”,“1”],[“1”,“0”,“0”,“1”,“0”]]<br>
+ 输出：4</p>
+<p>示例 2：</p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/26/max2grid.jpg" alt=""></p>
+<p>输入：matrix = [[“0”,“1”],[“1”,“0”]]<br>
+ 输出：1</p>
+<p>示例 3：</p>
+<p>输入：matrix = [[“0”]]<br>
+ 输出：0</p>
+<p>来源：力扣（LeetCode）<br>
+链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximal-square">https://leetcode-cn.com/problems/maximal-square</a><br>
+ 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+<h2 id="题目解答"><a class="markdownIt-Anchor" href="#题目解答">#</a> <strong>题目解答</strong></h2>
+<h3 id="1-暴力计算"><a class="markdownIt-Anchor" href="#1-暴力计算">#</a> 1、<strong>暴力计算</strong></h3>
+<h4 id="1解题思路"><a class="markdownIt-Anchor" href="#1解题思路">#</a> <strong>（1）解题思路</strong></h4>
+<p>语言描述不是很棒，大家凑活看叭，┭┮﹏┭┮</p>
+<p>想了想，暴力计算是最简单直观的做法，具体做法如下：</p>
+<ol>
+<li>遍历矩阵中的元素，当遇到 1 时，将该元素作为正方形的左上角的位置。</li>
+<li>确定正方形的左上角后，根据左上角所在的行和列计算可能的最大正方形的边长（正方形的范围 - 不能超出矩阵的行和列），在该范围内寻找只包含 1 的最大正方形；</li>
+<li>每次在下方新增一行以及在右方新增一列，判断新增的行和列是否满足所有元素都是 1。（方便起见，需要先判断选取的点的右下角的点是否为 1。若不是，则跳出本次循环并储存当前的最大正方形，找到下一个元素是 1 的节点作为左上角点，重复 2、3 步；若是，则判断下一行和右一列的其他元素是否都为 1**（注：这里不是下一行右一列的所有元素，而是初始左上角和以当前点为右下角的正方形的范围内的点，如下图）**，若不都为 1，则跳出本次循环并储存当前的最大正方形，找到下一个元素是 1 的节点作为左上角点，重复 2、3 步；若都为 1，则继续第 3 步）。</li>
+</ol>
+<p><img src="https://i.loli.net/2021/08/13/biqFJLHxV7CTXf8.png" alt=""></p>
+<h4 id="2代码"><a class="markdownIt-Anchor" href="#2代码">#</a> <strong>（2）代码</strong></h4>
+<p><strong>配合题目链接食用</strong></p>
+<h5 id="java"><a class="markdownIt-Anchor" href="#java">#</a> java</h5>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximalSquare</span><span class="params">(<span class="keyword">char</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxSide = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (matrix == <span class="keyword">null</span> || matrix.length == <span class="number">0</span> || matrix[<span class="number">0</span>].length == <span class="number">0</span>) &#123; <span class="comment">// 没有矩阵或矩阵大小为0时</span></span><br><span class="line">            <span class="keyword">return</span> maxSide;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> rows = matrix.length, columns = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; columns; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="string">&#x27;1&#x27;</span>) &#123; <span class="comment">// 遇到一个 1 作为正方形的左上角</span></span><br><span class="line">                    maxSide = Math.max(maxSide, <span class="number">1</span>); <span class="comment">// 更新可能的最大正方形边长</span></span><br><span class="line">                    <span class="keyword">int</span> currentMaxSide = Math.min(rows - i, columns - j); <span class="comment">// 当前最大正方形边长</span></span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt; currentMaxSide; k++) &#123; <span class="comment">// 判断新增的一行一列是否均为 1</span></span><br><span class="line">                        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">                        <span class="keyword">if</span> (matrix[i + k][j + k] == <span class="string">&#x27;0&#x27;</span>) &#123; <span class="comment">// 判断右下角的点</span></span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">int</span> m = <span class="number">0</span>; m &lt; k; m++) &#123; <span class="comment">// 判断下一行右一列</span></span><br><span class="line">                            <span class="keyword">if</span> (matrix[i + k][j + m] == <span class="string">&#x27;0&#x27;</span> || matrix[i + m][j + k] == <span class="string">&#x27;0&#x27;</span>) &#123;</span><br><span class="line">                                flag = <span class="keyword">false</span>;</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span> (flag) &#123; <span class="comment">// 若判断都是1，则更新，不是则退出本次循环，寻找下一个左上角</span></span><br><span class="line">                            maxSide = Math.max(maxSide, k + <span class="number">1</span>); <span class="comment">// 更新可能的最大正方形边长</span></span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> maxSquare = maxSide * maxSide;</span><br><span class="line">        <span class="keyword">return</span> maxSquare;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3总结"><a class="markdownIt-Anchor" href="#3总结">#</a> <strong>（3）总结</strong></h4>
+<p>​		暴力的思路比其他方法简单（但是我的描述可能会有些不顺畅），但是效率不高。</p>
+<h3 id="2-dp算法动态规划来自题解"><a class="markdownIt-Anchor" href="#2-dp算法动态规划来自题解">#</a> <strong>2、dp 算法（动态规划）（来自题解）</strong></h3>
+<p>​		又一次见到了动态规划，还是有无从下手的感觉。</p>
+<h4 id="1解题思路-2"><a class="markdownIt-Anchor" href="#1解题思路-2">#</a> <strong>（1）解题思路</strong></h4>
+<p>​		方法一虽然直观，但是时间复杂度太高，有没有办法降低时间复杂度呢？</p>
+<p>可以使用动态规划降低时间复杂度。我们用 dp (i,j) 表示以 (i,j) 为右下角，且只包含 1 的正方形的边长最大值。如果我们能计算出所有 dp (i,j) 的值，那么其中的最大值即为矩阵中只包含 1 的正方形的边长最大值，其平方即为最大正方形的面积。</p>
+<p>那么如何计算 dp 中的每个元素值呢？对于每个位置 (i,j)，检查在矩阵中该位置的值：</p>
+<ul>
+<li>
+<p>如果该位置的值是 0，则 dp (i,j)=0，因为当前位置不可能在由 1 组成的正方形中；</p>
+</li>
+<li>
+<p>如果该位置的值是 11，则 dp (i,j) 的值由其上方、左方和左上方的三个相邻位置的 dp 值决定。具体而言，当前位置的元素值等于三个相邻位置的元素中的最小值加 1，状态转移方程如下：</p>
+<p>​	dp(i,j) = min( dp(i−1,j) , dp(i−1,j−1) , dp(i,j−1) ) + 1</p>
+<p>如果读者对这个状态转移方程感到不解，<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/solution/tong-ji-quan-wei-1-de-zheng-fang-xing-zi-ju-zhen-2/">可以参考 1277. 统计全为 1 的正方形子矩阵的官方题解</a>，其中给出了详细的证明。</p>
+</li>
+</ul>
+<p>此外，还需要考虑边界条件。如果 i 和 j 中至少有一个为 0，则以位置 (i, j)(i,j) 为右下角的最大正方形的边长只能是 11，因此 dp (i,j)=1。</p>
+<p>以下用一个例子具体说明。原始矩阵如下。</p>
+<p>0 1 1 1 0<br>
+1 1 1 1 0<br>
+0 1 1 1 1<br>
+0 1 1 1 1<br>
+0 0 1 1 1<br>
+ 对应的 dp 值如下。</p>
+<p>0 1 1 1 0<br>
+1 1 2 2 0<br>
+0 1 2 3 1<br>
+0 1 2 3 2<br>
+0 0 1 2 3</p>
+<p>下图也给出了计算 dp 值的过程。</p>
+<p><img src="https://assets.leetcode-cn.com/solution-static/221/221_fig1.png" alt=""></p>
+<h4 id="2代码-2"><a class="markdownIt-Anchor" href="#2代码-2">#</a> <strong>（2）代码</strong></h4>
+<p><strong>配合题目链接食用</strong></p>
+<h5 id="java-2"><a class="markdownIt-Anchor" href="#java-2">#</a> Java</h5>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximalSquare</span><span class="params">(<span class="keyword">char</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxSide = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (matrix == <span class="keyword">null</span> || matrix.length == <span class="number">0</span> || matrix[<span class="number">0</span>].length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> maxSide;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> rows = matrix.length, columns = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[rows][columns];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; columns; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span>) &#123;</span><br><span class="line">                        dp[i][j] = <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        dp[i][j] = Math.min(Math.min(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]), dp[i - <span class="number">1</span>][j - <span class="number">1</span>]) + <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    maxSide = Math.max(maxSide, dp[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> maxSquare = maxSide * maxSide;</span><br><span class="line">        <span class="keyword">return</span> maxSquare;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/maximal-square/solution/zui-da-zheng-fang-xing-by-leetcode-solution/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+<h5 id="c"><a class="markdownIt-Anchor" href="#c">#</a> C++</h5>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maximalSquare</span><span class="params">(vector&lt;vector&lt;<span class="keyword">char</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.<span class="built_in">size</span>() == <span class="number">0</span> || matrix[<span class="number">0</span>].<span class="built_in">size</span>() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> maxSide = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> rows = matrix.<span class="built_in">size</span>(), columns = matrix[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">dp</span>(rows, vector&lt;<span class="keyword">int</span>&gt;(columns));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; columns; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span>) &#123;</span><br><span class="line">                        dp[i][j] = <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        dp[i][j] = <span class="built_in">min</span>(<span class="built_in">min</span>(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]), dp[i - <span class="number">1</span>][j - <span class="number">1</span>]) + <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    maxSide = <span class="built_in">max</span>(maxSide, dp[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> maxSquare = maxSide * maxSide;</span><br><span class="line">        <span class="keyword">return</span> maxSquare;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/maximal-square/solution/zui-da-zheng-fang-xing-by-leetcode-solution/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+<h4 id="3总结-2"><a class="markdownIt-Anchor" href="#3总结-2">#</a> <strong>（3）总结</strong></h4>
+<p>​		动态规划解题的思想还需要学习，现在还上不了手。</p>
+<h2 id="题目总结"><a class="markdownIt-Anchor" href="#题目总结">#</a> <strong>题目总结</strong></h2>
+<p>​		这次的题目是数最大正方形，暴力方法还是最先考虑到的，之后菜知道动态规划也可以解决。（动态规划现在还属实不会）</p>
+
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2"><span class="toc-text"> 最大正方形</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%8B%E5%88%B0%E9%A2%98%E7%9B%AE%E7%9A%84%E6%84%9F%E6%83%B3"><span class="toc-text"> 看到题目的感想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text"> 题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94"><span class="toc-text"> 题目解答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9A%B4%E5%8A%9B%E8%AE%A1%E7%AE%97"><span class="toc-text"> 1、暴力计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text"> （1）解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81"><span class="toc-text"> （2）代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#java"><span class="toc-text"> java</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%80%BB%E7%BB%93"><span class="toc-text"> （3）总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-dp%E7%AE%97%E6%B3%95%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%9D%A5%E8%87%AA%E9%A2%98%E8%A7%A3"><span class="toc-text"> 2、dp 算法（动态规划）（来自题解）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-2"><span class="toc-text"> （1）解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81-2"><span class="toc-text"> （2）代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#java-2"><span class="toc-text"> Java</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#c"><span class="toc-text"> C++</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%80%BB%E7%BB%93-2"><span class="toc-text"> （3）总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="toc-text"> 题目总结</span></a></li></ol></li></ol>
+  </div>
+</aside>
+  
+    <aside class="passage-copyright">
+      <div>本文作者: LAZ</div>
+      
+        <div>
+          原文链接: 
+          <a href="" target="_blank">http://example.com/passages/%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/</a>
+        </div>
+      
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+      </div>
+    </aside>
+  
+  
+    <div class="passage-tags">
+     
+      <a href="/tags/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A/"><i class="fa fa-tags"></i>算法作业</a>
+    
+    </div>
+  
+</div>
+
+    </main>
+    
+      
+<div class="site-comment-contanier" data-plateform="leancloud">
+  
+    <p id="site-comment-info">
+      <i class="fa fa-spinner fa-spin"></i> 评论加载中
+    </p>
+    <div id="site-comment"></div>
+  
+</div>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+      
+        <div class="site-footer-col">
+          <h5 class="site-footer-title">博客推荐</h5>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/" target="_blank">GodBMW</a>
+            </span>
+          
+            <span class="site-footer-item">
+              <a href="http://ruanyifeng.com/" target="_blank">阮一峰的个人网站</a>
+            </span>
+          
+        </div>
+      
+        <div class="site-footer-col">
+          <h5 class="site-footer-title">系列教程</h5>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/categories/webpack4%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/" target="_blank">webpack4系列教程</a>
+            </span>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/design-patterns/" target="_blank">设计模式手册</a>
+            </span>
+          
+        </div>
+      
+        <div class="site-footer-col">
+          <h5 class="site-footer-title">抓到我</h5>
+          
+            <span class="site-footer-item">
+              <a href="https://juejin.im/user/5b91fcf06fb9a05d3c7fd4a5" target="_blank">掘金</a>
+            </span>
+          
+            <span class="site-footer-item">
+              <a href="https://segmentfault.com/" target="_blank">思否</a>
+            </span>
+          
+        </div>
+      
+    
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+      <div class="site-footer-info">
+        <i class="fa fa-at"></i> Email: yuanxin.me@gmail.com
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 <a href="https://github.com/dongyuanxin/theme-ad/" target="_blank">Theme-AD</a>.
+      Created by <a href="https://godbmw.com/" target="_blank">GodBMW</a>.
+      All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+        <div class="site-layer-input-choose">
+          <a href="javascript:void(0);" title="Change Search Engine">Google</a>
+        </div>
+        <input type="text">
+        <i class="fa fa-search"></i>
+      </div>
+      
+        <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+          
+            <div>
+              <img src="/images/wechat.png" alt="WeChat">
+              
+                <p>WeChat</p>
+              
+            </div>
+          
+            <div>
+              <img src="/images/alipay.png" alt="AliPay">
+              
+                <p>AliPay</p>
+              
+            </div>
+          
+        </div>
+      
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+    
+
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="javascript:void(0);" data-enable="false">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="/passages/%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98/" data-enable="true">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+      <a href="#site-comment" data-enable="true">
+        <i class="fa fa-commenting"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    
+      <a href="javascript:void(0);" id="site-reward">
+        <i class="fa fa-thumbs-up"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
+  
+    <a id="share-btn-twitter" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-twitter"></i>
+    </a>
+  
+  
+    <a id="share-btn-facebook" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-facebook"></i>
+    </a>
+  
+  
+    <a id="share-btn-weibo" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-weibo"></i>
+    </a>
+  
+  
+    <a id="share-btn-qq" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-qq"></i>
+    </a>
+  
+  
+    <a id="share-btn-wechat" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-wechat"></i>
+    </a>
+  
+</div>
+    
+
+
+
+
+
+    
+  </body>
+</html>
