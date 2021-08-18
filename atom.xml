@@ -619,7 +619,7 @@
 &lt;p&gt;&lt;img src=&#34;https://water-boiled-fish.github.io/2020/09/03/hexo/15.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;新建一个仓库&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;* 注意，用户部署个人博客的 Github 仓库的命名必须符合特定要求 *&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;* 必须是”&lt;a href=&#34;http://xn--Github-on9i027mnx4aga157g.github.io&#34;&gt; 你的 Github 的昵称.github.io&lt;/a&gt;”*&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;* 命名格式为：  &lt;a href=&#34;http://xn--Github-on9i027mnx4aga157g.github.io&#34;&gt;你的 Github 的昵称.github.io&lt;/a&gt;*&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://water-boiled-fish.github.io/2020/09/03/hexo/16.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;建立了空仓库之后，我们需要装一个插件&lt;/p&gt;
 &lt;p&gt;在命令行中输入&lt;/p&gt;
@@ -633,7 +633,7 @@
 &lt;p&gt;这样你的 hexo 博客就部署到了远端 (所有人都可以用这个网址访问你的博客了)&lt;/p&gt;
 &lt;h2 id=&#34;美化自己的hexo博客&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#美化自己的hexo博客&#34;&gt;#&lt;/a&gt; 美化自己的 hexo 博客&lt;/h2&gt;
 &lt;p&gt;首先你需要下载一个博客的主题 (如果你认为你的博客默认主题已经非常好看的了请忽略我说的话)&lt;/p&gt;
-&lt;p&gt;我们以 ad 主题为例&lt;/p&gt;
+&lt;p&gt;我们以 ad 主题为例（分站使用的是 ad 主题&lt;/p&gt;
 &lt;p&gt;你需要先找见 ad 主题在 github 的网址，以便把这个主题克隆到自己的文件夹里面&lt;/p&gt;
 &lt;p&gt;ad 主题地址:&lt;a href=&#34;https://github.com/dongyuanxin/theme-ad&#34;&gt;https://github.com/dongyuanxin/theme-ad&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;然后我们需要在命令行中输入 git clone &lt;a href=&#34;https://github.com/dongyuanxin/theme-ad.git&#34;&gt;https://github.com/dongyuanxin/theme-ad.git&lt;/a&gt; themes/ad&lt;/p&gt;
