@@ -412,7 +412,7 @@
 &lt;h2 id=&#34;看到题目的感想&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#看到题目的感想&#34;&gt;#&lt;/a&gt; 看到题目的感想&lt;/h2&gt;
 &lt;p&gt;​		被离散数学&lt;strong&gt;折磨&lt;/strong&gt;之后看见树就会想到离散数学，虽然学习离散数学的时候老师&lt;strong&gt;教过中序遍历&lt;/strong&gt;，但是看到这个题的时候还是&lt;strong&gt;没有想起来&lt;/strong&gt;中序遍历是个啥，索性就去搜索了一下（快进到被老师打死）。&lt;/p&gt;
 &lt;p&gt;​		附上百度百科链接：&lt;/p&gt;
-&lt;p&gt;​		** 中序遍历：**&lt;a href=&#34;https://baike.baidu.com/item/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86&#34;&gt;https://baike.baidu.com/item/ 中序遍历&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;​		&lt;strong&gt;中序遍历：&lt;a href=&#34;https://baike.baidu.com/item/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86&#34;&gt;https://baike.baidu.com/item/ 中序遍历&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;题目描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目描述&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h2&gt;
 &lt;p&gt;给定一个二叉树的根节点 root ，返回它的 中序 遍历。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
