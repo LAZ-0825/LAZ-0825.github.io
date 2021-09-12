@@ -4,15 +4,15 @@
     <title>LAZ的小站 • Posts by &#34;杂记&#34; tag</title>
     <link href="http://example.com" />
     <updated>2021-09-09T09:14:33.000Z</updated>
-    <category term="算法作业" />
     <category term="杂记" />
+    <category term="算法作业" />
     <entry>
         <id>http://example.com/passages/%E6%9F%90%E8%8F%9C%E9%B8%A1%E8%89%B0%E9%9A%BE%E7%9A%84you-get%E4%BD%BF%E7%94%A8%E5%8E%86%E7%A8%8B/</id>
         <title>某菜鸡艰难的you-get使用历程</title>
         <link rel="alternate" href="http://example.com/passages/%E6%9F%90%E8%8F%9C%E9%B8%A1%E8%89%B0%E9%9A%BE%E7%9A%84you-get%E4%BD%BF%E7%94%A8%E5%8E%86%E7%A8%8B/"/>
         <content type="html">&lt;p&gt;​        &lt;strong&gt;声明：本文主要功能是记录使用 you-get 的感受和经历，也写了一些使用的过程，可以参考，但不是教学式的教程。（需要教程请百度 / 必应一下）&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&#34;you-get初体验&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#you-get初体验&#34;&gt;#&lt;/a&gt; you-get 初体验&lt;/h1&gt;
-&lt;p&gt;​        偶尔有看到身边的同学在用 you-get，并推荐给了我们，当时并没有感觉有很棒，但是后来感觉还是很好用的（真相定律。&lt;/p&gt;
+&lt;p&gt;​        偶尔有看到身边的同学在用 you-get，并推荐给了我们，当时并没有感觉有很棒，但是后来感觉还是很好用的（真香定律。&lt;/p&gt;
 &lt;h1 id=&#34;you-get的使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#you-get的使用&#34;&gt;#&lt;/a&gt; you-get 的使用&lt;/h1&gt;
 &lt;h2 id=&#34;安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h2&gt;
 &lt;p&gt;​        首先我们需要准备 Python 环境，可以去 python 官网下载，大于等于 Python3 即可，我用的是 python3.9.7。&lt;/p&gt;
