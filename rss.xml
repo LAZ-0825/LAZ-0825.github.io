@@ -136,7 +136,6 @@
 &lt;li&gt;确定正方形的左上角后，根据左上角所在的行和列计算可能的最大正方形的边长（正方形的范围 - 不能超出矩阵的行和列），在该范围内寻找只包含 1 的最大正方形；&lt;/li&gt;
 &lt;li&gt;每次在下方新增一行以及在右方新增一列，判断新增的行和列是否满足所有元素都是 1。（方便起见，需要先判断选取的点的右下角的点是否为 1。若不是，则跳出本次循环并储存当前的最大正方形，找到下一个元素是 1 的节点作为左上角点，重复 2、3 步；若是，则判断下一行和右一列的其他元素是否都为 1 &lt;strong&gt;（注：这里不是下一行右一列的所有元素，而是初始左上角和以当前点为右下角的正方形的范围内的点，如下图）&lt;/strong&gt; ，若不都为 1，则跳出本次循环并储存当前的最大正方形，找到下一个元素是 1 的节点作为左上角点，重复 2、3 步；若都为 1，则继续第 3 步）。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2021/08/13/biqFJLHxV7CTXf8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;2代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2代码&#34;&gt;#&lt;/a&gt; &lt;strong&gt;（2）代码&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;配合题目链接食用&lt;/strong&gt;&lt;/p&gt;
 &lt;h5 id=&#34;java&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java&#34;&gt;#&lt;/a&gt; java&lt;/h5&gt;
