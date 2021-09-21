@@ -7,8 +7,8 @@
         <language>zh-CN</language>
         <pubDate>Thu, 09 Sep 2021 17:14:33 +0800</pubDate>
         <lastBuildDate>Thu, 09 Sep 2021 17:14:33 +0800</lastBuildDate>
-        <category>杂记</category>
         <category>算法作业</category>
+        <category>杂记</category>
         <item>
             <guid isPermalink="true">http://example.com/passages/%E6%9F%90%E8%8F%9C%E9%B8%A1%E8%89%B0%E9%9A%BE%E7%9A%84you-get%E4%BD%BF%E7%94%A8%E5%8E%86%E7%A8%8B/</guid>
             <title>某菜鸡艰难的you-get使用历程</title>
@@ -777,7 +777,7 @@
 &lt;p&gt;你可以使用 Typora 来写文章，可以直接使用超链接的格式，当然也可以用其他的软件来写 (&lt;s&gt;比如记事本&lt;/s&gt;)&lt;/p&gt;
 &lt;p&gt;格式:[你想写的内容]+(你想加入的链接)&lt;/p&gt;
 &lt;p&gt;这是基于 markdown 语法的格式，markdown 格式的参考网址可以参考我在下文放出的链接&lt;/p&gt;
-&lt;h3 id=&#34;如何写文章及在写文章时加入图片&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何写文章及在写文章时加入图片&#34;&gt;#&lt;/a&gt; 如何写文章及在写文章时加入图片&lt;/h3&gt;
+&lt;h3 id=&#34;如何写文章及在写文章时加入图片不推荐建议使用图片链接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何写文章及在写文章时加入图片不推荐建议使用图片链接&#34;&gt;#&lt;/a&gt; 如何写文章及在写文章时加入图片（不推荐，建议使用图片链接）&lt;/h3&gt;
 &lt;p&gt;我们只需在命令行输入 hexo new “文章标题” 就可以创建一个空文件夹了，然后可以打开改.md 文件进行写入内容&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://water-boiled-fish.github.io/2020/09/03/hexo/23.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;那么问题来了，如何才能写出像我一样带有图片的文章呢？&lt;/p&gt;
