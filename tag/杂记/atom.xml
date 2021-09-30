@@ -4,8 +4,8 @@
     <title>LAZ的小站 • Posts by &#34;杂记&#34; tag</title>
     <link href="http://example.com" />
     <updated>2021-09-09T09:14:33.000Z</updated>
-    <category term="算法作业" />
     <category term="杂记" />
+    <category term="算法作业" />
     <entry>
         <id>http://example.com/passages/%E6%9F%90%E8%8F%9C%E9%B8%A1%E8%89%B0%E9%9A%BE%E7%9A%84you-get%E4%BD%BF%E7%94%A8%E5%8E%86%E7%A8%8B/</id>
         <title>某菜鸡艰难的you-get使用历程</title>
@@ -79,14 +79,14 @@
 &lt;p&gt;​        之后就可以在默认路径下找到你下载的视频啦～&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s3.bmp.ovh/imgs/2021/09/fbaaaa0c69a96bb6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;​        下载成功的话会有一个 MP4 文件和一个 XML 文件，分别对应视频和弹幕。&lt;/p&gt;
-&lt;p&gt;​        在这个步骤部分小伙伴会有疑问：为森么我下载下来是 FLV 文件和 XML 文件呢？&lt;/p&gt;
+&lt;p&gt;​        在这个步骤部分小伙伴会有疑问：&lt;strong&gt;为森么我下载下来是 FLV 文件和 XML 文件呢&lt;/strong&gt;？&lt;/p&gt;
 &lt;p&gt;我们可以通过 -i 指令来查看。&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;you-get -i https://www.bilibili.com/video/BV1Eb4y1U7hY?spm_id_from=333.851.b_7265636f6d6d656e64.1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;img src=&#34;https://s3.bmp.ovh/imgs/2021/09/4e6e16c7e83a9394.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;​        在这里我们可以找到 1080p 的 MP4 格式的下载指令，于是我们删除之前下载的文件，输入如下代码&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;you-get --format=dash-flv https://www.bilibili.com/video/BV1Eb4y1U7hY?spm_id_from=333.851.b_7265636f6d6d656e64.1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;img src=&#34;https://s3.bmp.ovh/imgs/2021/09/af6db85327aa8ef7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;​        在这一步之后，有人（比如我）会发现：咦？为森么下载了两个 MP4 文件，是原视频的音频和视频分开的那种。&lt;/p&gt;
+&lt;p&gt;​        在这一步之后，有人（比如我）会发现：&lt;strong&gt;咦？为森么下载了两个 MP4 文件，是原视频的音频和视频分开的那种&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;​        这里就要提到一个叫&lt;strong&gt; FFmpeg&lt;/strong&gt; 的东西了，它可以解决这个问题，具体解决方法建议自行百度 / 必应。（主要是因为我的问题是萱琪姐姐帮忙解决的，具体操作我也不是很清楚&lt;/p&gt;
 &lt;p&gt;​       还要推荐一个叫 Windows powerShell 的东西，这个也比较好用。在文件夹处 shift + 邮件即可呼出，我们可以通过 Windows powerShell 来使用 git 和 cmd，当然使用 Windows powerShell 配合 you-get 下载也十分的方便。&lt;/p&gt;
 &lt;p&gt;​        最后附上 Windows powerShell 的下载界面。&lt;br&gt;
