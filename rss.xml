@@ -5,19 +5,12 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 17 Jan 2022 18:24:39 +0800</pubDate>
-        <lastBuildDate>Mon, 17 Jan 2022 18:24:39 +0800</lastBuildDate>
+        <pubDate>Sun, 21 Nov 2021 10:53:13 +0800</pubDate>
+        <lastBuildDate>Sun, 21 Nov 2021 10:53:13 +0800</lastBuildDate>
         <category>杂记</category>
         <category>算法作业</category>
         <category>算法基础课</category>
         <category>学习</category>
-        <item>
-            <guid isPermalink="true">http://example.com/passages/text/</guid>
-            <title>text</title>
-            <link>http://example.com/passages/text/</link>
-            <pubDate>Mon, 17 Jan 2022 18:24:39 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
-        </item>
         <item>
             <guid isPermalink="true">http://example.com/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</guid>
             <title>基础算法</title>
@@ -1781,6 +1774,7 @@ check (m) 是检查 m 是在&lt;strong&gt;满足性质的区间&lt;/strong&gt;�
             <description><![CDATA[ &lt;p&gt;First Blog 完成啦！&lt;/p&gt;
 &lt;p&gt;博客可算是搭好了，等了好久终于等到今天～～&lt;/p&gt;
 &lt;p&gt;想说的话：现在保证能跑就行&lt;/p&gt;
+&lt;p&gt;Text.&lt;/p&gt;
  ]]></description>
         </item>
         <item>

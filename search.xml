@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>text</title>
-      <link href="/passages/text/"/>
-      <url>/passages/text/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>基础算法</title>
       <link href="/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
       <url>/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</url>
@@ -192,7 +179,7 @@
       <link href="/passages/First-Blog/"/>
       <url>/passages/First-Blog/</url>
       
-        <content type="html"><![CDATA[<p>First Blog 完成啦！</p><p>博客可算是搭好了，等了好久终于等到今天～～</p><p>想说的话：现在保证能跑就行</p>]]></content>
+        <content type="html"><![CDATA[<p>First Blog 完成啦！</p><p>博客可算是搭好了，等了好久终于等到今天～～</p><p>想说的话：现在保证能跑就行</p><p>Text.</p>]]></content>
       
       
       
