@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>text</title>
+      <link href="/passages/text/"/>
+      <url>/passages/text/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基础算法</title>
       <link href="/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
       <url>/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</url>
