@@ -323,7 +323,9 @@
             <description><![CDATA[ &lt;p&gt;First Blog 完成啦！&lt;/p&gt;
 &lt;p&gt;博客可算是搭好了，等了好久终于等到今天～～&lt;/p&gt;
 &lt;p&gt;想说的话：现在保证能跑就行&lt;/p&gt;
-&lt;p&gt;Text.&lt;/p&gt;
+&lt;p&gt;‘Text.’&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cn.bing.com/?mkt=zh-CN&#34;&gt;必应 (bing.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;printf()&lt;/code&gt;  函数&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
