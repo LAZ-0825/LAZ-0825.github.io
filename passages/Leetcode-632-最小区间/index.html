@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leetcode-632-最小区间 | LAZ的小站</title><meta name="keywords" content="算法作业"><meta name="author" content="LAZ"><meta name="copyright" content="LAZ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="132">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode-632-最小区间">
+<meta property="og:url" content="http://example.com/passages/Leetcode-632-%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/index.html">
+<meta property="og:site_name" content="LAZ的小站">
+<meta property="og:description" content="132">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/197252/37/3660/362939/611b9da7E675c5862/d5a3c9a9988279d7.jpg">
+<meta property="article:published_time" content="2022-02-17T04:12:53.000Z">
+<meta property="article:modified_time" content="2022-02-20T09:52:51.412Z">
+<meta property="article:author" content="LAZ">
+<meta property="article:tag" content="算法作业">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/197252/37/3660/362939/611b9da7E675c5862/d5a3c9a9988279d7.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/passages/Leetcode-632-%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LAZ","link":"链接: ","source":"来源: LAZ的小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Leetcode-632-最小区间',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-02-20 17:52:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://butterfly.lete114.top/css/Lete.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/macblack.css"><link rel="stylesheet" href="/css/mouse.css"><link rel="stylesheet" href="/css/xxx.css"><link rel="stylesheet" href="/css/tag.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s3.bmp.ovh/imgs/2022/01/48416141b447da0f.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-sitemap"></i><span> 分站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/ad/"><i class="fa-fw fas fa-chevron-right"></i><span> 分站（ad主题）</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/Message/"><i class="fa-fw fas fa-comment"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img10.360buyimg.com/ddimg/jfs/t1/197252/37/3660/362939/611b9da7E675c5862/d5a3c9a9988279d7.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LAZ的小站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-sitemap"></i><span> 分站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/ad/"><i class="fa-fw fas fa-chevron-right"></i><span> 分站（ad主题）</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/Message/"><i class="fa-fw fas fa-comment"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Leetcode-632-最小区间</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-02-17T04:12:53.000Z" title="发表于 2022-02-17 12:12:53">2022-02-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-20T09:52:51.412Z" title="更新于 2022-02-20 17:52:51">2022-02-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Leetcode-632-最小区间"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>132</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">LAZ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/passages/Leetcode-632-%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/">http://example.com/passages/Leetcode-632-%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">LAZ的小站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A/">算法作业</a></div><div class="post_share"><div class="social-share" data-image="https://img10.360buyimg.com/ddimg/jfs/t1/197252/37/3660/362939/611b9da7E675c5862/d5a3c9a9988279d7.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://i.loli.net/2021/08/10/5AkuxvBo9hc2fWJ.png" target="_blank"><img class="post-qr-code-img" src="https://i.loli.net/2021/08/10/5AkuxvBo9hc2fWJ.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://i.loli.net/2021/08/10/fchQveXJWzVGFOB.png" target="_blank"><img class="post-qr-code-img" src="https://i.loli.net/2021/08/10/fchQveXJWzVGFOB.png" alt="QQ"/></a><div class="post-qr-code-desc">QQ</div></li><li class="reward-item"><a href="https://i.loli.net/2021/08/10/RPmVMNrvWG3Jn5o.jpg" target="_blank"><img class="post-qr-code-img" src="https://i.loli.net/2021/08/10/RPmVMNrvWG3Jn5o.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/passages/Leetcode-218-%E5%A4%A9%E9%99%85%E7%BA%BF%E9%97%AE%E9%A2%98/"><img class="next-cover" src="https://img12.360buyimg.com/ddimg/jfs/t1/202544/25/1857/225134/611b9cdcE5d5e564f/582033b23f0396a2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Leetcode-218-天际线问题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/passages/Leetcode-218-天际线问题/" title="Leetcode-218-天际线问题"><img class="cover" src="https://img12.360buyimg.com/ddimg/jfs/t1/202544/25/1857/225134/611b9cdcE5d5e564f/582033b23f0396a2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-17</div><div class="title">Leetcode-218-天际线问题</div></div></a></div><div><a href="/passages/Leetcode-1226-哲学家进餐/" title="Leetcode-1226-哲学家进餐"><img class="cover" src="https://img11.360buyimg.com/ddimg/jfs/t1/187247/26/18718/226160/611b9da7Ee6ab8ae1/7c216c2a9ffdb37d.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-06</div><div class="title">Leetcode-1226-哲学家进餐</div></div></a></div><div><a href="/passages/Java中Synchronized的用法（简单介绍）/" title="Java中Synchronized的用法（简单介绍）"><img class="cover" src="https://img11.360buyimg.com/ddimg/jfs/t1/196668/29/18683/277709/611b9cdeEabed0d5a/137c643d8ac92411.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-27</div><div class="title">Java中Synchronized的用法（简单介绍）</div></div></a></div><div><a href="/passages/Leetcode-208-实现Trie-前缀树/" title="Leetcode-208-实现Trie(前缀树)"><img class="cover" src="https://img10.360buyimg.com/ddimg/jfs/t1/196128/21/18656/216627/611b9cdaE76575b35/ead8abb0d853939a.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-21</div><div class="title">Leetcode-208-实现Trie(前缀树)</div></div></a></div><div><a href="/passages/Leetcode-133-克隆图/" title="Leetcode-133-克隆图"><img class="cover" src="https://img10.360buyimg.com/ddimg/jfs/t1/190241/9/18792/224133/611b9cdeE8e10ea6e/acf52d6495b98620.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-20</div><div class="title">Leetcode-133-克隆图</div></div></a></div><div><a href="/passages/最大正方形/" title="最大正方形"><img class="cover" src="https://img10.360buyimg.com/ddimg/jfs/t1/189007/32/18644/118015/611b9cd9E1912bd4e/676fff59f3e3db34.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-12</div><div class="title">最大正方形</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s3.bmp.ovh/imgs/2022/01/48416141b447da0f.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LAZ</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LAZ-0825"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:1172623892@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://s3.bmp.ovh/imgs/2022/01/1c676af554a53516.png" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://github.com/LAZ-0825/LAZ-0825.github.io/discussions" target="_blank" title="有疑问的话这点里可以找到我"><i class="fas fa-comment-dots"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">如果你在浏览博客时有什么问题的话，可以到 <a target="_blank" rel="noopener" href="https://github.com/LAZ-0825/LAZ-0825.github.io/discussions" style="color:#49b1f5">Github Discussions</a> 或者 <a href="/Message/" style="color:#49b1f5">留言板</a> 进行反馈。</div><timing> </timing></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/passages/Leetcode-632-%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/" title="Leetcode-632-最小区间"><img src="https://img10.360buyimg.com/ddimg/jfs/t1/197252/37/3660/362939/611b9da7E675c5862/d5a3c9a9988279d7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Leetcode-632-最小区间"/></a><div class="content"><a class="title" href="/passages/Leetcode-632-%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/" title="Leetcode-632-最小区间">Leetcode-632-最小区间</a><time datetime="2022-02-17T04:12:53.000Z" title="发表于 2022-02-17 12:12:53">2022-02-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/Leetcode-218-%E5%A4%A9%E9%99%85%E7%BA%BF%E9%97%AE%E9%A2%98/" title="Leetcode-218-天际线问题"><img src="https://img12.360buyimg.com/ddimg/jfs/t1/202544/25/1857/225134/611b9cdcE5d5e564f/582033b23f0396a2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Leetcode-218-天际线问题"/></a><div class="content"><a class="title" href="/passages/Leetcode-218-%E5%A4%A9%E9%99%85%E7%BA%BF%E9%97%AE%E9%A2%98/" title="Leetcode-218-天际线问题">Leetcode-218-天际线问题</a><time datetime="2022-02-17T04:12:01.000Z" title="发表于 2022-02-17 12:12:01">2022-02-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/Leetcode-1226-%E5%93%B2%E5%AD%A6%E5%AE%B6%E8%BF%9B%E9%A4%90/" title="Leetcode-1226-哲学家进餐"><img src="https://img11.360buyimg.com/ddimg/jfs/t1/187247/26/18718/226160/611b9da7Ee6ab8ae1/7c216c2a9ffdb37d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Leetcode-1226-哲学家进餐"/></a><div class="content"><a class="title" href="/passages/Leetcode-1226-%E5%93%B2%E5%AD%A6%E5%AE%B6%E8%BF%9B%E9%A4%90/" title="Leetcode-1226-哲学家进餐">Leetcode-1226-哲学家进餐</a><time datetime="2022-02-06T10:29:25.000Z" title="发表于 2022-02-06 18:29:25">2022-02-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/Java%E4%B8%ADSynchronized%E7%9A%84%E7%94%A8%E6%B3%95%EF%BC%88%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%EF%BC%89/" title="Java中Synchronized的用法（简单介绍）"><img src="https://img11.360buyimg.com/ddimg/jfs/t1/196668/29/18683/277709/611b9cdeEabed0d5a/137c643d8ac92411.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java中Synchronized的用法（简单介绍）"/></a><div class="content"><a class="title" href="/passages/Java%E4%B8%ADSynchronized%E7%9A%84%E7%94%A8%E6%B3%95%EF%BC%88%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%EF%BC%89/" title="Java中Synchronized的用法（简单介绍）">Java中Synchronized的用法（简单介绍）</a><time datetime="2022-01-27T12:00:38.000Z" title="发表于 2022-01-27 20:00:38">2022-01-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/Leetcode-208-%E5%AE%9E%E7%8E%B0Trie-%E5%89%8D%E7%BC%80%E6%A0%91/" title="Leetcode-208-实现Trie(前缀树)"><img src="https://img10.360buyimg.com/ddimg/jfs/t1/196128/21/18656/216627/611b9cdaE76575b35/ead8abb0d853939a.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Leetcode-208-实现Trie(前缀树)"/></a><div class="content"><a class="title" href="/passages/Leetcode-208-%E5%AE%9E%E7%8E%B0Trie-%E5%89%8D%E7%BC%80%E6%A0%91/" title="Leetcode-208-实现Trie(前缀树)">Leetcode-208-实现Trie(前缀树)</a><time datetime="2022-01-21T04:43:37.000Z" title="发表于 2022-01-21 12:43:37">2022-01-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://img10.360buyimg.com/ddimg/jfs/t1/197252/37/3660/362939/611b9da7E675c5862/d5a3c9a9988279d7.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By LAZ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '37e259bf33b2d462f827',
+      clientSecret: '1a2768d8e34462798bcea1deaa6ab0379aacaf0a',
+      repo: 'LAZBLOG-speak',
+      owner: 'LAZ-0825',
+      admin: ['LAZ-0825'],
+      id: 'c251b38f8aec1f3fd603734014262429',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: true,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script data-pjax src="https://butterfly.lete114.top/js/Lete.js"></script><script src="/js/foot.js"></script><script src="/js/timing.js"></script><script src="https://cdn.jsdelivr.net/gh/xiabo2/CDN@latest/fishes.js"></script><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><script defer src="https://cdn.jsdelivr.net/combine/npm/jquery@latest/dist/jquery.min.js,gh/weilining/jsdelivr/jquery/circlemagic/circlemagic.min.js,gh/weilining/jsdelivr@latest/jquery/circlemagic/butterflycirclemagic.js"></script><script src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script src="/js/ip_content.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdnurl.eu.org/2022/01/13/pC5gaOws.png" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>
