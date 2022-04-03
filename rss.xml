@@ -5,12 +5,19 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sun, 03 Apr 2022 23:55:21 +0800</pubDate>
-        <lastBuildDate>Sun, 03 Apr 2022 23:55:21 +0800</lastBuildDate>
+        <pubDate>Mon, 04 Apr 2022 00:05:34 +0800</pubDate>
+        <lastBuildDate>Mon, 04 Apr 2022 00:05:34 +0800</lastBuildDate>
         <category>杂记</category>
         <category>算法作业</category>
         <category>算法基础课</category>
         <category>学习</category>
+        <item>
+            <guid isPermalink="true">http://example.com/passages/tttt/</guid>
+            <title>tttt</title>
+            <link>http://example.com/passages/tttt/</link>
+            <pubDate>Mon, 04 Apr 2022 00:05:34 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/passages/test/</guid>
             <title>test</title>
