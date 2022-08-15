@@ -13,7 +13,7 @@
     <category term="学习 教程" />
     <entry>
         <id>http://example.com/passages/MyBatis/</id>
-        <title>MyBatis</title>
+        <title>MyBatis笔记</title>
         <link rel="alternate" href="http://example.com/passages/MyBatis/"/>
         <content type="html">&lt;h1 id=&#34;mybatis简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mybatis简介&#34;&gt;#&lt;/a&gt; Mybatis 简介&lt;/h1&gt;
 &lt;h2 id=&#34;mybatis历史&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mybatis历史&#34;&gt;#&lt;/a&gt; MyBatis 历史&lt;/h2&gt;
