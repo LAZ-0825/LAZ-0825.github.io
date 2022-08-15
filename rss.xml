@@ -11,14 +11,15 @@
         <category>算法作业</category>
         <category>数据库</category>
         <category>Java</category>
-        <category>杂记 教程</category>
+        <category>教程</category>
         <category>算法基础课</category>
-        <category>学习 教程</category>
+        <category>学习</category>
         <item>
             <guid isPermalink="true">http://example.com/passages/MyBatis/</guid>
             <title>MyBatis笔记</title>
             <link>http://example.com/passages/MyBatis/</link>
-            <category>学习 教程</category>
+            <category>教程</category>
+            <category>学习</category>
             <pubDate>Mon, 15 Aug 2022 22:26:13 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;mybatis简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mybatis简介&#34;&gt;#&lt;/a&gt; Mybatis 简介&lt;/h1&gt;
 &lt;h2 id=&#34;mybatis历史&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mybatis历史&#34;&gt;#&lt;/a&gt; MyBatis 历史&lt;/h2&gt;
@@ -1463,7 +1464,8 @@ check (m) 是检查 m 是在&lt;strong&gt;满足性质的区间&lt;/strong&gt;�
             <guid isPermalink="true">http://example.com/passages/C%E8%AF%AD%E8%A8%80%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
             <title>C语言快速入门</title>
             <link>http://example.com/passages/C%E8%AF%AD%E8%A8%80%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</link>
-            <category>学习 教程</category>
+            <category>教程</category>
+            <category>学习</category>
             <pubDate>Sat, 09 Oct 2021 12:31:29 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;序言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#序言&#34;&gt;#&lt;/a&gt; 序言&lt;/h1&gt;
 &lt;p&gt;​        C 语言是一种面向过程的计算机编程语言，多用于嵌入式开发（电路硬件编程）与系统底层编写， 比如我们常用的 Linux 系统，Windows 系统就是主要由 C 语言编写的。同时 c 语言也是最早出现的编程语 言之一，最早在 1972 年就已经被使用，并且直到现在它也是使用率最多的编程语言之一。&lt;/p&gt;
@@ -2144,7 +2146,8 @@ check (m) 是检查 m 是在&lt;strong&gt;满足性质的区间&lt;/strong&gt;�
             <guid isPermalink="true">http://example.com/passages/%E6%9F%90%E8%8F%9C%E9%B8%A1%E8%89%B0%E9%9A%BE%E7%9A%84you-get%E4%BD%BF%E7%94%A8%E5%8E%86%E7%A8%8B/</guid>
             <title>某菜鸡艰难的you-get使用历程</title>
             <link>http://example.com/passages/%E6%9F%90%E8%8F%9C%E9%B8%A1%E8%89%B0%E9%9A%BE%E7%9A%84you-get%E4%BD%BF%E7%94%A8%E5%8E%86%E7%A8%8B/</link>
-            <category>杂记 教程</category>
+            <category>杂记</category>
+            <category>教程</category>
             <pubDate>Thu, 09 Sep 2021 17:14:33 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;​        &lt;strong&gt;声明：本文主要功能是记录使用 you-get 的感受和经历，也写了一些使用的过程，可以参考，但不是教学式的教程。（需要教程请百度 / 必应一下）&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&#34;you-get初体验&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#you-get初体验&#34;&gt;#&lt;/a&gt; you-get 初体验&lt;/h1&gt;

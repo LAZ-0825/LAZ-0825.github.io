@@ -8,9 +8,9 @@
     <category term="算法作业" />
     <category term="数据库" />
     <category term="Java" />
-    <category term="杂记 教程" />
+    <category term="教程" />
     <category term="算法基础课" />
-    <category term="学习 教程" />
+    <category term="学习" />
     <entry>
         <id>http://example.com/passages/MyBatis/</id>
         <title>MyBatis笔记</title>
@@ -864,7 +864,8 @@ properties、settings、typeAliases、typeHandlers、objectFactory、objectWrapp
 &lt;li&gt;navigatepageNums：导航分页的页码，[1,2,3,4,5]&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="学习 教程" />
+        <category term="教程" />
+        <category term="学习" />
         <updated>2022-08-15T14:26:13.000Z</updated>
     </entry>
     <entry>
@@ -2134,7 +2135,8 @@ check (m) 是检查 m 是在&lt;strong&gt;满足性质的区间&lt;/strong&gt;�
 &lt;p&gt;&lt;img src=&#34;https://s3.bmp.ovh/imgs/2021/10/9c1b67676cb5017d.png&#34; alt&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;del_list&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(struct node *p_head,&lt;span class=&#34;keyword&#34;&gt;int&lt;/span&gt; pos)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	strct node *p_front,*p_del;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	p_front = p_head;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;i &amp;lt;= pos - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;i ++)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	p_front = p_front-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    p_del = p_front-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	p_front-&amp;gt;next = p_del-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;built_in&#34;&gt;free&lt;/span&gt;(p_del);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
-        <category term="学习 教程" />
+        <category term="教程" />
+        <category term="学习" />
         <updated>2021-10-09T04:31:29.000Z</updated>
     </entry>
     <entry>
@@ -2223,7 +2225,8 @@ check (m) 是检查 m 是在&lt;strong&gt;满足性质的区间&lt;/strong&gt;�
 &lt;p&gt;​        最后附上 Windows powerShell 的下载界面。&lt;br&gt;
 &lt;img src=&#34;https://s3.bmp.ovh/imgs/2021/09/5f81eae2d969af1a.png&#34; alt&gt;&lt;/p&gt;
 </content>
-        <category term="杂记 教程" />
+        <category term="杂记" />
+        <category term="教程" />
         <updated>2021-09-09T09:14:33.000Z</updated>
     </entry>
     <entry>
