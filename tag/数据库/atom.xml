@@ -8,8 +8,9 @@
     <category term="算法作业" />
     <category term="数据库" />
     <category term="Java" />
+    <category term="杂记 教程" />
     <category term="算法基础课" />
-    <category term="学习" />
+    <category term="学习 教程" />
     <entry>
         <id>http://example.com/passages/%E4%BD%BF%E7%94%A8java%E5%B0%86ResultSet%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%89%93%E5%8D%B0%E6%88%90%E8%A1%A8%E6%A0%BC/</id>
         <title>使用java将ResultSet中的数据打印成表格</title>
