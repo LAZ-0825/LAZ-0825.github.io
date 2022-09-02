@@ -1,0 +1,624 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SpringBoot讲义-运维实用篇 | LXR的小站</title><meta name="keywords" content="教程,学习,SpringBoot"><meta name="author" content="LXR"><meta name="copyright" content="LXR"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="# SpringBoot 运维实用篇 ​		基础篇发布以后，看到了很多小伙伴在网上的留言，也帮助超过 100 位小伙伴解决了一些遇到的问题，并且已经发现了部分问题具有典型性，预计将有些问题在后面篇章的合适位置添加到本套课程中，作为解决方案提供给大家。 ​		从此刻开始，咱们就要进入到实用篇的学习了。实用篇是在基础篇的根基之上，补全 SpringBoot 的知识图谱。比如在基础篇中只给大家讲了 ya">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot讲义-运维实用篇">
+<meta property="og:url" content="http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/index.html">
+<meta property="og:site_name" content="LXR的小站">
+<meta property="og:description" content="# SpringBoot 运维实用篇 ​		基础篇发布以后，看到了很多小伙伴在网上的留言，也帮助超过 100 位小伙伴解决了一些遇到的问题，并且已经发现了部分问题具有典型性，预计将有些问题在后面篇章的合适位置添加到本套课程中，作为解决方案提供给大家。 ​		从此刻开始，咱们就要进入到实用篇的学习了。实用篇是在基础篇的根基之上，补全 SpringBoot 的知识图谱。比如在基础篇中只给大家讲了 ya">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/193230/7/18721/177179/611b9da6Ed923d39f/dba3bc711f204884.jpg">
+<meta property="article:published_time" content="2022-09-02T14:28:22.000Z">
+<meta property="article:modified_time" content="2022-09-02T15:51:57.957Z">
+<meta property="article:author" content="LXR">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="SpringBoot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/193230/7/18721/177179/611b9da6Ed923d39f/dba3bc711f204884.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LXR","link":"链接: ","source":"来源: LXR的小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SpringBoot讲义-运维实用篇',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-02 23:51:57'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://butterfly.lete114.top/css/Lete.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/macblack.css"><link rel="stylesheet" href="/css/mouse.css"><link rel="stylesheet" href="/css/xxx.css"><link rel="stylesheet" href="/css/tag.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s3.bmp.ovh/imgs/2022/01/48416141b447da0f.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-sitemap"></i><span> 分站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/ad/"><i class="fa-fw fas fa-chevron-right"></i><span> 分站（ad主题）</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-sitemap"></i><span> 在线技术文档</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/index.html"><span> Java8官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://spring.io/projects/spring-framework"><span> spring官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://spring.io/projects/spring-boot"><span> springBoot官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/index.html"><span> MyBatis官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://baomidou.com/"><span> MyBatis-Plus官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://cn.vuejs.org/"><span> VUE官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/"><span> 微信小程序官方文档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/Message/"><i class="fa-fw fas fa-comment"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img10.360buyimg.com/ddimg/jfs/t1/193230/7/18721/177179/611b9da6Ed923d39f/dba3bc711f204884.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LXR的小站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-sitemap"></i><span> 分站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/ad/"><i class="fa-fw fas fa-chevron-right"></i><span> 分站（ad主题）</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-sitemap"></i><span> 在线技术文档</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/index.html"><span> Java8官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://spring.io/projects/spring-framework"><span> spring官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://spring.io/projects/spring-boot"><span> springBoot官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/index.html"><span> MyBatis官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://baomidou.com/"><span> MyBatis-Plus官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://cn.vuejs.org/"><span> VUE官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/"><span> 微信小程序官方文档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/Message/"><i class="fa-fw fas fa-comment"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SpringBoot讲义-运维实用篇</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-02T14:28:22.000Z" title="发表于 2022-09-02 22:28:22">2022-09-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-02T15:51:57.957Z" title="更新于 2022-09-02 23:51:57">2022-09-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">10k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>32分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SpringBoot讲义-运维实用篇"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="springboot运维实用篇"><a class="markdownIt-Anchor" href="#springboot运维实用篇">#</a> SpringBoot 运维实用篇</h1>
+<p>​		基础篇发布以后，看到了很多小伙伴在网上的留言，也帮助超过 100 位小伙伴解决了一些遇到的问题，并且已经发现了部分问题具有典型性，预计将有些问题在后面篇章的合适位置添加到本套课程中，作为解决方案提供给大家。</p>
+<p>​		从此刻开始，咱们就要进入到实用篇的学习了。实用篇是在基础篇的根基之上，补全 SpringBoot 的知识图谱。比如在基础篇中只给大家讲了 yaml 的语法格式，但是具体写 yaml 文件的时候还有很多实用开发过程中的坑，这些在实用篇中都要进行学习。</p>
+<p>​		实用篇共分为两块内容，分别是运维实用篇和开发实用篇。其实划分的标准是我自己制定的，因为这里面的知识有一些还是比较散的，做两个阶段的划分是为了更好的将同类知识点进行归类，帮助学习者找到知识之间的关联性，这样有助于知识的记忆存储转换，经过一系列的知识反复出现与强化练习，将临时记忆转换成永久性记忆。做课程嘛，不能仅以讲完为目标，要以学习者的学习收获为目标，这也是我这么多年教学秉承的基本理念。</p>
+<p>​		下面就从运维实用篇开始讲，在运维实用篇中，我给学习者的定位是玩转配置，为开发实用篇中做各种技术的整合做好准备工作。与开发实用篇相比，运维实用篇的内容显得略微单薄，并且有部分知识模块在运维实用篇和开发实用篇中都要讲一部分，这些内容都后置到开发实用篇中了。废话不说了，先看看运维实用篇中都包含哪些内容：</p>
+<ul>
+<li>SpringBoot 程序的打包与运行</li>
+<li>配置高级</li>
+<li>多环境开发</li>
+<li>日志</li>
+</ul>
+<p>​		下面开启第一部分 SpringBoot 程序打包与运行的学习</p>
+<h2 id="yw-1springboot程序的打包与运行"><a class="markdownIt-Anchor" href="#yw-1springboot程序的打包与运行">#</a> YW-1.SpringBoot 程序的打包与运行</h2>
+<p>​		刚开始做开发学习的小伙伴可能在有一个知识上面有错误的认知，我们天天写程序是在 Idea 下写的，运行也是在 Idea 下运行的。</p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211201091317258.png" alt="image-20211201091317258" style="zoom:67%;">
+<p>​		但是实际开发完成后，我们的项目是不可能运行在自己的电脑上的。</p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211201091341645.png" alt="image-20211201091341645" style="zoom:67%;">
+<p>​		我们以后制作的程序是运行在专用的服务器上的，简单说就是将你做的程序放在一台独立运行的电脑上，这台电脑要比你开发使用的计算机更专业，并且安全等级各个方面要远超过你现在的电脑。</p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211201091502040.png" alt="image-20211201091502040" style="zoom:67%;">
+<p>​		那我们的程序如何放置在这台专用的电脑上呢，这就要将我们的程序先组织成一个文件，然后将这个文件传输到这台服务器上。这里面就存在两个过程，一个是打包的过程，另一个是运行的过程。</p>
+<p><font color="#f0f"><b>温馨提示</b></font></p>
+<p>​		企业项目上线为了保障环境适配性会采用下面流程发布项目，这里不讨论此过程。</p>
+<ol>
+<li>开发部门使用 Git、SVN 等版本控制工具上传工程到版本服务器</li>
+<li>服务器使用版本控制工具下载工程</li>
+<li>服务器上使用 Maven 工具在当前真机环境下重新构建项目</li>
+<li>启动服务</li>
+</ol>
+<p>​		继续说我们的打包和运行过程。所谓打包指将程序转换成一个可执行的文件，所谓运行指不依赖开发环境执行打包产生的文件。上述两个操作都有对应的命令可以快速执行。</p>
+<h3 id="程序打包"><a class="markdownIt-Anchor" href="#程序打包">#</a> <strong>程序打包</strong></h3>
+<p>​		SpringBoot 程序是基于 Maven 创建的，在 Maven 中提供有打包的指令，叫做 package。本操作可以在 Idea 环境下执行。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn <span class="keyword">package</span></span><br></pre></td></tr></table></figure>
+<p>​		打包后会产生一个与工程名类似的 jar 文件，其名称是由模块名 + 版本号 +.jar 组成的。</p>
+<h3 id="程序运行"><a class="markdownIt-Anchor" href="#程序运行">#</a> <strong>程序运行</strong></h3>
+<p>​		程序包打好以后，就可以直接执行了。在程序包所在路径下，执行指令。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar 工程包名.jar</span><br></pre></td></tr></table></figure>
+<p>​		执行程序打包指令后，程序正常运行，与在 Idea 下执行程序没有区别。</p>
+<p>​		<font color="#ff0000"><b>特别关注</b></font>：如果你的计算机中没有安装 java 的 jdk 环境，是无法正确执行上述操作的，因为程序执行使用的是 java 指令。</p>
+<p>​		<font color="#ff0000"><b>特别关注</b></font>：在使用向导创建 SpringBoot 工程时，pom.xml 文件中会有如下配置，这一段配置千万不能删除，否则打包后无法正常执行程序。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>总结</strong></p>
+<ol>
+<li>SpringBoot 工程可以基于 java 环境下独立运行 jar 文件启动服务</li>
+<li>SpringBoot 工程执行 mvn 命令 package 进行打包</li>
+<li>执行 jar 命令：java –jar 工程名.jar</li>
+</ol>
+<h3 id="springboot程序打包失败处理"><a class="markdownIt-Anchor" href="#springboot程序打包失败处理">#</a> SpringBoot 程序打包失败处理</h3>
+<p>​		有些小伙伴打包以后执行会出现一些问题，导致程序无法正常执行，例如下面的现象</p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211201094223991.png" alt="image-20211201094223991" style="zoom:67%;">
+<p>​		要想搞清楚这个问题就要说说.jar 文件的工作机制了，知道了这个东西就知道如何避免此类问题的发生了。</p>
+<p>​		搞 java 开发平时会接触很多 jar 包，比如 mysql 的驱动 jar 包，而上面我们打包程序后得到的也是一个 jar 文件。这个时候如果你使用上面的 java -jar 指令去执行 mysql 的驱动 jar 包就会出现上述不可执行的现象，而我们的 SpringBoot 项目为什么能执行呢？其实是因为打包方式不一样。</p>
+<p>​		在 SpringBoot 工程的 pom.xml 中有下面这组配置，这组配置决定了打包出来的程序包是否可以执行。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​		我们分别开启这段配置和注释掉这段配置分别执行两次打包，然后观察两次打包后的程序包的差别，共有 3 处比较明显的特征</p>
+<ul>
+<li>打包后文件的大小不同</li>
+<li>打包后所包含的内容不同</li>
+<li>打包程序中个别文件内容不同</li>
+</ul>
+<p>​		先看第一个现象，文件大小不同。带有配置时打包生成的程序包大小如下：</p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211201095610270.png" alt="image-20211201095610270" style="zoom:150%;">
+<p>​		不难看出，带有配置的程序包体积比不带配置的大了 30 倍，那这里面都有什么呢？能差这么多？下面看看里面的内容有什么区别。</p>
+<p>​		<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211201101541267.png" alt="image-20211201101541267" style="zoom:50%;"><img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211201101652868.png" alt="image-20211201101652868" style="zoom:50%;"></p>
+<p>​		我们发现内容也完全不一样，仅有一个目录是一样的，叫做 META-INF。打开容量大的程序包中的 BOOT-INF 目录下的 classes 目录，我们发现其中的内容居然和容量小的程序包中的内容完全一样。</p>
+<p>​		<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211201101805569.png" alt="image-20211201101805569" style="zoom:50%;"><img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211201101652868.png" alt="image-20211201101652868" style="zoom:50%;"></p>
+<p>​		原来大的程序包中除了包含小的程序包中的内容，还有别的东西。都有什么呢？回到 BOOT-INF 目录下，打开 lib 目录，里面显示了很多个 jar 文件。</p>
+<p>​		<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211201102025791.png" alt="image-20211201102025791" style="zoom:50%;"></p>
+<p>​		仔细翻阅不难发现，这些 jar 文件都是我们制作这个工程时导入的坐标对应的文件。大概可以想明白了，SpringBoot 程序为了让自己打包生成的程序可以独立运行，不仅将项目中自己开发的内容进行了打包，还把当前工程运行需要使用的 jar 包全部打包进来了。为什么这样做呢？就是为了可以独立运行。不依赖程序包外部的任何资源可以独立运行当前程序。这也是为什么大的程序包容量是小的程序包容量的 30 倍的主要原因。</p>
+<p>​		再看看大程序包还有什么不同之处，在最外层目录包含一个 org 目录，进入此目录，目录名是 org\springframework\boot\loader，在里面可以找到一个<font color="#ff0000"><b>JarLauncher.class</b></font>的文件，先记得这个文件。再看这套目录名，明显是一个 Spring 的目录名，为什么要把 Spring 框架的东西打包到这个程序包中呢？不清楚。</p>
+<p>​		回到两个程序包的最外层目录，查看名称相同的文件夹 META-INF 下都有一个叫做 MANIFEST.MF 的文件，但是大小不同，打开文件，比较内容区别</p>
+<ul>
+<li>
+<p>小容量文件的 MANIFEST.MF</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Manifest-Version: <span class="number">1.0</span></span><br><span class="line">Implementation-Title: springboot_08_ssmp</span><br><span class="line">Implementation-Version: <span class="number">0.0</span><span class="number">.1</span>-SNAPSHOT</span><br><span class="line">Build-Jdk-Spec: <span class="number">1.8</span></span><br><span class="line">Created-By: Maven Jar Plugin <span class="number">3.2</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>大容量文件的 MANIFEST.MF</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Manifest-Version: <span class="number">1.0</span></span><br><span class="line">Spring-Boot-Classpath-Index: BOOT-INF/classpath.idx</span><br><span class="line">Implementation-Title: springboot_08_ssmp</span><br><span class="line">Implementation-Version: <span class="number">0.0</span><span class="number">.1</span>-SNAPSHOT</span><br><span class="line">Spring-Boot-Layers-Index: BOOT-INF/layers.idx</span><br><span class="line">Start-Class: com.itheima.SSMPApplication</span><br><span class="line">Spring-Boot-Classes: BOOT-INF/classes/</span><br><span class="line">Spring-Boot-Lib: BOOT-INF/lib/</span><br><span class="line">Build-Jdk-Spec: <span class="number">1.8</span></span><br><span class="line">Spring-Boot-Version: <span class="number">2.5</span><span class="number">.4</span></span><br><span class="line">Created-By: Maven Jar Plugin <span class="number">3.2</span><span class="number">.0</span></span><br><span class="line">Main-Class: org.springframework.boot.loader.JarLauncher</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>​		大文件中明显比小文件中多了几行信息，其中最后一行信息是 Main-Class: org.springframework.boot.loader.<font color="#ff0000"><b>JarLauncher</b></font>。这句话什么意思呢？如果使用 java -jar 执行此程序包，将执行 Main-Class 属性配置的类，这个类恰巧就是前面看到的那个文件。原来 SpringBoot 打包程序中出现 Spring 框架的东西是为这里服务的。而这个 org.springframework.boot.loader.<font color="#ff0000"><b>JarLauncher</b></font>类内部要查找 Start-Class 属性中配置的类，并执行对应的类。这个属性在当前配置中也存在，对应的就是我们的引导类类名。</p>
+<p>​		现在这组设定的作用就搞清楚了</p>
+<ol>
+<li>SpringBoot 程序添加配置后会打出一个特殊的包，包含 Spring 框架部分功能，原始工程内容，原始工程依赖的 jar 包</li>
+<li>首先读取 MANIFEST.MF 文件中的 Main-Class 属性，用来标记执行 java -jar 命令后运行的类</li>
+<li>JarLauncher 类执行时会找到 Start-Class 属性，也就是启动类类名</li>
+<li>运行启动类时会运行当前工程的内容</li>
+<li>运行当前工程时会使用依赖的 jar 包，从 lib 目录中查找</li>
+</ol>
+<p>​		看来 SpringBoot 打出来了包为了能够独立运行，简直是煞费苦心，将所有需要使用的资源全部都添加到了这个包里。这就是为什么这个 jar 包能独立运行的原因。</p>
+<p>​		再来看之前的报错信息：</p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211201094223991.png" alt="image-20211201094223991" style="zoom:67%;">
+<p>​		由于打包时没有使用那段配置，结果打包后形成了一个普通的 jar 包，在 MANIFEST.MF 文件中也就没有了 Main-Class 对应的属性了，所以运行时提示找不到主清单属性，这就是报错的原因。</p>
+<p>​		上述内容搞清楚对我们编程意义并不大，但是对各位小伙伴理清楚 SpringBoot 工程独立运行的机制是有帮助的。其实整体过程主要是带着大家分析，如果以后遇到了类似的问题，多给自己提问，多问一个为什么，兴趣自己就可以独立解决问题了。</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>spring-boot-maven-plugin 插件用于将当前程序打包成一个可以独立运行的程序包</li>
+</ol>
+<h3 id="命令行启动常见问题及解决方案"><a class="markdownIt-Anchor" href="#命令行启动常见问题及解决方案">#</a> 命令行启动常见问题及解决方案</h3>
+<p>​		各位小伙伴在 DOS 环境下启动 SpringBoot 工程时，可能会遇到端口占用的问题。给大家一组命令，不用深入学习，备用吧。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 查询端口</span><br><span class="line">netstat -ano</span><br><span class="line"># 查询指定端口</span><br><span class="line">netstat -ano |findstr <span class="string">&quot;端口号&quot;</span></span><br><span class="line"># 根据进程PID查询进程名称</span><br><span class="line">tasklist |findstr <span class="string">&quot;进程PID号&quot;</span></span><br><span class="line"># 根据PID杀死任务</span><br><span class="line">taskkill /F /PID <span class="string">&quot;进程PID号&quot;</span></span><br><span class="line"># 根据进程名称杀死任务</span><br><span class="line">taskkill -f -t -im <span class="string">&quot;进程名称&quot;</span></span><br></pre></td></tr></table></figure>
+<p>​		关于打包与运行程序其实还有一系列的配置和参数，下面的内容中遇到再说，这里先开个头，知道如何打包和运行程序。</p>
+<h3 id="springboot项目快速启动linux版"><a class="markdownIt-Anchor" href="#springboot项目快速启动linux版">#</a> SpringBoot 项目快速启动（Linux 版）</h3>
+<p>​		其实对于 Linux 系统下的程序运行与 Windows 系统下的程序运行差别不大，命令还是那组命令，只不过各位小伙伴可能对 Linux 指令不太熟悉，结果就会导致各种各样的问题发生。比如防火墙如何关闭，IP 地址如何查询，JDK 如何安装等等。这里不作为重点内容给大家普及了，了解一下整体过程就行了。</p>
+<h2 id="yw-2配置高级"><a class="markdownIt-Anchor" href="#yw-2配置高级">#</a> YW-2. 配置高级</h2>
+<p>​		关于配置在基础篇讲过一部分，基础篇的配置总体上来说就是让各位小伙伴掌握配置的格式。比如配置文件如何写啊，写好的数据如何读取啊，都是基础的语法级知识。在实用篇中就要集中在配置的应用这个方面了，下面就开始配置高级相关内容的第一部分学习，为什么说第一部分，因为在开发实用篇中还有对应的配置高级知识要进行学习。</p>
+<h3 id="yw-2-1临时属性设置"><a class="markdownIt-Anchor" href="#yw-2-1临时属性设置">#</a> YW-2-1. 临时属性设置</h3>
+<p>​		目前我们的程序包打好了，可以发布了。但是程序包打好以后，里面的配置都已经是固定的了，比如配置了服务器的端口是 8080。如果我要启动项目，发现当前我的服务器上已经有应用启动起来并且占用了 8080 端口，这个时候就尴尬了。难道要重新把打包好的程序修改一下吗？比如我要把打包好的程序启动端口改成 80。</p>
+<p><img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211206095113771.png" alt="image-20211206095113771">             <img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211206095524343.png" alt="image-20211206095524343">             <img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211206095101581.png" alt="image-20211206095101581"></p>
+<p>​		SpringBoot 提供了灵活的配置方式，如果你发现你的项目中有个别属性需要重新配置，可以使用临时属性的方式快速修改某些配置。方法也特别简单，在启动的时候添加上对应参数就可以了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java –jar springboot.jar –-server.port=<span class="number">80</span></span><br></pre></td></tr></table></figure>
+<p>​		上面的命令是启动 SpringBoot 程序包的命令，在命令输入完毕后，空一格，然后输入两个 - 号。下面按照属性名 = 属性值的形式添加对应参数就可以了。记得，这里的格式不是 yaml 中的书写格式，当属性存在多级名称时，中间使用点分隔，和 properties 文件中的属性格式完全相同。</p>
+<p>​		如果你发现要修改的属性不止一个，可以按照上述格式继续写，属性与属性之间使用空格分隔。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java –jar springboot.jar –-server.port=<span class="number">80</span> --logging.level.root=debug</span><br></pre></td></tr></table></figure>
+<h4 id="属性加载优先级"><a class="markdownIt-Anchor" href="#属性加载优先级">#</a> <strong>属性加载优先级</strong></h4>
+<p>​		现在我们的程序配置受两个地方控制了，第一配置文件，第二临时属性。并且我们发现临时属性的加载优先级要高于配置文件的。那是否还有其他的配置方式呢？其实是有的，而且还不少，打开官方文档中对应的内容，就可以查看配置读取的优先顺序。地址奉上：<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html">https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config</a></p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211206100859236.png" alt="image-20211206100859236" style="zoom:67%;">
+<p>​		我们可以看到，居然有 14 种配置的位置，而我们现在使用的是这里面的 2 个。第 3 条 Config data 说的就是使用配置文件，第 11 条 Command line arguments 说的就是使用命令行临时参数。而这 14 种配置的顺序就是 SpringBoot 加载配置的顺序，言外之意，命令行临时属性比配置文件的加载优先级高，所以这个列表上面的优先级低，下面的优先级高。其实这个东西不用背的，你就记得一点，你最终要什么效果，你自己是知道的，不管这个顺序是怎么个高低排序，开发时一定要配置成你要的顺序为准。这个顺序只是在你想不明白问题的时候帮助你分析罢了。</p>
+<p>​		比如你现在加载了一个 user.name 属性。结果你发现出来的结果和你想的不一样，那肯定是别的优先级比你高的属性覆盖你的配置属性了，那你就可以看着这个顺序挨个排查。哪个位置有可能覆盖了你的属性。</p>
+<p>​		我在课程评论区看到小伙伴学习基础篇的时候问这个问题了，就是这个原因造成的。在 yaml 中配置了 user.name 属性值，然后读取出来的时候居然不是自己的配置值，<a target="_blank" rel="noopener" href="http://xn--user-k84fuita7h16u3uk1nizyar90cda546lea4601afs1g0rh.name">因为在系统属性中有一个属性叫做 user.name</a>，两个相互冲突了。而系统属性的加载优先顺序在上面这个列表中是 5 号，高于 3 号，<a target="_blank" rel="noopener" href="http://xn--SpringBootuser-9z9vsyw87bww6bbbpp1j67ybr4i4wi4pak9i275m9hk.name">所以 SpringBoot 最终会加载系统配置属性 user.name</a>。</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>使用 jar 命令启动 SpringBoot 工程时可以使用临时属性替换配置文件中的属性</li>
+<li>临时属性添加方式：java –jar 工程名.jar –- 属性名 = 值</li>
+<li>多个临时属性之间使用空格分隔</li>
+<li>临时属性必须是当前 boot 工程支持的属性，否则设置无效</li>
+</ol>
+<h4 id="开发环境中使用临时属性"><a class="markdownIt-Anchor" href="#开发环境中使用临时属性">#</a> 开发环境中使用临时属性</h4>
+<p>​		临时使用目前是有了，但是上线的时候通过命令行输入的临时属性必须是正确的啊，那这些属性配置值我们必须在开发环境中测试好才行。下面说一下开发环境中如何使用临时属性，其实就是 Idea 界面下如何操作了。</p>
+<p>​		打开 SpringBoot 引导类的运行界面，在里面找到配置项。其中 Program arguments 对应的位置就是添加临时属性的，可以加几个试试效果。</p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211206101947622.png" alt="image-20211206101947622" style="zoom:80%;">
+<p>​		做到这里其实可以产生一个思考了，如果对 java 编程熟悉的小伙伴应该知道，我们运行 main 方法的时候，如果想使用 main 方法的参数，也就是下面的 args 参数，就是在上面这个位置添加的参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​		原来是这样，通过这个 args 就可以获取到参数。再来看我们的引导类是如何书写的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    SpringApplication.run(SSMPApplication.class,args);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​		这个 args 参数居然传递给了 run 方法，看来在 Idea 中配置的临时参数就是通过这个位置传递到我们的程序中的。言外之意，这里如果不用这个 args 是不是就断开了外部传递临时属性的入口呢？是这样的，我们可以使用下面的调用方式，这样外部临时属性就无法进入到 SpringBoot 程序中了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    SpringApplication.run(SSMPApplication.class);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​		或者还可以使用如下格式来玩这个操作，就是将配置不写在配置文件中，直接写成一个字符串数组，传递给程序入口。当然，这种做法并没有什么实际开发意义。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String[] arg = <span class="keyword">new</span> String[<span class="number">1</span>];</span><br><span class="line">    arg[<span class="number">0</span>] = <span class="string">&quot;--server.port=8082&quot;</span>;</span><br><span class="line">    SpringApplication.run(SSMPApplication.class, arg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>总结</strong></p>
+<ol>
+<li>启动 SpringBoot 程序时，可以选择是否使用命令行属性为 SpringBoot 程序传递启动属性</li>
+</ol>
+<p><strong>思考</strong></p>
+<p>​		现在使用临时属性可以在启动项目前临时更改配置了，但是新的问题又出来了。临时属性好用是好用，就是写的多了会很麻烦。比如我现在有个需求，上线的时候使用临时属性配置 20 个值，这下可麻烦了，能不能搞得简单点，集中管理一下呢？比如说搞个文件，加载指定文件？还真可以。怎么做呢？咱们下一节再说。</p>
+<h3 id="yw-2-2配置文件分类"><a class="markdownIt-Anchor" href="#yw-2-2配置文件分类">#</a> YW-2-2. 配置文件分类</h3>
+<p>​		SpringBoot 提供了配置文件和临时属性的方式来对程序进行配置。前面一直说的是临时属性，这一节要说说配置文件了。其实这个配置文件我们一直在使用，只不过我们用的是 SpringBoot 提供的 4 级配置文件中的其中一个级别。4 个级别分别是：</p>
+<ul>
+<li>类路径下配置文件（一直使用的是这个，也就是 resources 目录中的 application.yml 文件）</li>
+<li>类路径下 config 目录下配置文件</li>
+<li>程序包所在目录中配置文件</li>
+<li>程序包所在目录中 config 目录下配置文件</li>
+</ul>
+<p>​		好复杂，一个一个说。其实上述 4 种文件是提供给你了 4 种配置文件书写的位置，功能都是一样的，都是做配置的。那大家关心的就是差别了，没错，就是因为位置不同，产生了差异。总体上来说，4 种配置文件如果都存在的话，有一个优先级的问题，说白了就是加入 4 个文件我都有，里面都有一样的配置，谁生效的问题。上面 4 个文件的加载优先顺序为</p>
+<ol>
+<li>file ：config/application.yml <strong>【最高】</strong></li>
+<li>file ：application.yml</li>
+<li>classpath：config/application.yml</li>
+<li>classpath：application.yml  <strong>【最低】</strong></li>
+</ol>
+<p>​		那为什么设计这种多种呢？说一个最典型的应用吧。</p>
+<ul>
+<li>场景 A：你作为一个开发者，你做程序的时候为了方便自己写代码，配置的数据库肯定是连接你自己本机的，咱们使用 4 这个级别，也就是之前一直用的 application.yml。</li>
+<li>场景 B：现在项目开发到了一个阶段，要联调测试了，连接的数据库是测试服务器的数据库，肯定要换一组配置吧。你可以选择把你之前的文件中的内容都改了，目前还不麻烦。</li>
+<li>场景 C：测试完了，一切 OK。你继续写你的代码，你发现你原来写的配置文件被改成测试服务器的内容了，你要再改回来。现在明白了不？场景 B 中把你的内容都改掉了，你现在要重新改回来，以后呢？改来改去吗？</li>
+</ul>
+<p>​		解决方案很简单，用上面的 3 这个级别的配置文件就可以快速解决这个问题，再写一个配置就行了。两个配置文件共存，因为 config 目录中的配置加载优先级比你的高，所以配置项如果和级别 4 里面的内容相同就覆盖了，这样是不是很简单？</p>
+<p>​		级别 1 和 2 什么时候使用呢？程序打包以后就要用这个级别了，管你程序里面配置写的是什么？我的级别高，可以轻松覆盖你，就不用考虑这些配置冲突的问题了。</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>
+<p>配置文件分为 4 种</p>
+<ul>
+<li>项目类路径配置文件：服务于开发人员本机开发与测试</li>
+<li>项目类路径 config 目录中配置文件：服务于项目经理整体调控</li>
+<li>工程路径配置文件：服务于运维人员配置涉密线上环境</li>
+<li>工程路径 config 目录中配置文件：服务于运维经理整体调控</li>
+</ul>
+</li>
+<li>
+<p>多层级配置文件间的属性采用叠加并覆盖的形式作用于程序</p>
+</li>
+</ol>
+<h3 id="yw-2-3自定义配置文件"><a class="markdownIt-Anchor" href="#yw-2-3自定义配置文件">#</a> YW-2-3. 自定义配置文件</h3>
+<p>​		之前咱们做配置使用的配置文件都是 application.yml，其实这个文件也是可以改名字的，这样方便维护。比如我 2020 年 4 月 1 日搞活动，走了一组配置，2020 年 5 月 1 日活动取消，恢复原始配置，这个时候只需要重新更换一下配置文件就可以了。但是你总不能在原始配置文件上修改吧，不然搞完活动以后，活动的配置就留不下来了，不利于维护。</p>
+<p>​		自定义配置文件方式有如下两种：</p>
+<p><strong>方式一：使用临时属性设置配置文件名，注意仅仅是名称，不要带扩展名</strong></p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211206105548238.png" alt="image-20211206105548238" style="zoom:67%;">
+<p><strong>方式二：使用临时属性设置配置文件路径，这个是全路径名</strong></p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211206105716450.png" alt="image-20211206105716450" style="zoom:67%;">
+<p>​		也可以设置加载多个配置文件</p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211206105750285.png" alt="image-20211206105750285" style="zoom:67%;">
+<p>​		<a target="_blank" rel="noopener" href="http://xn--spring-9m7iglw9hpv0ctyiphst29bh8d.config.name">使用的属性一个是 spring.config.name</a>，另一个是 spring.config.location，这个一定要区别清楚。</p>
+<p><font color="#f0f"><b>温馨提示</b></font></p>
+<p>​		我们现在研究的都是 SpringBoot 单体项目，就是单服务器版本。其实企业开发现在更多的是使用基于 SpringCloud 技术的多服务器项目。这种配置方式和我们现在学习的完全不一样，所有的服务器将不再设置自己的配置文件，而是通过配置中心获取配置，动态加载配置信息。为什么这样做？集中管理。这里不再说这些了，后面再讲这些东西。</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>配置文件可以修改名称，通过启动参数设定</li>
+<li>配置文件可以修改路径，通过启动参数设定</li>
+<li>微服务开发中配置文件通过配置中心进行设置</li>
+</ol>
+<h2 id="yw-3多环境开发"><a class="markdownIt-Anchor" href="#yw-3多环境开发">#</a> YW-3. 多环境开发</h2>
+<p>​		讲的内容距离线上开发越来越近了，下面说一说多环境开发问题。</p>
+<p>​		什么是多环境？其实就是说你的电脑上写的程序最终要放到别人的服务器上去运行。每个计算机环境不一样，这就是多环境。常见的多环境开发主要兼顾 3 种环境设置，开发环境 —— 自己用的，测试环境 —— 自己公司用的，生产环境 —— 甲方爸爸用的。因为这是绝对不同的三台电脑，所以环境肯定有所不同，比如连接的数据库不一样，设置的访问端口不一样等等。</p>
+<img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211206110958819.png" alt="image-20211206110958819" style="zoom:67%;">
+<h3 id="yw-3-1多环境开发yaml单一文件版"><a class="markdownIt-Anchor" href="#yw-3-1多环境开发yaml单一文件版">#</a> YW-3-1. 多环境开发（yaml 单一文件版）</h3>
+<p>​		那什么是多环境开发？就是针对不同的环境设置不同的配置属性即可。比如你自己开发时，配置你的端口如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+<p>​		如何想设计两组环境呢？中间使用三个减号分隔开</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">81</span></span><br></pre></td></tr></table></figure>
+<p>​		如何区分两种环境呢？起名字呗</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span> <span class="string">pro</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">	<span class="attr">port:</span> <span class="number">80</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span> <span class="string">dev</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">	<span class="attr">port:</span> <span class="number">81</span></span><br></pre></td></tr></table></figure>
+<p>​		那用哪一个呢？设置默认启动哪个就可以了</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span></span><br><span class="line">		<span class="attr">active:</span> <span class="string">pro</span>		<span class="comment"># 启动pro</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span> <span class="string">pro</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">	<span class="attr">port:</span> <span class="number">80</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span> <span class="string">dev</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">	<span class="attr">port:</span> <span class="number">81</span></span><br></pre></td></tr></table></figure>
+<p>​		就这么简单，再多来一组环境也 OK</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span></span><br><span class="line">		<span class="attr">active:</span> <span class="string">pro</span>		<span class="comment"># 启动pro</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span> <span class="string">pro</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">	<span class="attr">port:</span> <span class="number">80</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span> <span class="string">dev</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">	<span class="attr">port:</span> <span class="number">81</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span> <span class="string">test</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">	<span class="attr">port:</span> <span class="number">82</span></span><br></pre></td></tr></table></figure>
+<p>​		其中关于环境名称定义上述格式是过时格式，标准格式如下</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">config:</span></span><br><span class="line">    	<span class="attr">activate:</span></span><br><span class="line">        	<span class="attr">on-profile:</span> <span class="string">pro</span></span><br></pre></td></tr></table></figure>
+<p><strong>总结</strong></p>
+<ol>
+<li>多环境开发需要设置若干种常用环境，例如开发、生产、测试环境</li>
+<li>yaml 格式中设置多环境使用 — 区分环境设置边界</li>
+<li>每种环境的区别在于加载的配置属性不同</li>
+<li>启用某种环境时需要指定启动时使用该环境</li>
+</ol>
+<h3 id="yw-3-2多环境开发yaml多文件版"><a class="markdownIt-Anchor" href="#yw-3-2多环境开发yaml多文件版">#</a> YW-3-2. 多环境开发（yaml 多文件版）</h3>
+<p>​		将所有的配置都放在一个配置文件中，尤其是每一个配置应用场景都不一样，这显然不合理，于是就有了将一个配置文件拆分成多个配置文件的想法。拆分后，每个配置文件中写自己的配置，主配置文件中写清楚用哪一个配置文件就好了。</p>
+<p><strong>主配置文件</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span></span><br><span class="line">		<span class="attr">active:</span> <span class="string">pro</span>		<span class="comment"># 启动pro</span></span><br></pre></td></tr></table></figure>
+<p><strong>环境配置文件</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">	<span class="attr">port:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+<p>​		环境配置文件因为每一个都是配置自己的项，所以连名字都不用写里面了。那问题是如何区分这是哪一组配置呢？使用文件名区分。</p>
+<p><strong>application-pro.yaml</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">	<span class="attr">port:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+<p><strong>application-dev.yaml</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">	<span class="attr">port:</span> <span class="number">81</span></span><br></pre></td></tr></table></figure>
+<p>​		文件的命名规则为：application - 环境名.yml。</p>
+<p>​		在配置文件中，如果某些配置项所有环境都一样，可以将这些项写入到主配置中，只有哪些有区别的项才写入到环境配置文件中。</p>
+<ul>
+<li>主配置文件中设置公共配置（全局）</li>
+<li>环境分类配置文件中常用于设置冲突属性（局部）</li>
+</ul>
+<p><strong>总结</strong></p>
+<ol>
+<li>
+<p>可以使用独立配置文件定义环境属性</p>
+</li>
+<li>
+<p>独立配置文件便于线上系统维护更新并保障系统安全性</p>
+</li>
+</ol>
+<h3 id="yw-3-3多环境开发properties多文件版"><a class="markdownIt-Anchor" href="#yw-3-3多环境开发properties多文件版">#</a> YW-3-3. 多环境开发（properties 多文件版）</h3>
+<p>​		SpringBoot 最早期提供的配置文件格式是 properties 格式的，这种格式的多环境配置也了解一下吧。</p>
+<p><strong>主配置文件</strong></p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.profiles.active</span>=<span class="string">pro</span></span><br></pre></td></tr></table></figure>
+<p><strong>环境配置文件</strong></p>
+<p><strong>application-pro.properties</strong></p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.port</span>=<span class="string">80</span></span><br></pre></td></tr></table></figure>
+<p><strong>application-dev.properties</strong></p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.port</span>=<span class="string">81</span></span><br></pre></td></tr></table></figure>
+<p>​		文件的命名规则为：application - 环境名.properties。</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>properties 文件多环境配置仅支持多文件格式</li>
+</ol>
+<h3 id="yw-3-4多环境开发独立配置文件书写技巧"><a class="markdownIt-Anchor" href="#yw-3-4多环境开发独立配置文件书写技巧">#</a> YW-3-4. 多环境开发独立配置文件书写技巧</h3>
+<p>​		作为程序员在搞配置的时候往往处于一种分久必合合久必分的局面。开始先写一起，后来为了方便维护就拆分。对于多环境开发也是如此，下面给大家说一下如何基于多环境开发做配置独立管理，务必掌握。</p>
+<p><strong>准备工作</strong></p>
+<p>​		将所有的配置根据功能对配置文件中的信息进行拆分，并制作成独立的配置文件，命名规则如下</p>
+<ul>
+<li>application-devDB.yml</li>
+<li>application-devRedis.yml</li>
+<li>application-devMVC.yml</li>
+</ul>
+<p><strong>使用</strong></p>
+<p>​		使用 include 属性在激活指定环境的情况下，同时对多个环境进行加载使其生效，多个环境间使用逗号分隔</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span></span><br><span class="line">    	<span class="attr">active:</span> <span class="string">dev</span></span><br><span class="line">        <span class="attr">include:</span> <span class="string">devDB,devRedis,devMVC</span></span><br></pre></td></tr></table></figure>
+<p>​		比较一下，现在相当于加载 dev 配置时，再加载对应的 3 组配置，从结构上就很清晰，用了什么，对应的名称是什么</p>
+<p><strong>注意</strong></p>
+<p>​		当主环境 dev 与其他环境有相同属性时，主环境属性生效；其他环境中有相同属性时，最后加载的环境属性生效</p>
+<p><strong>改良</strong></p>
+<p>​		但是上面的设置也有一个问题，比如我要切换 dev 环境为 pro 时，include 也要修改。因为 include 属性只能使用一次，这就比较麻烦了。SpringBoot 从 2.4 版开始使用 group 属性替代 include 属性，降低了配置书写量。简单说就是我先写好，你爱用哪个用哪个。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span></span><br><span class="line">    	<span class="attr">active:</span> <span class="string">dev</span></span><br><span class="line">        <span class="attr">group:</span></span><br><span class="line">        	<span class="attr">&quot;dev&quot;:</span> <span class="string">devDB,devRedis,devMVC</span></span><br><span class="line">      		<span class="attr">&quot;pro&quot;:</span> <span class="string">proDB,proRedis,proMVC</span></span><br><span class="line">      		<span class="attr">&quot;test&quot;:</span> <span class="string">testDB,testRedis,testMVC</span></span><br></pre></td></tr></table></figure>
+<p>​		现在再来看，如果切换 dev 到 pro，只需要改一下是不是就结束了？完美！</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>多环境开发使用 group 属性设置配置文件分组，便于线上维护管理</li>
+</ol>
+<h3 id="yw-3-5多环境开发控制"><a class="markdownIt-Anchor" href="#yw-3-5多环境开发控制">#</a> YW-3-5. 多环境开发控制</h3>
+<p>​		多环境开发到这里基本上说完了，最后说一个冲突问题。就是 maven 和 SpringBoot 同时设置多环境的话怎么搞。</p>
+<p>​		要想处理这个冲突问题，你要先理清一个关系，究竟谁在多环境开发中其主导地位。也就是说如果现在都设置了多环境，谁的应该是保留下来的，另一个应该遵从相同的设置。</p>
+<p>​		maven 是做什么的？项目构建管理的，最终生成代码包的，SpringBoot 是干什么的？简化开发的。简化，又不是其主导作用。最终还是要靠 maven 来管理整个工程，所以 SpringBoot 应该听 maven 的。整个确认后下面就好做了。大体思想如下：</p>
+<ul>
+<li>先在 maven 环境中设置用什么具体的环境</li>
+<li>在 SpringBoot 中读取 maven 设置的环境即可</li>
+</ul>
+<p><strong>maven 中设置多环境（使用属性方式区分环境）</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>env_dev<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">profile.active</span>&gt;</span>dev<span class="tag">&lt;/<span class="name">profile.active</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span>		<span class="comment">&lt;!--默认启动环境--&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>env_pro<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">profile.active</span>&gt;</span>pro<span class="tag">&lt;/<span class="name">profile.active</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>SpringBoot 中读取 maven 设置值</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">profiles:</span></span><br><span class="line">    	<span class="attr">active:</span> <span class="string">@profile.active@</span></span><br></pre></td></tr></table></figure>
+<p>​		上面的 @属性名 @就是读取 maven 中配置的属性值的语法格式。</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>当 Maven 与 SpringBoot 同时对多环境进行控制时，以 Mavn 为主，SpringBoot 使用 @…@占位符读取 Maven 对应的配置属性值</li>
+<li>基于 SpringBoot 读取 Maven 配置属性的前提下，如果在 Idea 下测试工程时 pom.xml 每次更新需要手动 compile 方可生效</li>
+</ol>
+<h2 id="yw-4日志"><a class="markdownIt-Anchor" href="#yw-4日志">#</a> YW-4. 日志</h2>
+<p>​		运维篇最后一部分我们来聊聊日志，日志大家不陌生，简单介绍一下。日志其实就是记录程序日常运行的信息，主要作用如下：</p>
+<ul>
+<li>编程期调试代码</li>
+<li>运营期记录信息</li>
+<li>记录日常运营重要信息（峰值流量、平均响应时长……）</li>
+<li>记录应用报错信息（错误堆栈）</li>
+<li>记录运维过程数据（扩容、宕机、报警……）</li>
+</ul>
+<p>​		或许各位小伙伴并不习惯于使用日志，没关系，慢慢多用，习惯就好。想进大厂，这是最基本的，别去面试的时候说没用过，完了，没机会了。</p>
+<h4 id="yw-4-1代码中使用日志工具记录日志"><a class="markdownIt-Anchor" href="#yw-4-1代码中使用日志工具记录日志">#</a> YW-4-1. 代码中使用日志工具记录日志</h4>
+<p>​		日志的使用格式非常固定，直接上操作步骤：</p>
+<p><strong>步骤①</strong>：添加日志记录操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/books&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookController</span> <span class="keyword">extends</span> <span class="title">BaseClass</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger log = LoggerFactory.getLogger(BookController.class);</span><br><span class="line">    <span class="meta">@GetMapping</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getById</span><span class="params">()</span></span>&#123;</span><br><span class="line">        log.debug(<span class="string">&quot;debug...&quot;</span>);</span><br><span class="line">        log.info(<span class="string">&quot;info...&quot;</span>);</span><br><span class="line">        log.warn(<span class="string">&quot;warn...&quot;</span>);</span><br><span class="line">        log.error(<span class="string">&quot;error...&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;springboot is running...2&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​		上述代码中 log 对象就是用来记录日志的对象，下面的 log.debug，log.info 这些操作就是写日志的 API 了。</p>
+<p><strong>步骤②</strong>：设置日志输出级别</p>
+<p>​		日志设置好以后可以根据设置选择哪些参与记录。这里是根据日志的级别来设置的。日志的级别分为 6 种，分别是：</p>
+<ul>
+<li>TRACE：运行堆栈信息，使用率低</li>
+<li>DEBUG：程序员调试代码使用</li>
+<li>INFO：记录运维过程数据</li>
+<li>WARN：记录运维过程报警数据</li>
+<li>ERROR：记录错误堆栈信息</li>
+<li>FATAL：灾难信息，合并计入 ERROR</li>
+</ul>
+<p>​		一般情况下，开发时候使用 DEBUG，上线后使用 INFO，运维信息记录使用 WARN 即可。下面就设置一下日志级别：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开启debug模式，输出调试信息，常用于检查系统运行状况</span></span><br><span class="line"><span class="attr">debug:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>​		这么设置太简单粗暴了，日志系统通常都提供了细粒度的控制</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开启debug模式，输出调试信息，常用于检查系统运行状况</span></span><br><span class="line"><span class="attr">debug:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置日志级别，root表示根节点，即整体应用日志级别</span></span><br><span class="line"><span class="attr">logging:</span></span><br><span class="line">	<span class="attr">level:</span></span><br><span class="line">    	<span class="attr">root:</span> <span class="string">debug</span></span><br></pre></td></tr></table></figure>
+<p>​		还可以再设置更细粒度的控制</p>
+<p><strong>步骤③</strong>：设置日志组，控制指定包对应的日志输出级别，也可以直接控制指定包对应的日志输出级别</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logging:</span></span><br><span class="line">	<span class="comment"># 设置日志组</span></span><br><span class="line">    <span class="attr">group:</span></span><br><span class="line">    	<span class="comment"># 自定义组名，设置当前组中所包含的包</span></span><br><span class="line">        <span class="attr">ebank:</span> <span class="string">com.itheima.controller</span></span><br><span class="line">    <span class="attr">level:</span></span><br><span class="line">    	<span class="attr">root:</span> <span class="string">warn</span></span><br><span class="line">        <span class="comment"># 为对应组设置日志级别</span></span><br><span class="line">        <span class="attr">ebank:</span> <span class="string">debug</span></span><br><span class="line">    	<span class="comment"># 为对包设置日志级别</span></span><br><span class="line">        <span class="attr">com.itheima.controller:</span> <span class="string">debug</span></span><br></pre></td></tr></table></figure>
+<p>​		说白了就是总体设置一下，每个包设置一下，如果感觉设置的麻烦，就先把包分个组，对组设置，没了，就这些。</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>日志用于记录开发调试与运维过程消息</li>
+<li>日志的级别共 6 种，通常使用 4 种即可，分别是 DEBUG，INFO,WARN,ERROR</li>
+<li>可以通过日志组或代码包的形式进行日志显示级别的控制</li>
+</ol>
+<h4 id="教你一招优化日志对象创建代码"><a class="markdownIt-Anchor" href="#教你一招优化日志对象创建代码">#</a> 教你一招：优化日志对象创建代码</h4>
+<p>​		写代码的时候每个类都要写创建日志记录对象，这个可以优化一下，使用前面用过的 lombok 技术给我们提供的工具类即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/books&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookController</span> <span class="keyword">extends</span> <span class="title">BaseClass</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger log = LoggerFactory.getLogger(BookController.class);	<span class="comment">//这一句可以不写了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​		导入 lombok 后使用注解搞定，日志对象名为 log</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Slf4j</span>		<span class="comment">//这个注解替代了下面那一行</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/books&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookController</span> <span class="keyword">extends</span> <span class="title">BaseClass</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger log = LoggerFactory.getLogger(BookController.class);	<span class="comment">//这一句可以不写了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>总结</strong></p>
+<ol>
+<li>基于 lombok 提供的 @Slf4j 注解为类快速添加日志对象</li>
+</ol>
+<h4 id="yw-4-2日志输出格式控制"><a class="markdownIt-Anchor" href="#yw-4-2日志输出格式控制">#</a> YW-4-2. 日志输出格式控制</h4>
+<p>​		日志已经能够记录了，但是目前记录的格式是 SpringBoot 给我们提供的，如果想自定义控制就需要自己设置了。先分析一下当前日志的记录格式。</p>
+<p><img src="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/image-20211206123431222.png" alt="image-20211206123431222"></p>
+<p>​		对于单条日志信息来说，日期，触发位置，记录信息是最核心的信息。级别用于做筛选过滤，PID 与线程名用于做精准分析。了解这些信息后就可以 DIY 日志格式了。本课程不做详细的研究，有兴趣的小伙伴可以学习相关的知识。下面给出课程中模拟的官方日志模板的书写格式，便于大家学习。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logging:</span></span><br><span class="line">	<span class="attr">pattern:</span></span><br><span class="line">    	<span class="attr">console:</span> <span class="string">&quot;%d %clr(%p) --- [%16t] %clr(%-40.40c)&#123;cyan&#125; : %m %n&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>总结</strong></p>
+<ol>
+<li>日志输出格式设置规则</li>
+</ol>
+<h4 id="yw-4-3日志文件"><a class="markdownIt-Anchor" href="#yw-4-3日志文件">#</a> YW-4-3. 日志文件</h4>
+<p>​		日志信息显示，记录已经控制住了，下面就要说一下日志的转存了。日志不能仅显示在控制台上，要把日志记录到文件中，方便后期维护查阅。</p>
+<p>​		对于日志文件的使用存在各种各样的策略，例如每日记录，分类记录，报警后记录等。这里主要研究日志文件如何记录。</p>
+<p>​		记录日志到文件中格式非常简单，设置日志文件名即可。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logging:</span></span><br><span class="line">	<span class="attr">file:</span></span><br><span class="line">    	<span class="attr">name:</span> <span class="string">server.log</span></span><br></pre></td></tr></table></figure>
+<p>​		虽然使用上述格式可以将日志记录下来了，但是面对线上的复杂情况，一个文件记录肯定是不能够满足运维要求的，通常会每天记录日志文件，同时为了便于维护，还要限制每个日志文件的大小。下面给出日志文件的常用配置方式：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logging:</span></span><br><span class="line">	<span class="attr">logback:</span></span><br><span class="line">    	<span class="attr">rollingpolicy:</span></span><br><span class="line">        	<span class="attr">max-file-size:</span> <span class="string">3KB</span></span><br><span class="line">            <span class="attr">file-name-pattern:</span> <span class="string">server.%d&#123;yyyy-MM-dd&#125;.%i.log</span></span><br></pre></td></tr></table></figure>
+<p>​		以上格式是基于 logback 日志技术设置每日日志文件的设置格式，要求容量到达 3KB 以后就转存信息到第二个文件中。文件命名规则中的 % d 标识日期，% i 是一个递增变量，用于区分日志文件。</p>
+<p><strong>总结</strong></p>
+<ol>
+<li>日志记录到文件</li>
+<li>日志文件格式设置</li>
+</ol>
+<h2 id="运维实用篇完结"><a class="markdownIt-Anchor" href="#运维实用篇完结">#</a> 运维实用篇完结</h2>
+<p>​		运维实用篇到这里就要先告一段落了，为什么不说结束呢？因为运维篇中还有一些知识，但是现在讲解过于分散了。所以要把这些知识与开发实用篇的知识结合在一起讲，也是本课程的教学设计的体现。</p>
+<p>​		在整体运维实用篇中带着大家学习了 4 块内容，首先学习了如何运行 SpringBoot 程序，也就是程序的打包与运行，接下来对配置进行了升级学习，不再局限在配置文件中进行设置，通过临时属性，外部配置文件对项目的配置进行管控。在多环境开发中给大家介绍了多种多环境开发的格式，其实掌握一种即可，此外还给大家讲了多环境开发的一些技巧以及与 maven 的冲突解决方案。最后给大家介绍了日志系统，老实说日志这里讲的相当的潦草，因为大部分日志相关的知识都不应该在这门课中学习，这里只是告诉大家如何整合实用而已。</p>
+<p>​		看了各位小伙伴的评论，知道你们再催更，我也在加油，一起努力吧，实用开发篇再会。实用开发篇会提高更新频度，不全部做完给大家更新了，我先把做好的一部分开放出来，随后做完一点就更新一点，额，好吧，就说到这里吧。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">LXR</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/">http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">LXR的小站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a><a class="post-meta__tags" href="/tags/SpringBoot/">SpringBoot</a></div><div class="post_share"><div class="social-share" data-image="https://img10.360buyimg.com/ddimg/jfs/t1/193230/7/18721/177179/611b9da6Ed923d39f/dba3bc711f204884.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://i.loli.net/2021/08/10/5AkuxvBo9hc2fWJ.png" target="_blank"><img class="post-qr-code-img" src="https://i.loli.net/2021/08/10/5AkuxvBo9hc2fWJ.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://i.loli.net/2021/08/10/fchQveXJWzVGFOB.png" target="_blank"><img class="post-qr-code-img" src="https://i.loli.net/2021/08/10/fchQveXJWzVGFOB.png" alt="QQ"/></a><div class="post-qr-code-desc">QQ</div></li><li class="reward-item"><a href="https://i.loli.net/2021/08/10/RPmVMNrvWG3Jn5o.jpg" target="_blank"><img class="post-qr-code-img" src="https://i.loli.net/2021/08/10/RPmVMNrvWG3Jn5o.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E7%AF%87/"><img class="prev-cover" src="https://img12.360buyimg.com/ddimg/jfs/t1/202544/25/1857/225134/611b9cdcE5d5e564f/582033b23f0396a2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">SpringBoot讲义-开发实用篇</div></div></a></div><div class="next-post pull-right"><a href="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%9F%BA%E7%A1%80%E7%AF%87/"><img class="next-cover" src="https://img11.360buyimg.com/ddimg/jfs/t1/192325/24/18145/223455/611b9cdcE8aa8b18e/64c75bf4bdd4a961.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SpringBoot讲义-基础篇</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/passages/SpringBoot讲义-原理篇/" title="SpringBoot讲义-原理篇"><img class="cover" src="https://img13.360buyimg.com/ddimg/jfs/t1/201014/9/2100/116055/611b9a15E22fe0582/06f08140ca9867a4.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-02</div><div class="title">SpringBoot讲义-原理篇</div></div></a></div><div><a href="/passages/SpringBoot讲义-开发实用篇/" title="SpringBoot讲义-开发实用篇"><img class="cover" src="https://img12.360buyimg.com/ddimg/jfs/t1/202544/25/1857/225134/611b9cdcE5d5e564f/582033b23f0396a2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-02</div><div class="title">SpringBoot讲义-开发实用篇</div></div></a></div><div><a href="/passages/SpringBoot讲义-基础篇/" title="SpringBoot讲义-基础篇"><img class="cover" src="https://img11.360buyimg.com/ddimg/jfs/t1/192325/24/18145/223455/611b9cdcE8aa8b18e/64c75bf4bdd4a961.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-02</div><div class="title">SpringBoot讲义-基础篇</div></div></a></div><div><a href="/passages/MySql基础篇/" title="MySql基础篇"><img class="cover" src="https://img12.360buyimg.com/ddimg/jfs/t1/202544/25/1857/225134/611b9cdcE5d5e564f/582033b23f0396a2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-28</div><div class="title">MySql基础篇</div></div></a></div><div><a href="/passages/MyBatis-Plus/" title="MyBatis-Plus"><img class="cover" src="https://img11.360buyimg.com/ddimg/jfs/t1/187530/21/18789/334891/611b9cdfEef003be3/0ccc9f5752896181.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-28</div><div class="title">MyBatis-Plus</div></div></a></div><div><a href="/passages/MyBatis/" title="MyBatis笔记"><img class="cover" src="https://img13.360buyimg.com/ddimg/jfs/t1/177753/39/19615/271529/611b9cdfEd3a0207e/3719a98759543c1a.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-15</div><div class="title">MyBatis笔记</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s3.bmp.ovh/imgs/2022/01/48416141b447da0f.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LXR</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LAZ-0825"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:1172623892@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://s3.bmp.ovh/imgs/2022/01/1c676af554a53516.png" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://github.com/LAZ-0825/LAZ-0825.github.io/discussions" target="_blank" title="有疑问的话这点里可以找到我"><i class="fas fa-comment-dots"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">如果你在浏览博客时有什么问题的话，可以到 <a target="_blank" rel="noopener" href="https://github.com/LAZ-0825/LAZ-0825.github.io/discussions" style="color:#49b1f5">Github Discussions</a> 或者 <a href="/Message/" style="color:#49b1f5">留言板</a> 进行反馈。</div><timing> </timing></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#springboot%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87"><span class="toc-number">1.</span> <span class="toc-text"> SpringBoot 运维实用篇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#yw-1springboot%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%89%93%E5%8C%85%E4%B8%8E%E8%BF%90%E8%A1%8C"><span class="toc-number">1.1.</span> <span class="toc-text"> YW-1.SpringBoot 程序的打包与运行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 程序打包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 程序运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#springboot%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85%E5%A4%B1%E8%B4%A5%E5%A4%84%E7%90%86"><span class="toc-number">1.1.3.</span> <span class="toc-text"> SpringBoot 程序打包失败处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%AF%E5%8A%A8%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 命令行启动常见问题及解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#springboot%E9%A1%B9%E7%9B%AE%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8linux%E7%89%88"><span class="toc-number">1.1.5.</span> <span class="toc-text"> SpringBoot 项目快速启动（Linux 版）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yw-2%E9%85%8D%E7%BD%AE%E9%AB%98%E7%BA%A7"><span class="toc-number">1.2.</span> <span class="toc-text"> YW-2. 配置高级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#yw-2-1%E4%B8%B4%E6%97%B6%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text"> YW-2-1. 临时属性设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%8A%A0%E8%BD%BD%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 属性加载优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%B4%E6%97%B6%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 开发环境中使用临时属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yw-2-2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.2.</span> <span class="toc-text"> YW-2-2. 配置文件分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yw-2-3%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.3.</span> <span class="toc-text"> YW-2-3. 自定义配置文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yw-3%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91"><span class="toc-number">1.3.</span> <span class="toc-text"> YW-3. 多环境开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#yw-3-1%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91yaml%E5%8D%95%E4%B8%80%E6%96%87%E4%BB%B6%E7%89%88"><span class="toc-number">1.3.1.</span> <span class="toc-text"> YW-3-1. 多环境开发（yaml 单一文件版）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yw-3-2%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91yaml%E5%A4%9A%E6%96%87%E4%BB%B6%E7%89%88"><span class="toc-number">1.3.2.</span> <span class="toc-text"> YW-3-2. 多环境开发（yaml 多文件版）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yw-3-3%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91properties%E5%A4%9A%E6%96%87%E4%BB%B6%E7%89%88"><span class="toc-number">1.3.3.</span> <span class="toc-text"> YW-3-3. 多环境开发（properties 多文件版）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yw-3-4%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91%E7%8B%AC%E7%AB%8B%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B9%A6%E5%86%99%E6%8A%80%E5%B7%A7"><span class="toc-number">1.3.4.</span> <span class="toc-text"> YW-3-4. 多环境开发独立配置文件书写技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yw-3-5%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.5.</span> <span class="toc-text"> YW-3-5. 多环境开发控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yw-4%E6%97%A5%E5%BF%97"><span class="toc-number">1.4.</span> <span class="toc-text"> YW-4. 日志</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#yw-4-1%E4%BB%A3%E7%A0%81%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%97%A5%E5%BF%97%E5%B7%A5%E5%85%B7%E8%AE%B0%E5%BD%95%E6%97%A5%E5%BF%97"><span class="toc-number">1.4.0.1.</span> <span class="toc-text"> YW-4-1. 代码中使用日志工具记录日志</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%99%E4%BD%A0%E4%B8%80%E6%8B%9B%E4%BC%98%E5%8C%96%E6%97%A5%E5%BF%97%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%A0%81"><span class="toc-number">1.4.0.2.</span> <span class="toc-text"> 教你一招：优化日志对象创建代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#yw-4-2%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6"><span class="toc-number">1.4.0.3.</span> <span class="toc-text"> YW-4-2. 日志输出格式控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#yw-4-3%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6"><span class="toc-number">1.4.0.4.</span> <span class="toc-text"> YW-4-3. 日志文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87%E5%AE%8C%E7%BB%93"><span class="toc-number">1.5.</span> <span class="toc-text"> 运维实用篇完结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%8E%9F%E7%90%86%E7%AF%87/" title="SpringBoot讲义-原理篇"><img src="https://img13.360buyimg.com/ddimg/jfs/t1/201014/9/2100/116055/611b9a15E22fe0582/06f08140ca9867a4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot讲义-原理篇"/></a><div class="content"><a class="title" href="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%8E%9F%E7%90%86%E7%AF%87/" title="SpringBoot讲义-原理篇">SpringBoot讲义-原理篇</a><time datetime="2022-09-02T14:28:45.000Z" title="发表于 2022-09-02 22:28:45">2022-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E7%AF%87/" title="SpringBoot讲义-开发实用篇"><img src="https://img12.360buyimg.com/ddimg/jfs/t1/202544/25/1857/225134/611b9cdcE5d5e564f/582033b23f0396a2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot讲义-开发实用篇"/></a><div class="content"><a class="title" href="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E7%AF%87/" title="SpringBoot讲义-开发实用篇">SpringBoot讲义-开发实用篇</a><time datetime="2022-09-02T14:28:33.000Z" title="发表于 2022-09-02 22:28:33">2022-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/" title="SpringBoot讲义-运维实用篇"><img src="https://img10.360buyimg.com/ddimg/jfs/t1/193230/7/18721/177179/611b9da6Ed923d39f/dba3bc711f204884.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot讲义-运维实用篇"/></a><div class="content"><a class="title" href="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/" title="SpringBoot讲义-运维实用篇">SpringBoot讲义-运维实用篇</a><time datetime="2022-09-02T14:28:22.000Z" title="发表于 2022-09-02 22:28:22">2022-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%9F%BA%E7%A1%80%E7%AF%87/" title="SpringBoot讲义-基础篇"><img src="https://img11.360buyimg.com/ddimg/jfs/t1/192325/24/18145/223455/611b9cdcE8aa8b18e/64c75bf4bdd4a961.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot讲义-基础篇"/></a><div class="content"><a class="title" href="/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%9F%BA%E7%A1%80%E7%AF%87/" title="SpringBoot讲义-基础篇">SpringBoot讲义-基础篇</a><time datetime="2022-09-02T14:28:06.000Z" title="发表于 2022-09-02 22:28:06">2022-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/MySql%E5%9F%BA%E7%A1%80%E7%AF%87/" title="MySql基础篇"><img src="https://img12.360buyimg.com/ddimg/jfs/t1/202544/25/1857/225134/611b9cdcE5d5e564f/582033b23f0396a2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySql基础篇"/></a><div class="content"><a class="title" href="/passages/MySql%E5%9F%BA%E7%A1%80%E7%AF%87/" title="MySql基础篇">MySql基础篇</a><time datetime="2022-08-28T05:49:59.000Z" title="发表于 2022-08-28 13:49:59">2022-08-28</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://img10.360buyimg.com/ddimg/jfs/t1/193230/7/18721/177179/611b9da6Ed923d39f/dba3bc711f204884.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By LXR</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="icp"><a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/"><span>晋ICP备2022002077号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '37e259bf33b2d462f827',
+      clientSecret: '1a2768d8e34462798bcea1deaa6ab0379aacaf0a',
+      repo: 'LAZBLOG-speak',
+      owner: 'LAZ-0825',
+      admin: ['LAZ-0825'],
+      id: 'adde3385a2c325a1c009deadf8296729',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: true,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script data-pjax src="https://butterfly.lete114.top/js/Lete.js"></script><script src="/js/foot.js"></script><script src="/js/timing.js"></script><script src="https://cdn.jsdelivr.net/gh/xiabo2/CDN@latest/fishes.js"></script><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><script defer src="https://cdn.jsdelivr.net/combine/npm/jquery@latest/dist/jquery.min.js,gh/weilining/jsdelivr/jquery/circlemagic/circlemagic.min.js,gh/weilining/jsdelivr@latest/jquery/circlemagic/butterflycirclemagic.js"></script><script src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script src="/js/ip_content.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdnurl.eu.org/2022/01/13/pC5gaOws.png" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>
