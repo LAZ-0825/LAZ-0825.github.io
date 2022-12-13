@@ -5,10 +5,11 @@
     <link href="http://example.com" />
     <updated>2022-08-28T05:49:59.000Z</updated>
     <category term="杂记" />
+    <category term="料理" />
+    <category term="教程" />
     <category term="算法作业" />
     <category term="数据库" />
     <category term="Java" />
-    <category term="教程" />
     <category term="算法基础课" />
     <category term="学习" />
     <category term="SpringBoot" />
@@ -1503,8 +1504,8 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="数据库" />
         <category term="教程" />
+        <category term="数据库" />
         <category term="学习" />
         <updated>2022-08-28T05:49:59.000Z</updated>
     </entry>
