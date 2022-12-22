@@ -3,9 +3,10 @@
     <id>http://example.com</id>
     <title>LXR的小站</title>
     <link href="http://example.com" />
-    <updated>2022-12-13T10:07:46.000Z</updated>
+    <updated>2022-12-22T04:39:10.000Z</updated>
     <category term="杂记" />
     <category term="料理" />
+    <category term="菜谱" />
     <category term="教程" />
     <category term="算法作业" />
     <category term="数据库" />
@@ -13,6 +14,113 @@
     <category term="算法基础课" />
     <category term="学习" />
     <category term="SpringBoot" />
+    <entry>
+        <id>http://example.com/passages/LXR%E3%81%AE%E5%BE%AE%E6%B3%A2%E7%82%89%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/</id>
+        <title>LXRの微波炉入门食谱</title>
+        <link rel="alternate" href="http://example.com/passages/LXR%E3%81%AE%E5%BE%AE%E6%B3%A2%E7%82%89%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/"/>
+        <content type="html">&lt;h1 id=&#34;这里是来自料理菜鸟lxrの微波炉入门食谱~~&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#这里是来自料理菜鸟lxrの微波炉入门食谱~~&#34;&gt;#&lt;/a&gt; 这里是来自料理菜鸟 LXR の微波炉入门食谱～～&lt;/h1&gt;
+&lt;p&gt;自上次出了烤箱入门食谱之后，最近没事就翻腾家里落灰的厨房用品，发现了许久没用的微波炉，心血来潮再开个坑  &lt;s&gt;绝对不是因为馋&lt;/s&gt;  所以搞了一点入门食谱过来给微波炉开开光（√。&lt;/p&gt;
+&lt;p&gt;最后可以拍照回来补档（&lt;s&gt;希望不会咕咕咕&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;菜鸟の菜谱内容如下：&lt;/p&gt;
+&lt;h2 id=&#34;1蒜蓉茄子&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1蒜蓉茄子&#34;&gt;#&lt;/a&gt; 1. 蒜蓉茄子&lt;/h2&gt;
+&lt;p&gt;蒜蓉茄子是烧烤摊上的扛把子，贼拉解馋。我好多次在深夜点烤串外卖，就为了吃烤茄子…… 后来我学会了用微波炉做烤茄子！&lt;/p&gt;
+&lt;h3 id=&#34;原料&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原料&#34;&gt;#&lt;/a&gt; 原料：&lt;/h3&gt;
+&lt;p&gt;茄子；酱油；孜然；十三香；耗油；醋；椒盐粉；蒜蓉酱；小辣椒（可以根据口味增删）&lt;/p&gt;
+&lt;h3 id=&#34;步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤&#34;&gt;#&lt;/a&gt; 步骤：&lt;/h3&gt;
+&lt;p&gt;（1）茄子洗净，放微波炉里中高火叮 6 分钟&lt;/p&gt;
+&lt;p&gt;（2）将适量十三香、耗油、醋、酱油放在碗里混合&lt;/p&gt;
+&lt;p&gt;（3）茄子拿出来，剖开，用刀把茄子肉划几刀，不要划透&lt;/p&gt;
+&lt;p&gt;（4）把前面调的酱汁均匀涂在茄子上，抹上蒜蓉酱，撒上孜然、椒盐粉，喜欢吃辣可以放点辣椒碎。调料不全也没事，可以根据口味调整调料种类和用量。（建议用蒜蓉酱，自己切的蒜末没有那么入味）&lt;/p&gt;
+&lt;p&gt;（5）放微波炉里继续叮 5-6 分钟，中途撒上点葱末。&lt;/p&gt;
+&lt;h2 id=&#34;2微波炉烤红薯&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2微波炉烤红薯&#34;&gt;#&lt;/a&gt; 2. 微波炉烤红薯&lt;/h2&gt;
+&lt;p&gt;我经常在晚上用微波炉烤红薯，吃着没有罪恶感，还顶饿，关键是超级超级容易做&lt;/p&gt;
+&lt;h3 id=&#34;原料-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原料-2&#34;&gt;#&lt;/a&gt; 原料：&lt;/h3&gt;
+&lt;p&gt;红薯；厨房纸；餐巾纸&lt;/p&gt;
+&lt;h3 id=&#34;步骤-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤-2&#34;&gt;#&lt;/a&gt; 步骤：&lt;/h3&gt;
+&lt;p&gt;（1）挑选粗细均匀的中小号红心红薯，不要选白瓤的，没有红心的甜。把红薯洗净，切成两半，如果是比较胖的红薯可以竖着对半剖开。切开红薯熟得更快，也可以防止加热爆炸。（如果不喜欢剥皮可以在这步把皮削掉）&lt;/p&gt;
+&lt;p&gt;（2）红薯外面包上一层厨房纸或餐巾纸（纸薄可以包两层），把纸用水淋湿，防止红薯烤得太干。&lt;/p&gt;
+&lt;p&gt;（3）放微波炉里加热，根据大小不同用中高火烤 6-10 分钟，捏一下软了就可以拿出来吃了。&lt;/p&gt;
+&lt;h2 id=&#34;3煎蛋可做无油版&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3煎蛋可做无油版&#34;&gt;#&lt;/a&gt; 3. 煎蛋（可做无油版）&lt;/h2&gt;
+&lt;p&gt;用锅煎蛋太大材小用了，还得刷锅，还是微波炉最省事！&lt;/p&gt;
+&lt;h3 id=&#34;原料-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原料-3&#34;&gt;#&lt;/a&gt; 原料：&lt;/h3&gt;
+&lt;p&gt;鸡蛋；酱油或其他喜欢的调味料&lt;/p&gt;
+&lt;h3 id=&#34;步骤-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤-3&#34;&gt;#&lt;/a&gt; 步骤：&lt;/h3&gt;
+&lt;p&gt;（1）拿个可以进微波炉的盘子，里面倒点油，把油弄均匀一点。如果想做无油版可以不放油，更健康。&lt;/p&gt;
+&lt;p&gt;（2）把鸡蛋打进去，在蛋黄上戳几个洞，防止爆炸。（一定要扎洞！！！）&lt;/p&gt;
+&lt;p&gt;（3）盖上保鲜膜，保鲜膜扎几个洞，或者用盘子加个盖子。（此步可省略）&lt;/p&gt;
+&lt;p&gt;（4）放进微波炉中火加热 30-50 秒，看你喜欢吃几分熟的蛋了，我自己比较喜欢吃溏心的。不确定自己家微波炉的 “性格” 可以先叮 30 秒，熟度不够再继续叮一会。切记不要叮太久，口感会很差的。&lt;/p&gt;
+&lt;p&gt;（5）根据口味撒上点酱油、香油、盐之类的调味料，健康快手的煎蛋就做好啦。&lt;/p&gt;
+&lt;h2 id=&#34;4三分钟鸡蛋三明治&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4三分钟鸡蛋三明治&#34;&gt;#&lt;/a&gt; 4. 三分钟鸡蛋三明治&lt;/h2&gt;
+&lt;p&gt;早上花不到 10 分钟就能做好一个三明治，如果前一天晚上把料备好，早上 3 分钟就能做好，非常省事。&lt;/p&gt;
+&lt;h3 id=&#34;原料-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原料-4&#34;&gt;#&lt;/a&gt; 原料：&lt;/h3&gt;
+&lt;p&gt;面包片；鸡蛋；生菜；火腿&lt;/p&gt;
+&lt;h3 id=&#34;步骤-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤-4&#34;&gt;#&lt;/a&gt; 步骤：&lt;/h3&gt;
+&lt;p&gt;（1）鸡蛋打散均匀涂在一片面包片上，上面铺上生菜、火腿或其他喜欢的配料，另拿一片面包片盖上。可以根据自己的喜好做多层豪华版，加入芝士、培根、西红柿片也很好吃。&lt;/p&gt;
+&lt;p&gt;（2）入微波炉中高火烤 3-5 分钟，中间翻一次面。&lt;/p&gt;
+&lt;h2 id=&#34;5微波炉金针菇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5微波炉金针菇&#34;&gt;#&lt;/a&gt; 5. 微波炉金针菇&lt;/h2&gt;
+&lt;p&gt;金针菇细细的很容易熟，烤肉的时候放边上稍微加热一会就爽口又鲜美，用微波炉做那就是轻松加愉快。我给这道菜取了个别名叫微波 see you tomorrow，有人懂我的梗吗。&lt;/p&gt;
+&lt;h3 id=&#34;原料-5&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原料-5&#34;&gt;#&lt;/a&gt; 原料：&lt;/h3&gt;
+&lt;p&gt;金针菇；盐；酱油；孜然粉；辣椒粉；香油&lt;/p&gt;
+&lt;h3 id=&#34;步骤-5&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤-5&#34;&gt;#&lt;/a&gt; 步骤：&lt;/h3&gt;
+&lt;p&gt;（1）金针菇去根、洗净、装盘&lt;/p&gt;
+&lt;p&gt;（2）把调料均匀洒在金针菇上，调料可以根据口味增删，加一点蒜泥也蛮好吃的。&lt;/p&gt;
+&lt;p&gt;（3）入微波炉中高火叮 2-3 分钟，别叮太久，金针菇很容易熟的，软了闻着有香味就是好了，拿出来搅拌均匀，凉一凉就能吃了。喜欢葱可以加一点葱花，又香又爽口。&lt;/p&gt;
+&lt;h2 id=&#34;6奥尔良烤翅&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6奥尔良烤翅&#34;&gt;#&lt;/a&gt; 6. 奥尔良烤翅&lt;/h2&gt;
+&lt;p&gt;看成品绝对想不到竟然那么容易做，味道超级好～&lt;/p&gt;
+&lt;h3 id=&#34;原料-6&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原料-6&#34;&gt;#&lt;/a&gt; 原料：&lt;/h3&gt;
+&lt;p&gt;鸡翅；奥尔良腌料；蜂蜜（可不用）&lt;/p&gt;
+&lt;h3 id=&#34;步骤-6&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤-6&#34;&gt;#&lt;/a&gt; 步骤：&lt;/h3&gt;
+&lt;p&gt;（1）鸡翅洗净划口，放在盘子里滤水备用&lt;/p&gt;
+&lt;p&gt;（2）超市买来的奥尔良腌料和水 1:1 调配，将鸡翅放在调料汁里，把每一个鸡翅都均匀裹上调料汁&lt;/p&gt;
+&lt;p&gt;（3）放入冰箱冷藏几个小时腌入味&lt;/p&gt;
+&lt;p&gt;（4）把鸡翅均匀刷上蜂蜜（可省略此步骤）&lt;/p&gt;
+&lt;p&gt;（5）微波炉中高火叮 10 分钟（鸡翅量少要缩短时间），不熟继续叮 2 分钟，如果鸡翅量比较多可能需要更多时间，每次加 2 分钟直到熟透为止，中间可以翻面。&lt;/p&gt;
+&lt;h2 id=&#34;7微波炉红片&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7微波炉红片&#34;&gt;#&lt;/a&gt; 7. 微波炉红片&lt;/h2&gt;
+&lt;p&gt;高中的时候学校门口有卖红薯片的，酥酥甜甜非常好吃。其实有微波炉可以自己做，闲着没事可以磨磨牙。&lt;/p&gt;
+&lt;h3 id=&#34;原料-7&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原料-7&#34;&gt;#&lt;/a&gt; 原料：&lt;/h3&gt;
+&lt;p&gt;红薯；油&lt;/p&gt;
+&lt;h3 id=&#34;步骤-7&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤-7&#34;&gt;#&lt;/a&gt; 步骤：&lt;/h3&gt;
+&lt;p&gt;（1）红薯去皮擦成薄片，不建议用刀切，除非刀工了得，能切得很薄。我的刀工超级差，比较喜欢借助工具。&lt;/p&gt;
+&lt;p&gt;（2）红薯片用凉水过一下，沥干水分备用&lt;/p&gt;
+&lt;p&gt;（3）平盘涂薄薄一层油（可不涂），红薯片铺在平盘里，每一片不能重叠也不要挨着，会黏在一起&lt;/p&gt;
+&lt;p&gt;（4）微波炉高火叮 1 分钟，翻面再叮 1 分钟，不干重复以上步骤。有些微波炉 3 分钟就能叮好，有些要叮很久才能彻底干。千万不要贪心，每次加 1 分钟或半分钟就好，小心别叮糊了。&lt;/p&gt;
+&lt;h2 id=&#34;8微波炉烤豆腐&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8微波炉烤豆腐&#34;&gt;#&lt;/a&gt; 8. 微波炉烤豆腐&lt;/h2&gt;
+&lt;p&gt;江月路地铁站附近有个卖煎豆腐和狼牙土豆的三轮车，后来没有了，不知道是不是被清走了…… 我想吃煎豆腐啊！但是我家那锅煎豆腐粘锅，嫩豆腐还容易碎。后来发现微波炉烤出来的味道差不多，还更好操作。&lt;/p&gt;
+&lt;h3 id=&#34;原料-8&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原料-8&#34;&gt;#&lt;/a&gt; 原料：&lt;/h3&gt;
+&lt;p&gt;豆腐；耗油；甜面酱；孜然；辣椒粉；葱；香菜；芝麻&lt;/p&gt;
+&lt;h3 id=&#34;步骤-8&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤-8&#34;&gt;#&lt;/a&gt; 步骤：&lt;/h3&gt;
+&lt;p&gt;（1）豆腐洗净切片，把表面水分晾干或用厨房纸吸干&lt;/p&gt;
+&lt;p&gt;（2）平盘（能入微波炉的盘子）刷油或铺一张油纸，豆腐平铺在盘子里&lt;/p&gt;
+&lt;p&gt;（3）适量耗油、甜面酱、孜然、辣椒粉混合，均匀涂在豆腐上&lt;/p&gt;
+&lt;p&gt;（4）微波炉高火 5 分钟，豆腐翻面刷酱继续叮 5 分钟，根据自家微波炉特性可适当增加时间&lt;/p&gt;
+&lt;p&gt;（5）出炉撒芝麻、葱花、香菜&lt;/p&gt;
+&lt;h2 id=&#34;9微波炉牛轧糖&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#9微波炉牛轧糖&#34;&gt;#&lt;/a&gt; 9. 微波炉牛轧糖&lt;/h2&gt;
+&lt;p&gt;很多人知道可以用棉花糖做牛轧糖，其实用微波炉就可以做，超级简单。&lt;/p&gt;
+&lt;h3 id=&#34;原料-9&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原料-9&#34;&gt;#&lt;/a&gt; 原料：&lt;/h3&gt;
+&lt;p&gt;棉花糖；奶粉；花生仁（杏仁）&lt;/p&gt;
+&lt;p&gt;棉花糖、奶粉、花生仁比例是 2:1:1&lt;/p&gt;
+&lt;h3 id=&#34;步骤-9&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤-9&#34;&gt;#&lt;/a&gt; 步骤：&lt;/h3&gt;
+&lt;p&gt;（1）花生仁打碎，可以放在袋子里碾碎&lt;/p&gt;
+&lt;p&gt;（2）棉花糖放在大一点的容器里，高火叮 1 分钟&lt;/p&gt;
+&lt;p&gt;（3）把融化的棉花糖拿出来，加入奶粉和花生碎疯狂快速搅拌，如果凝固了搅不动就再叮一下下&lt;/p&gt;
+&lt;p&gt;（4）借助保鲜膜把搅拌好的一坨放在平盘里压平，晾凉放进冰箱冷藏凝固&lt;/p&gt;
+&lt;p&gt;（5）取出用刀切块，可以买糖纸包装一下&lt;/p&gt;
+&lt;h2 id=&#34;10红糖苹果&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#10红糖苹果&#34;&gt;#&lt;/a&gt; 10. 红糖苹果&lt;/h2&gt;
+&lt;p&gt;煮熟的苹果软软的很好吃，我之前经常用苹果块、红枣、冰糖一起炖，暖暖甜甜的吃着很满足。微波炉叮苹果也是很好吃的，可以加一点红糖，很适合女孩经期吃，暖暖的吃下去有个心理安慰。&lt;/p&gt;
+&lt;h3 id=&#34;原料-10&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原料-10&#34;&gt;#&lt;/a&gt; 原料：&lt;/h3&gt;
+&lt;p&gt;苹果、红糖、红枣（可不放）&lt;/p&gt;
+&lt;h3 id=&#34;步骤-10&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#步骤-10&#34;&gt;#&lt;/a&gt; 步骤：&lt;/h3&gt;
+&lt;p&gt;（1）选一个小一点的苹果洗净，用刀在中间去核挖个洞，如果嫌麻烦可以直接切块&lt;/p&gt;
+&lt;p&gt;（2）把苹果放碗里，在洞里放一点红糖，别放多了，太甜就不好吃了。有红枣可以把一颗红枣切成两半去核放进去，味道也很好。&lt;/p&gt;
+&lt;p&gt;（3）微波炉高火叮 2 分钟，拿出来把苹果翻个个继续叮 2 分钟，如果不够软可以稍微增加点时间&lt;/p&gt;
+&lt;p&gt;上面就是今天的 10 个微波炉菜谱啦，其实用微波炉做蛋羹也很方便，不过有一次我在做的时候蛋飞得到处都是，微波炉变成事故现场，蛋羹变成了蜂窝炸弹，后来我就不敢再尝试了…… 还是乖乖用水蒸……&lt;/p&gt;
+&lt;p&gt;下次再找到什么有意思的东西再继续写菜谱系列叭～&lt;/p&gt;
+</content>
+        <category term="料理" />
+        <category term="菜谱" />
+        <category term="教程" />
+        <updated>2022-12-22T04:39:10.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/passages/LXR%E3%81%AE%E7%83%A4%E7%AE%B1%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/</id>
         <title>LXRの烤箱入门食谱</title>
@@ -147,6 +255,7 @@
 &lt;p&gt;END&lt;/p&gt;
 </content>
         <category term="料理" />
+        <category term="菜谱" />
         <category term="教程" />
         <updated>2022-12-13T10:07:46.000Z</updated>
     </entry>

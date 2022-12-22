@@ -1,31 +1,24 @@
 <?xml version="1.0"?>
-<rss version="2.0">
-    <channel>
-        <title>LXR的小站 • Posts by &#34;料理&#34; tag</title>
-        <link>http://example.com</link>
-        <description></description>
-        <language>zh-CN</language>
-        <pubDate>Thu, 22 Dec 2022 12:39:10 +0800</pubDate>
-        <lastBuildDate>Thu, 22 Dec 2022 12:39:10 +0800</lastBuildDate>
-        <category>杂记</category>
-        <category>料理</category>
-        <category>菜谱</category>
-        <category>教程</category>
-        <category>算法作业</category>
-        <category>数据库</category>
-        <category>Java</category>
-        <category>算法基础课</category>
-        <category>学习</category>
-        <category>SpringBoot</category>
-        <item>
-            <guid isPermalink="true">http://example.com/passages/LXR%E3%81%AE%E5%BE%AE%E6%B3%A2%E7%82%89%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/</guid>
-            <title>LXRの微波炉入门食谱</title>
-            <link>http://example.com/passages/LXR%E3%81%AE%E5%BE%AE%E6%B3%A2%E7%82%89%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/</link>
-            <category>料理</category>
-            <category>菜谱</category>
-            <category>教程</category>
-            <pubDate>Thu, 22 Dec 2022 12:39:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;这里是来自料理菜鸟lxrの微波炉入门食谱~~&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#这里是来自料理菜鸟lxrの微波炉入门食谱~~&#34;&gt;#&lt;/a&gt; 这里是来自料理菜鸟 LXR の微波炉入门食谱～～&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>LXR的小站 • Posts by &#34;菜谱&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2022-12-22T04:39:10.000Z</updated>
+    <category term="杂记" />
+    <category term="料理" />
+    <category term="菜谱" />
+    <category term="教程" />
+    <category term="算法作业" />
+    <category term="数据库" />
+    <category term="Java" />
+    <category term="算法基础课" />
+    <category term="学习" />
+    <category term="SpringBoot" />
+    <entry>
+        <id>http://example.com/passages/LXR%E3%81%AE%E5%BE%AE%E6%B3%A2%E7%82%89%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/</id>
+        <title>LXRの微波炉入门食谱</title>
+        <link rel="alternate" href="http://example.com/passages/LXR%E3%81%AE%E5%BE%AE%E6%B3%A2%E7%82%89%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/"/>
+        <content type="html">&lt;h1 id=&#34;这里是来自料理菜鸟lxrの微波炉入门食谱~~&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#这里是来自料理菜鸟lxrの微波炉入门食谱~~&#34;&gt;#&lt;/a&gt; 这里是来自料理菜鸟 LXR の微波炉入门食谱～～&lt;/h1&gt;
 &lt;p&gt;自上次出了烤箱入门食谱之后，最近没事就翻腾家里落灰的厨房用品，发现了许久没用的微波炉，心血来潮再开个坑  &lt;s&gt;绝对不是因为馋&lt;/s&gt;  所以搞了一点入门食谱过来给微波炉开开光（√。&lt;/p&gt;
 &lt;p&gt;最后可以拍照回来补档（&lt;s&gt;希望不会咕咕咕&lt;/s&gt;&lt;/p&gt;
 &lt;p&gt;菜鸟の菜谱内容如下：&lt;/p&gt;
@@ -122,17 +115,17 @@
 &lt;p&gt;（3）微波炉高火叮 2 分钟，拿出来把苹果翻个个继续叮 2 分钟，如果不够软可以稍微增加点时间&lt;/p&gt;
 &lt;p&gt;上面就是今天的 10 个微波炉菜谱啦，其实用微波炉做蛋羹也很方便，不过有一次我在做的时候蛋飞得到处都是，微波炉变成事故现场，蛋羹变成了蜂窝炸弹，后来我就不敢再尝试了…… 还是乖乖用水蒸……&lt;/p&gt;
 &lt;p&gt;下次再找到什么有意思的东西再继续写菜谱系列叭～&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/passages/LXR%E3%81%AE%E7%83%A4%E7%AE%B1%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/</guid>
-            <title>LXRの烤箱入门食谱</title>
-            <link>http://example.com/passages/LXR%E3%81%AE%E7%83%A4%E7%AE%B1%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/</link>
-            <category>料理</category>
-            <category>菜谱</category>
-            <category>教程</category>
-            <pubDate>Tue, 13 Dec 2022 18:07:46 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;这里来自料理菜鸟lxrの烤箱入门食谱~~&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#这里来自料理菜鸟lxrの烤箱入门食谱~~&#34;&gt;#&lt;/a&gt; 这里来自料理菜鸟 LXR の烤箱入门食谱～～&lt;/h1&gt;
+</content>
+        <category term="料理" />
+        <category term="菜谱" />
+        <category term="教程" />
+        <updated>2022-12-22T04:39:10.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/passages/LXR%E3%81%AE%E7%83%A4%E7%AE%B1%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/</id>
+        <title>LXRの烤箱入门食谱</title>
+        <link rel="alternate" href="http://example.com/passages/LXR%E3%81%AE%E7%83%A4%E7%AE%B1%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/"/>
+        <content type="html">&lt;h1 id=&#34;这里来自料理菜鸟lxrの烤箱入门食谱~~&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#这里来自料理菜鸟lxrの烤箱入门食谱~~&#34;&gt;#&lt;/a&gt; 这里来自料理菜鸟 LXR の烤箱入门食谱～～&lt;/h1&gt;
 &lt;p&gt;翻到了家里落灰的烤箱  &lt;s&gt;因为馋&lt;/s&gt;  所以搞了这样一份入门食谱，想把烤箱重新启用。&lt;/p&gt;
 &lt;p&gt;之后做料理的时候可能会保留一些照片回来补档（&lt;s&gt;如果还记得的话&lt;/s&gt;&lt;/p&gt;
 &lt;p&gt;菜鸟の菜谱内容如下：&lt;/p&gt;
@@ -260,7 +253,10 @@
 &lt;p&gt;&lt;strong&gt;3、烤箱长时间工作时不要长时间守在烤箱前面。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;4、如果烤箱的玻璃门发现有裂痕之类的请立刻停止使用。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;END&lt;/p&gt;
- ]]></description>
-        </item>
-    </channel>
-</rss>
+</content>
+        <category term="料理" />
+        <category term="菜谱" />
+        <category term="教程" />
+        <updated>2022-12-13T10:07:46.000Z</updated>
+    </entry>
+</feed>
