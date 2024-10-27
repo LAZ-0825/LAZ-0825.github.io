@@ -5,15 +5,15 @@
     <link href="http://example.com" />
     <updated>2022-12-22T04:39:10.000Z</updated>
     <category term="杂记" />
-    <category term="料理" />
-    <category term="菜谱" />
+    <category term="学习" />
     <category term="教程" />
     <category term="算法作业" />
+    <category term="料理" />
+    <category term="菜谱" />
     <category term="数据库" />
+    <category term="SpringBoot" />
     <category term="Java" />
     <category term="算法基础课" />
-    <category term="学习" />
-    <category term="SpringBoot" />
     <entry>
         <id>http://example.com/passages/LXR%E3%81%AE%E5%BE%AE%E6%B3%A2%E7%82%89%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/</id>
         <title>LXRの微波炉入门食谱</title>
@@ -116,9 +116,9 @@
 &lt;p&gt;上面就是今天的 10 个微波炉菜谱啦，其实用微波炉做蛋羹也很方便，不过有一次我在做的时候蛋飞得到处都是，微波炉变成事故现场，蛋羹变成了蜂窝炸弹，后来我就不敢再尝试了…… 还是乖乖用水蒸……&lt;/p&gt;
 &lt;p&gt;下次再找到什么有意思的东西再继续写菜谱系列叭～&lt;/p&gt;
 </content>
+        <category term="教程" />
         <category term="料理" />
         <category term="菜谱" />
-        <category term="教程" />
         <updated>2022-12-22T04:39:10.000Z</updated>
     </entry>
     <entry>
@@ -254,9 +254,9 @@
 &lt;p&gt;&lt;strong&gt;4、如果烤箱的玻璃门发现有裂痕之类的请立刻停止使用。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;END&lt;/p&gt;
 </content>
+        <category term="教程" />
         <category term="料理" />
         <category term="菜谱" />
-        <category term="教程" />
         <updated>2022-12-13T10:07:46.000Z</updated>
     </entry>
     <entry>
@@ -650,9 +650,10 @@
 &lt;p&gt;​		课程做到这里就要和各位小伙伴先 say 顾拜了，感谢各位小伙伴的支持，也欢迎各位小伙伴持续关注黑马程序员出品的各种视频教程。黑马程序员的每位老师做课程都是认真的，都是为了各位致力于 IT 研发事业的小伙伴能够学习之路上少遇沟沟坎坎，顺利到达成功的彼岸。&lt;/p&gt;
 &lt;p&gt;​		番外篇，さようなら！ 안녕히 계십시오！แล้วเจอกัน！До свидания ！خداحافظ ！&lt;/p&gt;
 </content>
-        <category term="教程" />
         <category term="学习" />
+        <category term="教程" />
         <category term="SpringBoot" />
+        <category term="Java" />
         <updated>2022-09-02T14:28:45.000Z</updated>
     </entry>
     <entry>
@@ -2454,9 +2455,10 @@
 &lt;p&gt;​		开发实用篇做到这里就告一段落，下面就要着手准备原理篇了。市面上很多课程原理篇讲的过于高深莫测，在新手还没明白 123 的时候就开始讲微积分了，着实让人看了着急。至于原理篇我讲成什么样子？一起期待吧。&lt;/p&gt;
 &lt;h1 id&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h1&gt;
 </content>
-        <category term="教程" />
         <category term="学习" />
+        <category term="教程" />
         <category term="SpringBoot" />
+        <category term="Java" />
         <updated>2022-09-02T14:28:33.000Z</updated>
     </entry>
     <entry>
@@ -2844,9 +2846,10 @@
 &lt;p&gt;​		在整体运维实用篇中带着大家学习了 4 块内容，首先学习了如何运行 SpringBoot 程序，也就是程序的打包与运行，接下来对配置进行了升级学习，不再局限在配置文件中进行设置，通过临时属性，外部配置文件对项目的配置进行管控。在多环境开发中给大家介绍了多种多环境开发的格式，其实掌握一种即可，此外还给大家讲了多环境开发的一些技巧以及与 maven 的冲突解决方案。最后给大家介绍了日志系统，老实说日志这里讲的相当的潦草，因为大部分日志相关的知识都不应该在这门课中学习，这里只是告诉大家如何整合实用而已。&lt;/p&gt;
 &lt;p&gt;​		看了各位小伙伴的评论，知道你们再催更，我也在加油，一起努力吧，实用开发篇再会。实用开发篇会提高更新频度，不全部做完给大家更新了，我先把做好的一部分开放出来，随后做完一点就更新一点，额，好吧，就说到这里吧。&lt;/p&gt;
 </content>
-        <category term="教程" />
         <category term="学习" />
+        <category term="教程" />
         <category term="SpringBoot" />
+        <category term="Java" />
         <updated>2022-09-02T14:28:22.000Z</updated>
     </entry>
     <entry>
@@ -4352,9 +4355,10 @@
 &lt;h2 id=&#34;基础篇完结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基础篇完结&#34;&gt;#&lt;/a&gt; 基础篇完结&lt;/h2&gt;
 &lt;p&gt;​		基础篇到这里就全部结束了，在基础篇中带着大家学习了如何创建一个 SpringBoot 工程，然后学习了 SpringBoot 的基础配置语法格式，接下来对常见的市面上的实用技术做了整合，最后通过一个小的案例对前面学习的内容做了一个综合应用。整体来说就是一个最基本的入门，关于 SpringBoot 的实际开发其实接触的还是很少的，我们到实用篇和原理篇中继续吧，各位小伙伴，加油学习，再见。&lt;/p&gt;
 </content>
-        <category term="教程" />
         <category term="学习" />
+        <category term="教程" />
         <category term="SpringBoot" />
+        <category term="Java" />
         <updated>2022-09-02T14:28:06.000Z</updated>
     </entry>
     <entry>
@@ -5848,9 +5852,9 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 </content>
+        <category term="学习" />
         <category term="教程" />
         <category term="数据库" />
-        <category term="学习" />
         <updated>2022-08-28T05:49:59.000Z</updated>
     </entry>
     <entry>
@@ -6644,8 +6648,8 @@
 &lt;p&gt;感谢尚硅谷杨博超老师：&lt;a href=&#34;https://www.bilibili.com/video/BV12R4y157Be?p=1&#34;&gt;https://www.bilibili.com/video/BV12R4y157Be?p=1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;感谢 MyBatis-Plus 作者苞米豆：&lt;a href=&#34;https://baomidou.com/&#34;&gt;https://baomidou.com/&lt;/a&gt;&lt;/p&gt;
 </content>
-        <category term="教程" />
         <category term="学习" />
+        <category term="教程" />
         <updated>2022-08-28T05:38:50.000Z</updated>
     </entry>
     <entry>
@@ -7501,8 +7505,8 @@ properties、settings、typeAliases、typeHandlers、objectFactory、objectWrapp
 &lt;li&gt;navigatepageNums：导航分页的页码，[1,2,3,4,5]&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="教程" />
         <category term="学习" />
+        <category term="教程" />
         <updated>2022-08-15T14:26:13.000Z</updated>
     </entry>
     <entry>
@@ -8772,8 +8776,8 @@ check (m) 是检查 m 是在&lt;strong&gt;满足性质的区间&lt;/strong&gt;�
 &lt;p&gt;&lt;img src=&#34;https://s3.bmp.ovh/imgs/2021/10/9c1b67676cb5017d.png&#34; alt&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;del_list&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(struct node *p_head,&lt;span class=&#34;keyword&#34;&gt;int&lt;/span&gt; pos)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	strct node *p_front,*p_del;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	p_front = p_head;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;i &amp;lt;= pos - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;i ++)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	p_front = p_front-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    p_del = p_front-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	p_front-&amp;gt;next = p_del-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;built_in&#34;&gt;free&lt;/span&gt;(p_del);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
-        <category term="教程" />
         <category term="学习" />
+        <category term="教程" />
         <updated>2021-10-09T04:31:29.000Z</updated>
     </entry>
     <entry>

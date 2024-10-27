@@ -5,15 +5,15 @@
     <link href="http://example.com" />
     <updated>2022-09-02T14:28:45.000Z</updated>
     <category term="杂记" />
-    <category term="料理" />
-    <category term="菜谱" />
+    <category term="学习" />
     <category term="教程" />
     <category term="算法作业" />
+    <category term="料理" />
+    <category term="菜谱" />
     <category term="数据库" />
+    <category term="SpringBoot" />
     <category term="Java" />
     <category term="算法基础课" />
-    <category term="学习" />
-    <category term="SpringBoot" />
     <entry>
         <id>http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%8E%9F%E7%90%86%E7%AF%87/</id>
         <title>SpringBoot讲义-原理篇</title>
@@ -405,9 +405,10 @@
 &lt;p&gt;​		课程做到这里就要和各位小伙伴先 say 顾拜了，感谢各位小伙伴的支持，也欢迎各位小伙伴持续关注黑马程序员出品的各种视频教程。黑马程序员的每位老师做课程都是认真的，都是为了各位致力于 IT 研发事业的小伙伴能够学习之路上少遇沟沟坎坎，顺利到达成功的彼岸。&lt;/p&gt;
 &lt;p&gt;​		番外篇，さようなら！ 안녕히 계십시오！แล้วเจอกัน！До свидания ！خداحافظ ！&lt;/p&gt;
 </content>
-        <category term="教程" />
         <category term="学习" />
+        <category term="教程" />
         <category term="SpringBoot" />
+        <category term="Java" />
         <updated>2022-09-02T14:28:45.000Z</updated>
     </entry>
     <entry>
@@ -2209,9 +2210,10 @@
 &lt;p&gt;​		开发实用篇做到这里就告一段落，下面就要着手准备原理篇了。市面上很多课程原理篇讲的过于高深莫测，在新手还没明白 123 的时候就开始讲微积分了，着实让人看了着急。至于原理篇我讲成什么样子？一起期待吧。&lt;/p&gt;
 &lt;h1 id&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h1&gt;
 </content>
-        <category term="教程" />
         <category term="学习" />
+        <category term="教程" />
         <category term="SpringBoot" />
+        <category term="Java" />
         <updated>2022-09-02T14:28:33.000Z</updated>
     </entry>
     <entry>
@@ -2599,9 +2601,10 @@
 &lt;p&gt;​		在整体运维实用篇中带着大家学习了 4 块内容，首先学习了如何运行 SpringBoot 程序，也就是程序的打包与运行，接下来对配置进行了升级学习，不再局限在配置文件中进行设置，通过临时属性，外部配置文件对项目的配置进行管控。在多环境开发中给大家介绍了多种多环境开发的格式，其实掌握一种即可，此外还给大家讲了多环境开发的一些技巧以及与 maven 的冲突解决方案。最后给大家介绍了日志系统，老实说日志这里讲的相当的潦草，因为大部分日志相关的知识都不应该在这门课中学习，这里只是告诉大家如何整合实用而已。&lt;/p&gt;
 &lt;p&gt;​		看了各位小伙伴的评论，知道你们再催更，我也在加油，一起努力吧，实用开发篇再会。实用开发篇会提高更新频度，不全部做完给大家更新了，我先把做好的一部分开放出来，随后做完一点就更新一点，额，好吧，就说到这里吧。&lt;/p&gt;
 </content>
-        <category term="教程" />
         <category term="学习" />
+        <category term="教程" />
         <category term="SpringBoot" />
+        <category term="Java" />
         <updated>2022-09-02T14:28:22.000Z</updated>
     </entry>
     <entry>
@@ -4107,9 +4110,10 @@
 &lt;h2 id=&#34;基础篇完结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基础篇完结&#34;&gt;#&lt;/a&gt; 基础篇完结&lt;/h2&gt;
 &lt;p&gt;​		基础篇到这里就全部结束了，在基础篇中带着大家学习了如何创建一个 SpringBoot 工程，然后学习了 SpringBoot 的基础配置语法格式，接下来对常见的市面上的实用技术做了整合，最后通过一个小的案例对前面学习的内容做了一个综合应用。整体来说就是一个最基本的入门，关于 SpringBoot 的实际开发其实接触的还是很少的，我们到实用篇和原理篇中继续吧，各位小伙伴，加油学习，再见。&lt;/p&gt;
 </content>
-        <category term="教程" />
         <category term="学习" />
+        <category term="教程" />
         <category term="SpringBoot" />
+        <category term="Java" />
         <updated>2022-09-02T14:28:06.000Z</updated>
     </entry>
 </feed>
