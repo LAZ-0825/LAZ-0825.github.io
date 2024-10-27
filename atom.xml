@@ -3,10 +3,10 @@
     <id>http://example.com</id>
     <title>LXR的小站</title>
     <link href="http://example.com" />
-    <updated>2022-12-22T04:39:10.000Z</updated>
-    <category term="杂记" />
+    <updated>2024-10-27T05:40:14.000Z</updated>
     <category term="学习" />
     <category term="教程" />
+    <category term="杂记" />
     <category term="算法作业" />
     <category term="料理" />
     <category term="菜谱" />
@@ -14,6 +14,13 @@
     <category term="SpringBoot" />
     <category term="Java" />
     <category term="算法基础课" />
+    <entry>
+        <id>http://example.com/passages/newPage/</id>
+        <title>newPage</title>
+        <link rel="alternate" href="http://example.com/passages/newPage/"/>
+        <content type="html"></content>
+        <updated>2024-10-27T05:40:14.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/passages/LXR%E3%81%AE%E5%BE%AE%E6%B3%A2%E7%82%89%E5%85%A5%E9%97%A8%E9%A3%9F%E8%B0%B1/</id>
         <title>LXRの微波炉入门食谱</title>
@@ -8866,8 +8873,8 @@ check (m) 是检查 m 是在&lt;strong&gt;满足性质的区间&lt;/strong&gt;�
 &lt;p&gt;​        最后附上 Windows powerShell 的下载界面。&lt;br&gt;
 &lt;img src=&#34;https://s3.bmp.ovh/imgs/2021/09/5f81eae2d969af1a.png&#34; alt&gt;&lt;/p&gt;
 </content>
-        <category term="杂记" />
         <category term="教程" />
+        <category term="杂记" />
         <updated>2021-09-09T09:14:33.000Z</updated>
     </entry>
     <entry>
