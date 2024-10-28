@@ -4,10 +4,10 @@
     <title>LXR的小站 • Posts by &#34;教程&#34; tag</title>
     <link href="http://laz0825.cn" />
     <updated>2022-12-22T04:39:10.000Z</updated>
+    <category term="杂记" />
     <category term="学习" />
     <category term="教程" />
     <category term="算法作业" />
-    <category term="杂记" />
     <category term="料理" />
     <category term="菜谱" />
     <category term="数据库" />
@@ -266,6 +266,7 @@
         <content type="html">&lt;h1 id=&#34;springboot原理篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot原理篇&#34;&gt;#&lt;/a&gt; SpringBoot 原理篇&lt;/h1&gt;
 &lt;h3 id=&#34;前言白嫖发言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言白嫖发言&#34;&gt;#&lt;/a&gt; 前言（白嫖发言）&lt;/h3&gt;
 &lt;p&gt;​		这个笔记是从黑马老师那里嫖来的，放在这里是为了方便查看，没有商用的意思，转载请标明&lt;strong&gt;黑马程序员&lt;/strong&gt;以及链接。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV15b4y1a7yG&#34;&gt;黑马程序员 SpringBoot2 全套视频教程，springboot 零基础到项目实战&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;​		原理篇来辣！&lt;/p&gt;
 &lt;p&gt;​		其实从本人的角度出发，看了这么多学习 java 的小伙伴的学习过程，个人观点，不建议小伙伴过早的去研究技术的原理。原因有二：一，&lt;strong&gt;先应用熟练&lt;/strong&gt;，&lt;strong&gt;培养技术应用的条件反射&lt;/strong&gt;，然后再学原理。大把的学习者天天还纠结于这里少写一个这，那里少写一个那，程序都跑不下去，要啥原理，要啥自行车。这里要说一句啊，懂不懂啥意思那不叫原理，原理是抽象到顶层设计层面的东西。知道为什么写这句话，知道错误的原因和懂原理是两码事。二， &lt;strong&gt;原理真不是看源码&lt;/strong&gt;，源码只能称作原理的落地实现方式，当好的落地实现方式出现后，就会有新旧版本的迭代，底层实现方式也会伴随着更新升级。但是原理不变，只是找到了更好的实现最初目标的路径。一个好的课程，一位好的老师，不会用若干行云里雾里的源代码把学习者带到沟里，然后爬不出来，深陷泥潭。一边沮丧的看着源码，一边舔着老师奉其为大神，这就叫不干人事。原理就应该使用最通俗易懂的语言，把设计思想讲出来，至于看源码，只是因为目前的技术原创人员只想到了当前这种最笨的设计方案，还没有更好的。比如 spirng 程序，写起来很费劲，springboot 出来以后就简单轻松了很多，实现方案变了，原理不变。但凡你想通过下面的课程学习去读懂若干行代码，然后特别装逼的告诉自己，我懂原理了。我只能告诉你，你选了一条成本最高的路线，看源码仅仅是验证原理，源码仅对应程序流程，不对应原理。原理是思想级的，不是代码级的，原理是原本的道理。&lt;/p&gt;
 &lt;p&gt;​		springboot 技术本身就是为了加速 spring 程序的开发的，可以大胆的说，springboot 技术没有自己的原理层面的设计，仅仅是实现方案进行了改进。将 springboot 定位成工具，你就不会去想方设法的学习其原理了。就像是将木头分割成若干份，我们可以用斧子，用锯子，用刀，用火烧或者一脚踹断它，这些都是方式方法，而究其本质底层原理是植物纤维的组织方式，研究完这个，你再看前述的各种工具，都是基于这个原理在说如何变更破坏这种植物纤维的方式。所以不要一张嘴说了若干种技术，然后告诉自己，这就是 spirngboot 的原理。没有的事，springboot 作为一款工具，压根就没有原理。我们下面要学习的其实就是 spirngboot 程序的工作流程。&lt;/p&gt;
@@ -664,6 +665,7 @@
         <content type="html">&lt;h1 id=&#34;springboot开发实用篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot开发实用篇&#34;&gt;#&lt;/a&gt; SpringBoot 开发实用篇&lt;/h1&gt;
 &lt;h3 id=&#34;前言白嫖发言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言白嫖发言&#34;&gt;#&lt;/a&gt; 前言（白嫖发言）&lt;/h3&gt;
 &lt;p&gt;​		这个笔记是从黑马老师那里嫖来的，放在这里是为了方便查看，没有商用的意思，转载请标明&lt;strong&gt;黑马程序员&lt;/strong&gt;以及链接。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV15b4y1a7yG&#34;&gt;黑马程序员 SpringBoot2 全套视频教程，springboot 零基础到项目实战&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;​				开发实用篇中因为牵扯到 SpringBoot 整合各种各样的技术，由于不是每个小伙伴对各种技术都有所掌握，所以在整合每一个技术之前，都会做一个快速的普及，这样的话内容整个开发实用篇所包含的内容就会比较多。各位小伙伴在学习的时候，如果对某一个技术不是很清楚，可以先跳过对应章节，或者先补充一下技术知识，然后再来看对应的课程。开发实用篇具体包含的内容如下：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;热部署&lt;/li&gt;
@@ -2468,6 +2470,7 @@
         <content type="html">&lt;h1 id=&#34;springboot运维实用篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot运维实用篇&#34;&gt;#&lt;/a&gt; SpringBoot 运维实用篇&lt;/h1&gt;
 &lt;h3 id=&#34;前言白嫖发言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言白嫖发言&#34;&gt;#&lt;/a&gt; 前言（白嫖发言）&lt;/h3&gt;
 &lt;p&gt;​		这个笔记是从黑马老师那里嫖来的，放在这里是为了方便查看，没有商用的意思，转载请标明&lt;strong&gt;黑马程序员&lt;/strong&gt;以及链接。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV15b4y1a7yG&#34;&gt;黑马程序员 SpringBoot2 全套视频教程，springboot 零基础到项目实战&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;​		从此刻开始，咱们就要进入到实用篇的学习了。实用篇是在基础篇的根基之上，补全 SpringBoot 的知识图谱。比如在基础篇中只给大家讲了 yaml 的语法格式，但是具体写 yaml 文件的时候还有很多实用开发过程中的坑，这些在实用篇中都要进行学习。&lt;/p&gt;
 &lt;p&gt;​		实用篇共分为两块内容，分别是运维实用篇和开发实用篇。其实划分的标准是我自己制定的，因为这里面的知识有一些还是比较散的，做两个阶段的划分是为了更好的将同类知识点进行归类，帮助学习者找到知识之间的关联性，这样有助于知识的记忆存储转换，经过一系列的知识反复出现与强化练习，将临时记忆转换成永久性记忆。做课程嘛，不能仅以讲完为目标，要以学习者的学习收获为目标，这也是我这么多年教学秉承的基本理念。&lt;/p&gt;
 &lt;p&gt;​		下面就从运维实用篇开始讲，在运维实用篇中，我给学习者的定位是玩转配置，为开发实用篇中做各种技术的整合做好准备工作。与开发实用篇相比，运维实用篇的内容显得略微单薄，并且有部分知识模块在运维实用篇和开发实用篇中都要讲一部分，这些内容都后置到开发实用篇中了。废话不说了，先看看运维实用篇中都包含哪些内容：&lt;/p&gt;
@@ -2859,6 +2862,7 @@
         <content type="html">&lt;h1 id=&#34;springboot&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot&#34;&gt;#&lt;/a&gt; SpringBoot&lt;/h1&gt;
 &lt;h3 id=&#34;前言白嫖发言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言白嫖发言&#34;&gt;#&lt;/a&gt; 前言（白嫖发言）&lt;/h3&gt;
 &lt;p&gt;​		这个笔记是从黑马老师那里嫖来的，放在这里是为了方便查看，没有商用的意思，转载请标明&lt;strong&gt;黑马程序员&lt;/strong&gt;以及链接。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV15b4y1a7yG&#34;&gt;黑马程序员 SpringBoot2 全套视频教程，springboot 零基础到项目实战&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h3&gt;
 &lt;p&gt;​		很荣幸有机会能以这样的形式和互联网上的各位小伙伴一起学习交流技术课程，这次给大家带来的是 Spring 家族中比较重要的一门技术课程 ——SpringBoot。一句话介绍这个技术，应该怎么说呢？现在如果开发 Spring 程序不用 SpringBoot 那就是给自己过不去，SpringBoot 为我们开发 Spring 程序提供了太多的帮助，在此借这个机会给大家分享这门课程，希望各位小伙伴学有所得，学有所用，学有所成。&lt;/p&gt;
 &lt;p&gt;​		正如上面提到的，这门技术是用来加速开发 Spring 程序的，因此学习这门技术是有一定的门槛的。你可以理解为你现在是一门传统的手工艺人，现在工艺升级，可以加速你的生产制作过程，但是前提是你要会原始工艺，然后才能学习新的工艺。嗯，怎么说呢？有一定的门槛，至少 Spring 怎么回事，与 Spring 配合在一起工作的一堆技术又是怎么回事，这些搞明白才能来看这个技术，不然就只能学个皮毛，或者学着学着就开始因为其他技术不太过关，然后就学不下去了，然后，就没有然后了，果断弃坑了。不管怎么说，既来之则安之，加油学习吧，投资自己肯定是没毛病的。&lt;/p&gt;
@@ -8228,8 +8232,8 @@ properties、settings、typeAliases、typeHandlers、objectFactory、objectWrapp
 &lt;p&gt;​        最后附上 Windows powerShell 的下载界面。&lt;br&gt;
 &lt;img src=&#34;https://s3.bmp.ovh/imgs/2021/09/5f81eae2d969af1a.png&#34; alt&gt;&lt;/p&gt;
 </content>
-        <category term="教程" />
         <category term="杂记" />
+        <category term="教程" />
         <updated>2021-09-09T09:14:33.000Z</updated>
     </entry>
 </feed>
