@@ -4,9 +4,9 @@
     <title>LXR的小站 • Posts by &#34;教程&#34; tag</title>
     <link href="http://laz0825.cn" />
     <updated>2022-12-22T04:39:10.000Z</updated>
+    <category term="杂记" />
     <category term="学习" />
     <category term="教程" />
-    <category term="杂记" />
     <category term="算法作业" />
     <category term="料理" />
     <category term="菜谱" />
@@ -8228,8 +8228,8 @@ properties、settings、typeAliases、typeHandlers、objectFactory、objectWrapp
 &lt;p&gt;​        最后附上 Windows powerShell 的下载界面。&lt;br&gt;
 &lt;img src=&#34;https://s3.bmp.ovh/imgs/2021/09/5f81eae2d969af1a.png&#34; alt&gt;&lt;/p&gt;
 </content>
-        <category term="教程" />
         <category term="杂记" />
+        <category term="教程" />
         <updated>2021-09-09T09:14:33.000Z</updated>
     </entry>
 </feed>
