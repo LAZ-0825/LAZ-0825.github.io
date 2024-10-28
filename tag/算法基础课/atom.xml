@@ -4,20 +4,20 @@
     <title>LXR的小站 • Posts by &#34;算法基础课&#34; tag</title>
     <link href="http://laz0825.cn" />
     <updated>2021-11-21T02:53:13.000Z</updated>
+    <category term="杂记" />
+    <category term="算法基础课" />
+    <category term="算法作业" />
+    <category term="数据库" />
+    <category term="Java" />
     <category term="学习" />
     <category term="教程" />
-    <category term="杂记" />
-    <category term="算法作业" />
+    <category term="SpringBoot" />
     <category term="料理" />
     <category term="菜谱" />
-    <category term="数据库" />
-    <category term="SpringBoot" />
-    <category term="Java" />
-    <category term="算法基础课" />
     <entry>
-        <id>http://laz0825.cn/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</id>
+        <id>http://laz0825.cn/passages/10/</id>
         <title>基础算法</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/10/"/>
         <content type="html">&lt;h1 id=&#34;acwing-785-快速排序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#acwing-785-快速排序&#34;&gt;#&lt;/a&gt; AcWing 785. 快速排序&lt;/h1&gt;
 &lt;h2 id=&#34;题目描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目描述&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h2&gt;
 &lt;p&gt;给定你一个长度为 n 的整数数列。&lt;/p&gt;

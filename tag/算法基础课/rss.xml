@@ -7,20 +7,20 @@
         <language>zh-CN</language>
         <pubDate>Sun, 21 Nov 2021 10:53:13 +0800</pubDate>
         <lastBuildDate>Sun, 21 Nov 2021 10:53:13 +0800</lastBuildDate>
+        <category>杂记</category>
+        <category>算法基础课</category>
+        <category>算法作业</category>
+        <category>数据库</category>
+        <category>Java</category>
         <category>学习</category>
         <category>教程</category>
-        <category>杂记</category>
-        <category>算法作业</category>
+        <category>SpringBoot</category>
         <category>料理</category>
         <category>菜谱</category>
-        <category>数据库</category>
-        <category>SpringBoot</category>
-        <category>Java</category>
-        <category>算法基础课</category>
         <item>
-            <guid isPermalink="true">http://laz0825.cn/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</guid>
+            <guid isPermalink="true">http://laz0825.cn/passages/10/</guid>
             <title>基础算法</title>
-            <link>http://laz0825.cn/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</link>
+            <link>http://laz0825.cn/passages/10/</link>
             <category>算法基础课</category>
             <pubDate>Sun, 21 Nov 2021 10:53:13 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;acwing-785-快速排序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#acwing-785-快速排序&#34;&gt;#&lt;/a&gt; AcWing 785. 快速排序&lt;/h1&gt;

@@ -1,0 +1,392 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>二叉树的中序遍历 | LXR的小站</title><meta name="keywords" content="算法作业"><meta name="author" content="LXR"><meta name="copyright" content="LXR"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="# 二叉树的中序遍历 ​		大一 -&gt; 大二暑期算法作业 ​		分站已经上线简约风算法作业集合（也可以选择阅读模式 # 看到题目的感想 ​		被离散数学折磨之后看见树就会想到离散数学，虽然学习离散数学的时候老师教过中序遍历，但是看到这个题的时候还是没有想起来中序遍历是个啥，索性就去搜索了一下（快进到被老师打死）。 ​		附上百度百科链接： ​		中序遍历：https:&#x2F;&#x2F;baike.baid">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二叉树的中序遍历">
+<meta property="og:url" content="http://laz0825.cn/passages/3/index.html">
+<meta property="og:site_name" content="LXR的小站">
+<meta property="og:description" content="# 二叉树的中序遍历 ​		大一 -&gt; 大二暑期算法作业 ​		分站已经上线简约风算法作业集合（也可以选择阅读模式 # 看到题目的感想 ​		被离散数学折磨之后看见树就会想到离散数学，虽然学习离散数学的时候老师教过中序遍历，但是看到这个题的时候还是没有想起来中序遍历是个啥，索性就去搜索了一下（快进到被老师打死）。 ​		附上百度百科链接： ​		中序遍历：https:&#x2F;&#x2F;baike.baid">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/185559/5/19691/202654/611b9cdcEc85b6bcc/3504ed4e4ea14cdf.jpg">
+<meta property="article:published_time" content="2021-07-15T02:43:29.000Z">
+<meta property="article:modified_time" content="2022-03-29T09:06:09.382Z">
+<meta property="article:author" content="LXR">
+<meta property="article:tag" content="算法作业">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/185559/5/19691/202654/611b9cdcEc85b6bcc/3504ed4e4ea14cdf.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://laz0825.cn/passages/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LXR","link":"链接: ","source":"来源: LXR的小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '二叉树的中序遍历',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-29 17:06:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://butterfly.lete114.top/css/Lete.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/macblack.css"><link rel="stylesheet" href="/css/mouse.css"><link rel="stylesheet" href="/css/xxx.css"><link rel="stylesheet" href="/css/tag.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s3.bmp.ovh/imgs/2022/01/48416141b447da0f.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-sitemap"></i><span> 分站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/ad/"><i class="fa-fw fas fa-chevron-right"></i><span> 分站（ad主题）</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-sitemap"></i><span> 在线技术文档</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/index.html"><span> Java8官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.wdbyte.com/"><span> Java系列文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://spring.io/projects/spring-framework"><span> spring官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://spring.io/projects/spring-boot"><span> springBoot官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/index.html"><span> MyBatis官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://baomidou.com/"><span> MyBatis-Plus官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://cn.vuejs.org/"><span> VUE官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/"><span> 微信小程序官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://element.eleme.cn/#/zh-CN/"><span> ELEMENT-UI官方中文文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://jquery.com/"><span> jQuery官网(内含Ajax)</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://jquery.asprain.cn/ajaxSend.htm"><span> jQuery中文文档(内含Ajax)</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.axios-http.cn/docs/intro"><span> Axios中文文档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/Message/"><i class="fa-fw fas fa-comment"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img11.360buyimg.com/ddimg/jfs/t1/185559/5/19691/202654/611b9cdcEc85b6bcc/3504ed4e4ea14cdf.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LXR的小站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-sitemap"></i><span> 分站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/ad/"><i class="fa-fw fas fa-chevron-right"></i><span> 分站（ad主题）</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-sitemap"></i><span> 在线技术文档</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/index.html"><span> Java8官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.wdbyte.com/"><span> Java系列文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://spring.io/projects/spring-framework"><span> spring官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://spring.io/projects/spring-boot"><span> springBoot官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/index.html"><span> MyBatis官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://baomidou.com/"><span> MyBatis-Plus官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://cn.vuejs.org/"><span> VUE官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/"><span> 微信小程序官方文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://element.eleme.cn/#/zh-CN/"><span> ELEMENT-UI官方中文文档</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://jquery.com/"><span> jQuery官网(内含Ajax)</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://jquery.asprain.cn/ajaxSend.htm"><span> jQuery中文文档(内含Ajax)</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.axios-http.cn/docs/intro"><span> Axios中文文档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/Message/"><i class="fa-fw fas fa-comment"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">二叉树的中序遍历</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-07-15T02:43:29.000Z" title="发表于 2021-07-15 10:43:29">2021-07-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-29T09:06:09.382Z" title="更新于 2022-03-29 17:06:09">2022-03-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="二叉树的中序遍历"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="二叉树的中序遍历"><a class="markdownIt-Anchor" href="#二叉树的中序遍历">#</a> 二叉树的中序遍历</h1>
+<p>​		大一 -&gt; 大二暑期算法作业</p>
+<p>​		<strong>分站已经上线简约风算法作业集合（也可以选择阅读模式</strong></p>
+<h2 id="看到题目的感想"><a class="markdownIt-Anchor" href="#看到题目的感想">#</a> 看到题目的感想</h2>
+<p>​		被离散数学<strong>折磨</strong>之后看见树就会想到离散数学，虽然学习离散数学的时候老师<strong>教过中序遍历</strong>，但是看到这个题的时候还是<strong>没有想起来</strong>中序遍历是个啥，索性就去搜索了一下（快进到被老师打死）。</p>
+<p>​		附上百度百科链接：</p>
+<p>​		<strong>中序遍历：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86">https://baike.baidu.com/item/ 中序遍历</a></strong></p>
+<h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述">#</a> 题目描述</h2>
+<p>给定一个二叉树的根节点 root ，返回它的 中序 遍历。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/15/inorder_1.jpg" alt="img"></p>
+<p>输入：root = [1,null,2,3]<br>
+ 输出：[1,3,2]</p>
+<p><strong>示例 2：</strong></p>
+<p>输入：root = []<br>
+ 输出：[]</p>
+<p><strong>示例 3：</strong></p>
+<p>输入：root = [1]<br>
+ 输出：[1]</p>
+<p><strong>示例 4：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/15/inorder_5.jpg" alt="img"></p>
+<p>输入：root = [1,2]<br>
+ 输出：[2,1]</p>
+<p><strong>示例 5：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/15/inorder_4.jpg" alt="img"></p>
+<p>输入：root = [1,null,2]<br>
+ 输出：[1,2]</p>
+<p>提示：</p>
+<p>树中节点数目在范围 [0, 100] 内<br>
+ - 100 &lt;= Node.val &lt;= 100</p>
+<p>进阶：递归算法很简单，你可以通过迭代算法完成吗？</p>
+<p>来源：力扣（LeetCode）<br>
+链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal">https://leetcode-cn.com/problems/binary-tree-inorder-traversal</a></p>
+<h2 id="题目解答"><a class="markdownIt-Anchor" href="#题目解答">#</a> 题目解答</h2>
+<p>​       （**ps：** 由于做题时采用的是执行代码，并未提交，提交结果均为后来补上，所以时间均为两天前）</p>
+<h3 id="1递归算法"><a class="markdownIt-Anchor" href="#1递归算法">#</a> 1. 递归算法</h3>
+<p>利用递归的思想解题也是老朋友了，在之前的算法题里面有过接触，所以并不是很难理解。</p>
+<h4 id="1解题思路"><a class="markdownIt-Anchor" href="#1解题思路">#</a> （1）解题思路</h4>
+<p>​		在解题的时候，了解到了一个名叫 <strong>vector</strong> 的东西，可以理解为 C++ 和 Java 中的一种动态数组。记得第一次听到这个名词的时候还是在翁恺老师的《C 语言程序设计》这门课上听到的，想想还真是怀念。（跑远了</p>
+<p>附上一些链接（<strong>配合梯子一起食用</strong>）：</p>
+<p><strong>vector：内存在堆上</strong></p>
+<p>​    <strong>注意：vector 每添加一次都会把之前的全复制一遍，所以效率并不高。</strong></p>
+<p>​    <strong>1）</strong> <strong><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/cpp/standard-library/vector-class?view=msvc-160">https://docs.microsoft.com/zh-cn/cpp/standard-library/vector-class?view=msvc-160</a>  来源：Microsoft C++、C 和汇编程序文档</strong></p>
+<p>​    <strong>2） <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/16/docs/api/jdk.incubator.vector/jdk/incubator/vector/package-summary.html">https://docs.oracle.com/en/java/javase/16/docs/api/jdk.incubator.vector/jdk/incubator/vector/package-summary.html</a>  来源：Java 官方文档里的包（纯英文比较难顶</strong></p>
+<p>​    <strong>3） <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Vector/3330482">https://baike.baidu.com/item/Vector/3330482</a> 来源：百度百科</strong></p>
+<p>​    <strong>4） <a target="_blank" rel="noopener" href="https://www.w3cschool.cn/cpp/cpp-i6da2pq0.html">https://www.w3cschool.cn/cpp/cpp-i6da2pq0.html</a>  来源：某不知名 C++ 教程</strong></p>
+<p>​    <strong>《C 语言程序设计》：<a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/ZJU-9001?tid=9001#/learn/announce">https://www.icourse163.org/learn/ZJU-9001?tid=9001#/learn/announce</a>  来源：中国大学 MOOC</strong></p>
+<p>​		本题可以通过递归思想对给出的二叉树的<strong>左子树、根节点、右子树依次进行遍历（中序遍历）</strong>，并将各个数据存放在设置好的 vector<int>中（由于 vector 是<strong>动态分配内存</strong>的，所以比用担心大小会不够用），最后即可得到该二叉树的中序遍历。</int></p>
+<h4 id="2代码"><a class="markdownIt-Anchor" href="#2代码">#</a> （2）代码</h4>
+<p>​		解题代码如下（<strong>配合题目链接食用</strong>）：</p>
+<h5 id="c"><a class="markdownIt-Anchor" href="#c">#</a> <strong>C++</strong></h5>
+<p><strong>有一种比较好用的 C++ 容器，比 vector 好用，只是不能自增。（本题未使用）</strong></p>
+<p><strong>array：内存在栈上</strong></p>
+<p><strong>array： <a target="_blank" rel="noopener" href="http://c.biancheng.net/view/6688.html">http://c.biancheng.net/view/6688.html</a> 来源：C 语言中文网</strong></p>
+<p><strong>array： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV18b4y1X7EB?from=search&amp;seid=11718690349134275715">https://www.bilibili.com/video/BV18b4y1X7EB?from=search&amp;seid=11718690349134275715</a> 来源：哔哩哔哩（是一个油管的小哥哥，讲的很棒，圈粉了）</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">inorder</span><span class="params">(TreeNode* root, vector&lt;<span class="keyword">int</span>&gt;&amp; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) &#123; <span class="comment">// 如果碰到空节点，说明该部分遍历已完成，return出去</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">inorder</span>(root-&gt;left, res); <span class="comment">// 递归遍历左子树</span></span><br><span class="line">        res.<span class="built_in">push_back</span>(root-&gt;val); <span class="comment">// 将该节点的值增加在动态数组末尾</span></span><br><span class="line">        <span class="built_in">inorder</span>(root-&gt;right, res); <span class="comment">// 递归遍历右子树</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt; res; <span class="comment">// 新建一个int类型的vector,用来存放遍历结果</span></span><br><span class="line">        <span class="built_in">inorder</span>(root, res); <span class="comment">// 从根节点root开始遍历，依次放入值</span></span><br><span class="line">        <span class="keyword">return</span> res; <span class="comment">// 返回遍历结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="https://img12.360buyimg.com/ddimg/jfs/t1/178612/13/21226/22498/61284220E9e541099/4f61f1de25898a99.png" alt="image-20210827092120481.png"></li>
+</ul>
+<h5 id="java"><a class="markdownIt-Anchor" href="#java">#</a> <strong>Java</strong></h5>
+<p>List &amp; ArrayList 是 Java 中的一种列表。</p>
+<p><strong>List &amp; ArrayList：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/25aa92f8d681">https://www.jianshu.com/p/25aa92f8d681</a> 来源：简书</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;(); <span class="comment">// 新建Integer的List来存放数值</span></span><br><span class="line">        inorder(root, res); <span class="comment">// 从根节点root开始遍历，依次将数值放入</span></span><br><span class="line">        <span class="keyword">return</span> res; <span class="comment">// 返回遍历结果</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">inorder</span><span class="params">(TreeNode root, List&lt;Integer&gt; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123; <span class="comment">// 如果碰到空节点，说明该部分遍历已完成，return出去</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        inorder(root.left, res); <span class="comment">// 递归遍历左子树</span></span><br><span class="line">        res.add(root.val); <span class="comment">// 将该节点的值增加在末尾</span></span><br><span class="line">        inorder(root.right, res); <span class="comment">// 递归遍历右子树</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/200702/31/3771/22855/6128423eE4f6965f0/3afc9e3dfe9a422d.png" alt="image-20210827092151479.png"></p>
+<h5 id="c来自题解"><a class="markdownIt-Anchor" href="#c来自题解">#</a> <strong>C（来自题解）</strong></h5>
+<p>（C 语言中的动态数组不会玩，于是把题解拿过来）</p>
+<p><strong>C 语言动态数组 <a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/c-dynamic-array.html">https://www.runoob.com/w3cnote/c-dynamic-array.html</a> 来源：菜鸟教程</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *right;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Note: The returned array must be malloced, assume caller calls free().</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inorder</span><span class="params">(struct TreeNode* root, <span class="keyword">int</span>* res, <span class="keyword">int</span>* resSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!root) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    inorder(root-&gt;left, res, resSize);</span><br><span class="line">    res[(*resSize)++] = root-&gt;val;</span><br><span class="line">    inorder(root-&gt;right, res, resSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">inorderTraversal</span><span class="params">(struct TreeNode* root, <span class="keyword">int</span>* returnSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>* res = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * <span class="number">501</span>);</span><br><span class="line">    *returnSize = <span class="number">0</span>;</span><br><span class="line">    inorder(root, res, returnSize);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+<h4 id="3总结"><a class="markdownIt-Anchor" href="#3总结">#</a> （3）总结</h4>
+<p>​		利用递归思想来解题还是比较舒服的，也很好用，适合我这种菜鸡。</p>
+<h3 id="2迭代算法"><a class="markdownIt-Anchor" href="#2迭代算法">#</a> 2. 迭代算法</h3>
+<p><strong>关于迭代算法的基本思想：</strong></p>
+<p><strong>迭代算法 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/cs-whut/p/11024564.html">https://www.cnblogs.com/cs-whut/p/11024564.html</a> 来源：博客园</strong></p>
+<p>​		迭代算法之前没有接触过，上手有点看不懂。</p>
+<h4 id="1解题思路-2"><a class="markdownIt-Anchor" href="#1解题思路-2">#</a> （1）解题思路</h4>
+<p>​		通过迭代 + 栈模型来清楚的展现解题流程（题解中有动画展示，配合食用比较好理解）。</p>
+<h4 id="2代码-2"><a class="markdownIt-Anchor" href="#2代码-2">#</a> （2）代码</h4>
+<p>​		解题代码如下（<strong>配合题目链接食用</strong>）：</p>
+<h5 id="c-2"><a class="markdownIt-Anchor" href="#c-2">#</a> <strong>C++</strong></h5>
+<p>C++ 的栈：</p>
+<p><strong>stack <a target="_blank" rel="noopener" href="http://c.biancheng.net/view/478.html">http://c.biancheng.net/view/478.html</a> 来源：C 语言中文网</strong></p>
+<p><strong>stack <a target="_blank" rel="noopener" href="https://www.apiref.com/cpp-zh/cpp/container/stack.html">https://www.apiref.com/cpp-zh/cpp/container/stack.html</a> 来源：C++ 文档</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt; res; <span class="comment">// 新建一个int类型的vector,用来存放遍历结果</span></span><br><span class="line">        stack&lt;TreeNode*&gt; stk; <span class="comment">// 新建栈</span></span><br><span class="line">        <span class="keyword">while</span> (root != <span class="literal">nullptr</span> || !stk.<span class="built_in">empty</span>()) &#123; <span class="comment">// 节点有数值 或 栈不为空</span></span><br><span class="line">            <span class="keyword">while</span> (root != <span class="literal">nullptr</span>) &#123; <span class="comment">// 当节点有值时</span></span><br><span class="line">                stk.<span class="built_in">push</span>(root); <span class="comment">// 数据入栈</span></span><br><span class="line">                root = root-&gt;left; <span class="comment">// 访问左子树</span></span><br><span class="line">            &#125;</span><br><span class="line">            root = stk.<span class="built_in">top</span>(); <span class="comment">// 找到栈顶数据的节点</span></span><br><span class="line">            <span class="comment">// top()：返回一个栈顶元素的引用，类型为 T&amp;。如果栈为空，返回值未定义。</span></span><br><span class="line">            stk.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="comment">// pop()：弹出栈顶元素。</span></span><br><span class="line">            res.<span class="built_in">push_back</span>(root-&gt;val); <span class="comment">// 在vector末尾添加当前节点数据</span></span><br><span class="line">            root = root-&gt;right; <span class="comment">// 访问右子树</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res; <span class="comment">// 返回结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/191173/7/19840/22319/6128425eE22b3e07d/1ca7845e69631535.png" alt="image-20210827092218700.png"></p>
+<h5 id="java-2"><a class="markdownIt-Anchor" href="#java-2">#</a> <strong>Java</strong></h5>
+<p>Java 的栈：</p>
+<p><strong>Deque： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d78a7c982edb">https://www.jianshu.com/p/d78a7c982edb</a> 来源：简书</strong></p>
+<p><strong>stack：</strong>**</p>
+<p><strong>（1） <a target="_blank" rel="noopener" href="https://www.javatpoint.com/java-stack">https://www.javatpoint.com/java-stack</a>  来源：某 Java 文档</strong></p>
+<p><strong>（2） <a target="_blank" rel="noopener" href="https://blog.csdn.net/YQYnsmile/article/details/78457539">https://blog.csdn.net/YQYnsmile/article/details/78457539</a>  来源：屑 C 某某 N</strong></p>
+<p><strong>（3） <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Stack.html">https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Stack.html</a>  来源：某全英文 Java 文档</strong></p>
+<p>Deque 可以作为堆栈（LIFO 后进先出），此接口优于传统 Stack 类的使用。</p>
+<p><strong>Stack 和 Deque 方法的比较</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">栈方法</th>
+<th style="text-align:center">等效 Deque 方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">push(e)</td>
+<td style="text-align:center">addFirst(e)</td>
+</tr>
+<tr>
+<td style="text-align:left">pop()</td>
+<td style="text-align:center">removeFirst()</td>
+</tr>
+<tr>
+<td style="text-align:left">peek()</td>
+<td style="text-align:center">peekFirst()</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;(); <span class="comment">// 新建List来保存数据</span></span><br><span class="line">        Deque&lt;TreeNode&gt; stk = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;(); <span class="comment">// 新建栈</span></span><br><span class="line">        <span class="keyword">while</span> (root != <span class="keyword">null</span> || !stk.isEmpty()) &#123; <span class="comment">// 节点有数值 或 栈不为空</span></span><br><span class="line">            <span class="keyword">while</span> (root != <span class="keyword">null</span>) &#123; <span class="comment">// 节点有数值时</span></span><br><span class="line">                stk.push(root); <span class="comment">// 将数据放入栈</span></span><br><span class="line">                root = root.left; <span class="comment">// 访问左子树</span></span><br><span class="line">            &#125;</span><br><span class="line">            root = stk.pop(); <span class="comment">// pop()：弹出栈顶元素。</span></span><br><span class="line">            res.add(root.val); <span class="comment">// 在List末尾添加当前节点数据</span></span><br><span class="line">            root = root.right; <span class="comment">// 访问右子树</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res; <span class="comment">// 返回结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/177616/31/21117/22717/6128427aE9968827a/f401017322512ef0.png" alt="image-20210827092339328.png"></p>
+<h5 id="c来自题解-2"><a class="markdownIt-Anchor" href="#c来自题解-2">#</a> <strong>C</strong>（来自题解）</h5>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *right;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Note: The returned array must be malloced, assume caller calls free().</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">inorderTraversal</span><span class="params">(struct TreeNode* root, <span class="keyword">int</span>* returnSize)</span> </span>&#123;</span><br><span class="line">    *returnSize = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span>* res = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * <span class="number">501</span>);</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>** <span class="title">stk</span> =</span> <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct TreeNode*) * <span class="number">501</span>);</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">NULL</span> || top &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (root != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            stk[top++] = root;</span><br><span class="line">            root = root-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        root = stk[--top];</span><br><span class="line">        res[(*returnSize)++] = root-&gt;val;</span><br><span class="line">        root = root-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+<h4 id="3总结-2"><a class="markdownIt-Anchor" href="#3总结-2">#</a> （3）总结</h4>
+<p>​		利用迭代算法来解题的思想还没有怎么接触过没上手感觉比较难。（<strong>还是递归香</strong>    <strong>确信</strong>）</p>
+<h3 id="3morris-中序遍历来自题解"><a class="markdownIt-Anchor" href="#3morris-中序遍历来自题解">#</a> 3.Morris 中序遍历（来自题解）</h3>
+<p>​		这个就是真的闻所未闻了，看了题解，决定搬过来</p>
+<h4 id="1思路与算法"><a class="markdownIt-Anchor" href="#1思路与算法">#</a> （1）思路与算法</h4>
+<ol>
+<li>
+<p><strong>Morris 遍历算法</strong>是另一种遍历二叉树的方法，它能将非递归的中序遍历空间复杂度降为 O (1) O (1)。</p>
+<p><strong>Morris 遍历算法</strong>整体步骤如下（假设当前遍历到的节点为 xx）：</p>
+</li>
+<li>
+<p>如果 xx 无左孩子，先将 xx 的值加入答案数组，再访问 xx 的右孩子，即 x  =  x . right。<br>
+如果 xx 有左孩子，则找到 xx 左子树上最右的节点（<strong>即左子树中序遍历的最后一个节点，xx 在中序遍历中的前驱节点</strong>），我们记为 predecessor。根据 predecessor 的右孩子是否为空，进行如下操作。</p>
+<ul>
+<li>如果 predecessor 的右孩子为空，则将其右孩子指向 xx，然后访问 xx 的左孩子，即  x  =  x . left。</li>
+<li>如果 predecessor 的右孩子不为空，则此时其右孩子指向 xx，说明我们已经遍历完 xx 的左子树，我们将 predecessor 的右孩子置空，将 xx 的值加入答案数组，然后访问 xx 的右孩子，即  x  =  x . right。</li>
+</ul>
+</li>
+<li>
+<p>重复上述操作，直至访问完整棵树。</p>
+<p>4. 其实整个过程我们就多做一步：假设当前遍历到的节点为 xx，将 xx 的左子树中最右边的节点的右孩子指向 xx，这样在左子树遍历完成后我们通过这个指向走回了 xx，且能通过这个指向知晓我们已经遍历完成了左子树，而不用再通过栈来维护，省去了栈的空间复杂度。</p>
+</li>
+</ol>
+<h4 id="2代码-3"><a class="markdownIt-Anchor" href="#2代码-3">#</a> （2）代码</h4>
+<p><strong>题解链接： <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/">https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/</a> 来源：力扣</strong></p>
+<p>​		不想搬运代码了，就给出了链接。<strong>Morris 中序遍历</strong>是题解中的第三种解法，题解带有动画教程，可以看看。</p>
+<h4 id="3总结-3"><a class="markdownIt-Anchor" href="#3总结-3">#</a> （3）总结</h4>
+<p>​		一种没听过的中序遍历算法，搬运题解来的。（主要还是太菜了没玩明白）</p>
+<h2 id="题目总结"><a class="markdownIt-Anchor" href="#题目总结">#</a> 题目总结</h2>
+<p>​		此次题目中，出现了<strong>递归算法、迭代算法、Morris 遍历算法</strong>三种解题思路。</p>
+<p>​		总的来说，还是递归较好理解，写起来难度稍微低一些；迭代算法初次了解，试了试水；Morris 遍历算法第一次见，还是看题解叭（还是人菜）。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">LXR</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://laz0825.cn/passages/3/">http://laz0825.cn/passages/3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://laz0825.cn" target="_blank">LXR的小站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A/">算法作业</a></div><div class="post_share"><div class="social-share" data-image="https://img11.360buyimg.com/ddimg/jfs/t1/185559/5/19691/202654/611b9cdcEc85b6bcc/3504ed4e4ea14cdf.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://i.loli.net/2021/08/10/5AkuxvBo9hc2fWJ.png" target="_blank"><img class="post-qr-code-img" src="https://i.loli.net/2021/08/10/5AkuxvBo9hc2fWJ.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://i.loli.net/2021/08/10/fchQveXJWzVGFOB.png" target="_blank"><img class="post-qr-code-img" src="https://i.loli.net/2021/08/10/fchQveXJWzVGFOB.png" alt="QQ"/></a><div class="post-qr-code-desc">QQ</div></li><li class="reward-item"><a href="https://i.loli.net/2021/08/10/RPmVMNrvWG3Jn5o.jpg" target="_blank"><img class="post-qr-code-img" src="https://i.loli.net/2021/08/10/RPmVMNrvWG3Jn5o.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/passages/4/"><img class="prev-cover" src="https://img10.360buyimg.com/ddimg/jfs/t1/197252/37/3660/362939/611b9da7E675c5862/d5a3c9a9988279d7.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">爬楼梯</div></div></a></div><div class="next-post pull-right"><a href="/passages/2/"><img class="next-cover" src="https://img11.360buyimg.com/ddimg/jfs/t1/193967/2/18654/129816/611b99f3E63da2d59/66f6bbd7c4130710.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">HEXO+GitHub搭建博客的小教程</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/passages/16/" title="Leetcode-632-最小区间"><img class="cover" src="https://img10.360buyimg.com/ddimg/jfs/t1/181104/28/19764/188096/611b9da6E81fc9b7d/9a1f9a2a4158af04.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-17</div><div class="title">Leetcode-632-最小区间</div></div></a></div><div><a href="/passages/15/" title="Leetcode-218-天际线问题"><img class="cover" src="https://img13.360buyimg.com/ddimg/jfs/t1/184015/10/19881/195772/611bb46bE0bcc9f88/0e69e55f8069b683.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-17</div><div class="title">Leetcode-218-天际线问题</div></div></a></div><div><a href="/passages/14/" title="Leetcode-1226-哲学家进餐"><img class="cover" src="https://img11.360buyimg.com/ddimg/jfs/t1/187247/26/18718/226160/611b9da7Ee6ab8ae1/7c216c2a9ffdb37d.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-06</div><div class="title">Leetcode-1226-哲学家进餐</div></div></a></div><div><a href="/passages/13/" title="Java中Synchronized的用法（简单介绍）"><img class="cover" src="https://img11.360buyimg.com/ddimg/jfs/t1/196668/29/18683/277709/611b9cdeEabed0d5a/137c643d8ac92411.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-27</div><div class="title">Java中Synchronized的用法（简单介绍）</div></div></a></div><div><a href="/passages/12/" title="Leetcode-208-实现Trie(前缀树)"><img class="cover" src="https://img10.360buyimg.com/ddimg/jfs/t1/196128/21/18656/216627/611b9cdaE76575b35/ead8abb0d853939a.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-21</div><div class="title">Leetcode-208-实现Trie(前缀树)</div></div></a></div><div><a href="/passages/11/" title="Leetcode-133-克隆图"><img class="cover" src="https://img10.360buyimg.com/ddimg/jfs/t1/190241/9/18792/224133/611b9cdeE8e10ea6e/acf52d6495b98620.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-20</div><div class="title">Leetcode-133-克隆图</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s3.bmp.ovh/imgs/2022/01/48416141b447da0f.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LXR</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LAZ-0825"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:1172623892@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://s3.bmp.ovh/imgs/2022/01/1c676af554a53516.png" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://github.com/LAZ-0825/LAZ-0825.github.io/discussions" target="_blank" title="有疑问的话这点里可以找到我"><i class="fas fa-comment-dots"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">如果你在浏览博客时有什么问题的话，可以到 <a target="_blank" rel="noopener" href="https://github.com/LAZ-0825/LAZ-0825.github.io/discussions" style="color:#49b1f5">Github Discussions</a> 或者 <a href="/Message/" style="color:#49b1f5">留言板</a> 进行反馈。</div><timing> </timing></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="toc-number">1.</span> <span class="toc-text"> 二叉树的中序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%8B%E5%88%B0%E9%A2%98%E7%9B%AE%E7%9A%84%E6%84%9F%E6%83%B3"><span class="toc-number">1.1.</span> <span class="toc-text"> 看到题目的感想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.2.</span> <span class="toc-text"> 题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A7%A3%E7%AD%94"><span class="toc-number">1.3.</span> <span class="toc-text"> 题目解答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 1. 递归算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-number">1.3.1.1.</span> <span class="toc-text"> （1）解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.1.2.</span> <span class="toc-text"> （2）代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#c"><span class="toc-number">1.3.1.2.1.</span> <span class="toc-text"> C++</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#java"><span class="toc-number">1.3.1.2.2.</span> <span class="toc-text"> Java</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#c%E6%9D%A5%E8%87%AA%E9%A2%98%E8%A7%A3"><span class="toc-number">1.3.1.2.3.</span> <span class="toc-text"> C（来自题解）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.1.3.</span> <span class="toc-text"> （3）总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 2. 迭代算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-2"><span class="toc-number">1.3.2.1.</span> <span class="toc-text"> （1）解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81-2"><span class="toc-number">1.3.2.2.</span> <span class="toc-text"> （2）代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#c-2"><span class="toc-number">1.3.2.2.1.</span> <span class="toc-text"> C++</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#java-2"><span class="toc-number">1.3.2.2.2.</span> <span class="toc-text"> Java</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#c%E6%9D%A5%E8%87%AA%E9%A2%98%E8%A7%A3-2"><span class="toc-number">1.3.2.2.3.</span> <span class="toc-text"> C（来自题解）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%80%BB%E7%BB%93-2"><span class="toc-number">1.3.2.3.</span> <span class="toc-text"> （3）总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3morris-%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9D%A5%E8%87%AA%E9%A2%98%E8%A7%A3"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 3.Morris 中序遍历（来自题解）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E6%80%9D%E8%B7%AF%E4%B8%8E%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.3.1.</span> <span class="toc-text"> （1）思路与算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%BB%A3%E7%A0%81-3"><span class="toc-number">1.3.3.2.</span> <span class="toc-text"> （2）代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%80%BB%E7%BB%93-3"><span class="toc-number">1.3.3.3.</span> <span class="toc-text"> （3）总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.</span> <span class="toc-text"> 题目总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/passages/27/" title="newPage"><img src="https://s3.bmp.ovh/imgs/2021/08/dfa7801fb4272cb6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="newPage"/></a><div class="content"><a class="title" href="/passages/27/" title="newPage">newPage</a><time datetime="2024-10-27T05:40:14.000Z" title="发表于 2024-10-27 13:40:14">2024-10-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/26/" title="LXRの微波炉入门食谱"><img src="https://img11.360buyimg.com/ddimg/jfs/t1/183062/38/19882/223186/611b99f3E2f98da7e/93bc79b9241d9f92.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LXRの微波炉入门食谱"/></a><div class="content"><a class="title" href="/passages/26/" title="LXRの微波炉入门食谱">LXRの微波炉入门食谱</a><time datetime="2022-12-22T04:39:10.000Z" title="发表于 2022-12-22 12:39:10">2022-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/25/" title="LXRの烤箱入门食谱"><img src="https://img12.360buyimg.com/ddimg/jfs/t1/180055/33/19859/177816/611b99f3Eed9e9100/8f69131f658b2167.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LXRの烤箱入门食谱"/></a><div class="content"><a class="title" href="/passages/25/" title="LXRの烤箱入门食谱">LXRの烤箱入门食谱</a><time datetime="2022-12-13T10:07:46.000Z" title="发表于 2022-12-13 18:07:46">2022-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/24/" title="SpringBoot讲义-原理篇"><img src="https://img13.360buyimg.com/ddimg/jfs/t1/201014/9/2100/116055/611b9a15E22fe0582/06f08140ca9867a4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot讲义-原理篇"/></a><div class="content"><a class="title" href="/passages/24/" title="SpringBoot讲义-原理篇">SpringBoot讲义-原理篇</a><time datetime="2022-09-02T14:28:45.000Z" title="发表于 2022-09-02 22:28:45">2022-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/passages/23/" title="SpringBoot讲义-开发实用篇"><img src="https://img10.360buyimg.com/ddimg/jfs/t1/177566/27/19894/230223/611b9ce3Ed619bf5c/66b1f15329bf0e41.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot讲义-开发实用篇"/></a><div class="content"><a class="title" href="/passages/23/" title="SpringBoot讲义-开发实用篇">SpringBoot讲义-开发实用篇</a><time datetime="2022-09-02T14:28:33.000Z" title="发表于 2022-09-02 22:28:33">2022-09-02</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://img11.360buyimg.com/ddimg/jfs/t1/185559/5/19691/202654/611b9cdcEc85b6bcc/3504ed4e4ea14cdf.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2024 By LXR</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="icp"><a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/"><span>晋ICP备2022002077号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '37e259bf33b2d462f827',
+      clientSecret: '1a2768d8e34462798bcea1deaa6ab0379aacaf0a',
+      repo: 'LAZBLOG-speak',
+      owner: 'LAZ-0825',
+      admin: ['LAZ-0825'],
+      id: '0d4c78681e87c548caf94a1d53d24f91',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: true,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script data-pjax src="https://butterfly.lete114.top/js/Lete.js"></script><script src="/js/foot.js"></script><script src="/js/timing.js"></script><script src="https://cdn.jsdelivr.net/gh/xiabo2/CDN@latest/fishes.js"></script><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><script defer src="https://cdn.jsdelivr.net/combine/npm/jquery@latest/dist/jquery.min.js,gh/weilining/jsdelivr/jquery/circlemagic/circlemagic.min.js,gh/weilining/jsdelivr@latest/jquery/circlemagic/butterflycirclemagic.js"></script><script src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script src="/js/ip_content.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdnurl.eu.org/2022/01/13/pC5gaOws.png" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>

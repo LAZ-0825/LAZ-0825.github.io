@@ -4,20 +4,20 @@
     <title>LXR的小站 • Posts by &#34;算法作业&#34; tag</title>
     <link href="http://laz0825.cn" />
     <updated>2022-02-17T04:12:53.000Z</updated>
+    <category term="杂记" />
+    <category term="算法基础课" />
+    <category term="算法作业" />
+    <category term="数据库" />
+    <category term="Java" />
     <category term="学习" />
     <category term="教程" />
-    <category term="杂记" />
-    <category term="算法作业" />
+    <category term="SpringBoot" />
     <category term="料理" />
     <category term="菜谱" />
-    <category term="数据库" />
-    <category term="SpringBoot" />
-    <category term="Java" />
-    <category term="算法基础课" />
     <entry>
-        <id>http://laz0825.cn/passages/Leetcode-632-%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/</id>
+        <id>http://laz0825.cn/passages/16/</id>
         <title>Leetcode-632-最小区间</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/Leetcode-632-%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/16/"/>
         <content type="html">&lt;h1 id=&#34;leetcode-632-最小区间&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#leetcode-632-最小区间&#34;&gt;#&lt;/a&gt; Leetcode 632. 最小区间&lt;/h1&gt;
 &lt;h2 id=&#34;题目描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目描述&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h2&gt;
 &lt;p&gt;你有  &lt;code&gt;k&lt;/code&gt;  个 &lt;strong&gt;非递减排列&lt;/strong&gt; 的整数列表。找到一个 &lt;strong&gt;最小&lt;/strong&gt; 区间，使得  &lt;code&gt;k&lt;/code&gt;  个列表中的每个列表至少有一个数包含在其中。&lt;/p&gt;
@@ -73,9 +73,9 @@
         <updated>2022-02-17T04:12:53.000Z</updated>
     </entry>
     <entry>
-        <id>http://laz0825.cn/passages/Leetcode-218-%E5%A4%A9%E9%99%85%E7%BA%BF%E9%97%AE%E9%A2%98/</id>
+        <id>http://laz0825.cn/passages/15/</id>
         <title>Leetcode-218-天际线问题</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/Leetcode-218-%E5%A4%A9%E9%99%85%E7%BA%BF%E9%97%AE%E9%A2%98/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/15/"/>
         <content type="html">&lt;p&gt;321&lt;/p&gt;
 &lt;h1 id=&#34;leetcode-218-天际线问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#leetcode-218-天际线问题&#34;&gt;#&lt;/a&gt; Leetcode 218. 天际线问题&lt;/h1&gt;
 &lt;h2 id=&#34;题目描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目描述&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h2&gt;
@@ -132,9 +132,9 @@
         <updated>2022-02-17T04:12:01.000Z</updated>
     </entry>
     <entry>
-        <id>http://laz0825.cn/passages/Leetcode-1226-%E5%93%B2%E5%AD%A6%E5%AE%B6%E8%BF%9B%E9%A4%90/</id>
+        <id>http://laz0825.cn/passages/14/</id>
         <title>Leetcode-1226-哲学家进餐</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/Leetcode-1226-%E5%93%B2%E5%AD%A6%E5%AE%B6%E8%BF%9B%E9%A4%90/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/14/"/>
         <content type="html">&lt;h1 id=&#34;leetcode-1226-哲学家进餐&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#leetcode-1226-哲学家进餐&#34;&gt;#&lt;/a&gt; Leetcode 1226. 哲学家进餐&lt;/h1&gt;
 &lt;h2 id=&#34;题目描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目描述&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h2&gt;
 &lt;p&gt;5 个沉默寡言的哲学家围坐在圆桌前，每人面前一盘意面。叉子放在哲学家之间的桌面上。（5 个哲学家，5 根叉子）&lt;/p&gt;
@@ -200,9 +200,9 @@
         <updated>2022-02-06T10:29:25.000Z</updated>
     </entry>
     <entry>
-        <id>http://laz0825.cn/passages/Java%E4%B8%ADSynchronized%E7%9A%84%E7%94%A8%E6%B3%95%EF%BC%88%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%EF%BC%89/</id>
+        <id>http://laz0825.cn/passages/13/</id>
         <title>Java中Synchronized的用法（简单介绍）</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/Java%E4%B8%ADSynchronized%E7%9A%84%E7%94%A8%E6%B3%95%EF%BC%88%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%EF%BC%89/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/13/"/>
         <content type="html">&lt;h1 id=&#34;简单介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简单介绍&#34;&gt;#&lt;/a&gt; 简单介绍&lt;/h1&gt;
 &lt;h3 id=&#34;synchronized-是java中的关键字是一种同步锁-它修饰的对象有以下几种&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#synchronized-是java中的关键字是一种同步锁-它修饰的对象有以下几种&#34;&gt;#&lt;/a&gt;  &lt;code&gt;synchronized&lt;/code&gt;  是 Java 中的关键字，是一种同步锁。它修饰的对象有以下几种：&lt;/h3&gt;
 &lt;p&gt;1. 修饰一个代码块，被修饰的代码块称为同步语句块，其作用的范围是大括号  &lt;code&gt;&amp;#123;&amp;#125;&lt;/code&gt;  括起来的代码，作用的对象是调用这个代码块的对象；&lt;br&gt;
@@ -276,9 +276,9 @@
         <updated>2022-01-27T12:00:38.000Z</updated>
     </entry>
     <entry>
-        <id>http://laz0825.cn/passages/Leetcode-208-%E5%AE%9E%E7%8E%B0Trie-%E5%89%8D%E7%BC%80%E6%A0%91/</id>
+        <id>http://laz0825.cn/passages/12/</id>
         <title>Leetcode-208-实现Trie(前缀树)</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/Leetcode-208-%E5%AE%9E%E7%8E%B0Trie-%E5%89%8D%E7%BC%80%E6%A0%91/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/12/"/>
         <content type="html">&lt;h1 id=&#34;leetcode-208-实现-trie-前缀树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#leetcode-208-实现-trie-前缀树&#34;&gt;#&lt;/a&gt; Leetcode 208. 实现 Trie (前缀树)&lt;/h1&gt;
 &lt;h2 id=&#34;题目描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目描述&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://baike.baidu.com/item/%E5%AD%97%E5%85%B8%E6%A0%91/9825209?fr=aladdin&#34;&gt;Trie&lt;/a&gt;（发音类似 “try”）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。&lt;/p&gt;
@@ -317,9 +317,9 @@
         <updated>2022-01-21T04:43:37.000Z</updated>
     </entry>
     <entry>
-        <id>http://laz0825.cn/passages/Leetcode-133-%E5%85%8B%E9%9A%86%E5%9B%BE/</id>
+        <id>http://laz0825.cn/passages/11/</id>
         <title>Leetcode-133-克隆图</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/Leetcode-133-%E5%85%8B%E9%9A%86%E5%9B%BE/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/11/"/>
         <content type="html">&lt;h1 id=&#34;leetcode-133克隆图&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#leetcode-133克隆图&#34;&gt;#&lt;/a&gt; Leetcode 133. 克隆图&lt;/h1&gt;
 &lt;h2 id=&#34;题目描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#题目描述&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h2&gt;
 &lt;p&gt;给你无向&lt;a href=&#34;https://baike.baidu.com/item/%E8%BF%9E%E9%80%9A%E5%9B%BE/6460995?fr=aladdin&#34;&gt;连通&lt;/a&gt;图中一个节点的引用，请你返回该图的&lt;a href=&#34;https://baike.baidu.com/item/%E6%B7%B1%E6%8B%B7%E8%B4%9D/22785317?fr=aladdin&#34;&gt;深拷贝&lt;/a&gt;（克隆）。&lt;/p&gt;
@@ -380,9 +380,9 @@
         <updated>2022-01-20T08:17:02.000Z</updated>
     </entry>
     <entry>
-        <id>http://laz0825.cn/passages/%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/</id>
+        <id>http://laz0825.cn/passages/7/</id>
         <title>最大正方形</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/7/"/>
         <content type="html">&lt;h1 id=&#34;最大正方形&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最大正方形&#34;&gt;#&lt;/a&gt; &lt;strong&gt;最大正方形&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;​		大一 -&amp;gt; 大二暑期算法作业&lt;/p&gt;
 &lt;p&gt;​		&lt;strong&gt;分站已经上线简约风算法作业集合（也可以选择阅读模式&lt;/strong&gt;&lt;/p&gt;
@@ -468,9 +468,9 @@
         <updated>2021-08-12T02:11:41.000Z</updated>
     </entry>
     <entry>
-        <id>http://laz0825.cn/passages/%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98/</id>
+        <id>http://laz0825.cn/passages/6/</id>
         <title>太平洋大西洋水流问题</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/6/"/>
         <content type="html">&lt;h1 id=&#34;太平洋大西洋水流问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#太平洋大西洋水流问题&#34;&gt;#&lt;/a&gt; 太平洋大西洋水流问题&lt;/h1&gt;
 &lt;p&gt;​		大一 -&amp;gt; 大二暑期算法作业&lt;/p&gt;
 &lt;p&gt;​		&lt;strong&gt;分站已经上线简约风算法作业集合（也可以选择阅读模式&lt;/strong&gt;&lt;/p&gt;
@@ -523,9 +523,9 @@
         <updated>2021-08-05T11:30:57.000Z</updated>
     </entry>
     <entry>
-        <id>http://laz0825.cn/passages/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/</id>
+        <id>http://laz0825.cn/passages/5/</id>
         <title>罗马数字转整数</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/5/"/>
         <content type="html">&lt;h1 id=&#34;罗马数字转整数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#罗马数字转整数&#34;&gt;#&lt;/a&gt; 罗马数字转整数&lt;/h1&gt;
 &lt;p&gt;​		大一 -&amp;gt; 大二暑期算法作业&lt;/p&gt;
 &lt;p&gt;​		&lt;strong&gt;分站已经上线简约风算法作业集合（也可以选择阅读模式&lt;/strong&gt;&lt;/p&gt;
@@ -650,9 +650,9 @@
         <updated>2021-07-24T00:49:38.000Z</updated>
     </entry>
     <entry>
-        <id>http://laz0825.cn/passages/%E7%88%AC%E6%A5%BC%E6%A2%AF/</id>
+        <id>http://laz0825.cn/passages/4/</id>
         <title>爬楼梯</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/%E7%88%AC%E6%A5%BC%E6%A2%AF/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/4/"/>
         <content type="html">&lt;h1 id=&#34;爬楼梯&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#爬楼梯&#34;&gt;#&lt;/a&gt; 爬楼梯&lt;/h1&gt;
 &lt;p&gt;​		大一 -&amp;gt; 大二暑期算法作业&lt;/p&gt;
 &lt;p&gt;​		&lt;strong&gt;本文档中有对动态规划的解读（来自题解）&lt;/strong&gt;&lt;/p&gt;
@@ -798,9 +798,9 @@
         <updated>2021-07-19T07:24:26.000Z</updated>
     </entry>
     <entry>
-        <id>http://laz0825.cn/passages/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/</id>
+        <id>http://laz0825.cn/passages/3/</id>
         <title>二叉树的中序遍历</title>
-        <link rel="alternate" href="http://laz0825.cn/passages/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/3/"/>
         <content type="html">&lt;h1 id=&#34;二叉树的中序遍历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二叉树的中序遍历&#34;&gt;#&lt;/a&gt; 二叉树的中序遍历&lt;/h1&gt;
 &lt;p&gt;​		大一 -&amp;gt; 大二暑期算法作业&lt;/p&gt;
 &lt;p&gt;​		&lt;strong&gt;分站已经上线简约风算法作业集合（也可以选择阅读模式&lt;/strong&gt;&lt;/p&gt;
