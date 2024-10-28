@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>http://laz0825.cn</id>
     <title>LXR的小站 • Posts by &#34;数据库&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="http://laz0825.cn" />
     <updated>2022-08-28T05:49:59.000Z</updated>
     <category term="学习" />
     <category term="教程" />
@@ -15,9 +15,9 @@
     <category term="Java" />
     <category term="算法基础课" />
     <entry>
-        <id>http://example.com/passages/MySql%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
+        <id>http://laz0825.cn/passages/MySql%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
         <title>MySql基础篇</title>
-        <link rel="alternate" href="http://example.com/passages/MySql%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/MySql%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
         <content type="html">&lt;h1 id=&#34;一-sql&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-sql&#34;&gt;#&lt;/a&gt; 一、SQL&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;全称  &lt;code&gt;Structured Query Language&lt;/code&gt; ，结构化查询语言。操作关系型数据库的编程语言，定义了一套操作关系型数据库统一&lt;strong&gt;标准&lt;/strong&gt; 。&lt;/p&gt;
@@ -1511,9 +1511,9 @@
         <updated>2022-08-28T05:49:59.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/passages/%E4%BD%BF%E7%94%A8java%E5%B0%86ResultSet%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%89%93%E5%8D%B0%E6%88%90%E8%A1%A8%E6%A0%BC/</id>
+        <id>http://laz0825.cn/passages/%E4%BD%BF%E7%94%A8java%E5%B0%86ResultSet%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%89%93%E5%8D%B0%E6%88%90%E8%A1%A8%E6%A0%BC/</id>
         <title>使用java将ResultSet中的数据打印成表格</title>
-        <link rel="alternate" href="http://example.com/passages/%E4%BD%BF%E7%94%A8java%E5%B0%86ResultSet%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%89%93%E5%8D%B0%E6%88%90%E8%A1%A8%E6%A0%BC/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/%E4%BD%BF%E7%94%A8java%E5%B0%86ResultSet%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%89%93%E5%8D%B0%E6%88%90%E8%A1%A8%E6%A0%BC/"/>
         <content type="html">&lt;h1 id=&#34;背景介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#背景介绍&#34;&gt;#&lt;/a&gt; 背景介绍&lt;/h1&gt;
 &lt;p&gt;在写课设的时候呢，有一个需求是将数据库的数据输出到控制台，最好是格式化输出。&lt;/p&gt;
 &lt;p&gt;刚开始的时候我使用的方法是使用 select 语句讲数据拿到 ResultSet 中，之后将数据一条一条的放进对象中，之后放进 Arraylist 中来遍历输出。这种方法的效率较低，占用的时间空间都比较大。于是开始寻找一些方便好用的格式化输出 ResultSet 数据的方法，最终在参考了一些资料后整理出了这个方法。&lt;/p&gt;

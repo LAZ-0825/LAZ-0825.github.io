@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>LXR的小站 • Posts by &#34;数据库&#34; tag</title>
-        <link>http://example.com</link>
+        <link>http://laz0825.cn</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sun, 28 Aug 2022 13:49:59 +0800</pubDate>
@@ -18,9 +18,9 @@
         <category>Java</category>
         <category>算法基础课</category>
         <item>
-            <guid isPermalink="true">http://example.com/passages/MySql%E5%9F%BA%E7%A1%80%E7%AF%87/</guid>
+            <guid isPermalink="true">http://laz0825.cn/passages/MySql%E5%9F%BA%E7%A1%80%E7%AF%87/</guid>
             <title>MySql基础篇</title>
-            <link>http://example.com/passages/MySql%E5%9F%BA%E7%A1%80%E7%AF%87/</link>
+            <link>http://laz0825.cn/passages/MySql%E5%9F%BA%E7%A1%80%E7%AF%87/</link>
             <category>学习</category>
             <category>教程</category>
             <category>数据库</category>
@@ -1514,9 +1514,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/passages/%E4%BD%BF%E7%94%A8java%E5%B0%86ResultSet%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%89%93%E5%8D%B0%E6%88%90%E8%A1%A8%E6%A0%BC/</guid>
+            <guid isPermalink="true">http://laz0825.cn/passages/%E4%BD%BF%E7%94%A8java%E5%B0%86ResultSet%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%89%93%E5%8D%B0%E6%88%90%E8%A1%A8%E6%A0%BC/</guid>
             <title>使用java将ResultSet中的数据打印成表格</title>
-            <link>http://example.com/passages/%E4%BD%BF%E7%94%A8java%E5%B0%86ResultSet%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%89%93%E5%8D%B0%E6%88%90%E8%A1%A8%E6%A0%BC/</link>
+            <link>http://laz0825.cn/passages/%E4%BD%BF%E7%94%A8java%E5%B0%86ResultSet%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E6%89%93%E5%8D%B0%E6%88%90%E8%A1%A8%E6%A0%BC/</link>
             <category>数据库</category>
             <category>Java</category>
             <pubDate>Mon, 04 Jul 2022 18:43:15 +0800</pubDate>

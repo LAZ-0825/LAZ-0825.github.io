@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>LXR的小站 • Posts by &#34;算法基础课&#34; tag</title>
-        <link>http://example.com</link>
+        <link>http://laz0825.cn</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sun, 21 Nov 2021 10:53:13 +0800</pubDate>
@@ -18,9 +18,9 @@
         <category>Java</category>
         <category>算法基础课</category>
         <item>
-            <guid isPermalink="true">http://example.com/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</guid>
+            <guid isPermalink="true">http://laz0825.cn/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</guid>
             <title>基础算法</title>
-            <link>http://example.com/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</link>
+            <link>http://laz0825.cn/passages/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</link>
             <category>算法基础课</category>
             <pubDate>Sun, 21 Nov 2021 10:53:13 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;acwing-785-快速排序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#acwing-785-快速排序&#34;&gt;#&lt;/a&gt; AcWing 785. 快速排序&lt;/h1&gt;

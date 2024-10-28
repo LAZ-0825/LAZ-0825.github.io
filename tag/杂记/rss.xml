@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>LXR的小站 • Posts by &#34;杂记&#34; tag</title>
-        <link>http://example.com</link>
+        <link>http://laz0825.cn</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Thu, 09 Sep 2021 17:14:33 +0800</pubDate>
@@ -18,9 +18,9 @@
         <category>Java</category>
         <category>算法基础课</category>
         <item>
-            <guid isPermalink="true">http://example.com/passages/%E6%9F%90%E8%8F%9C%E9%B8%A1%E8%89%B0%E9%9A%BE%E7%9A%84you-get%E4%BD%BF%E7%94%A8%E5%8E%86%E7%A8%8B/</guid>
+            <guid isPermalink="true">http://laz0825.cn/passages/%E6%9F%90%E8%8F%9C%E9%B8%A1%E8%89%B0%E9%9A%BE%E7%9A%84you-get%E4%BD%BF%E7%94%A8%E5%8E%86%E7%A8%8B/</guid>
             <title>某菜鸡艰难的you-get使用历程</title>
-            <link>http://example.com/passages/%E6%9F%90%E8%8F%9C%E9%B8%A1%E8%89%B0%E9%9A%BE%E7%9A%84you-get%E4%BD%BF%E7%94%A8%E5%8E%86%E7%A8%8B/</link>
+            <link>http://laz0825.cn/passages/%E6%9F%90%E8%8F%9C%E9%B8%A1%E8%89%B0%E9%9A%BE%E7%9A%84you-get%E4%BD%BF%E7%94%A8%E5%8E%86%E7%A8%8B/</link>
             <category>教程</category>
             <category>杂记</category>
             <pubDate>Thu, 09 Sep 2021 17:14:33 +0800</pubDate>
@@ -108,9 +108,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/passages/HEXO+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B0%8F%E6%95%99%E7%A8%8B/</guid>
+            <guid isPermalink="true">http://laz0825.cn/passages/HEXO+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B0%8F%E6%95%99%E7%A8%8B/</guid>
             <title>HEXO+GitHub搭建博客的小教程</title>
-            <link>http://example.com/passages/HEXO+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B0%8F%E6%95%99%E7%A8%8B/</link>
+            <link>http://laz0825.cn/passages/HEXO+GitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B0%8F%E6%95%99%E7%A8%8B/</link>
             <category>杂记</category>
             <pubDate>Mon, 12 Jul 2021 15:20:05 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;如何用hexo搭建自己的博客及美化自己的博客&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何用hexo搭建自己的博客及美化自己的博客&#34;&gt;#&lt;/a&gt; 如何用 hexo 搭建自己的博客及美化自己的博客&lt;/h1&gt;
@@ -322,9 +322,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/passages/First-Blog/</guid>
+            <guid isPermalink="true">http://laz0825.cn/passages/First-Blog/</guid>
             <title>First Blog</title>
-            <link>http://example.com/passages/First-Blog/</link>
+            <link>http://laz0825.cn/passages/First-Blog/</link>
             <category>杂记</category>
             <pubDate>Mon, 12 Jul 2021 11:04:19 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;First Blog 完成啦！&lt;/p&gt;

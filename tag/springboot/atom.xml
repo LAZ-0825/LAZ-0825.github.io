@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>http://laz0825.cn</id>
     <title>LXR的小站 • Posts by &#34;springboot&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="http://laz0825.cn" />
     <updated>2022-09-02T14:28:45.000Z</updated>
     <category term="学习" />
     <category term="教程" />
@@ -15,11 +15,11 @@
     <category term="Java" />
     <category term="算法基础课" />
     <entry>
-        <id>http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%8E%9F%E7%90%86%E7%AF%87/</id>
+        <id>http://laz0825.cn/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%8E%9F%E7%90%86%E7%AF%87/</id>
         <title>SpringBoot讲义-原理篇</title>
-        <link rel="alternate" href="http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%8E%9F%E7%90%86%E7%AF%87/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%8E%9F%E7%90%86%E7%AF%87/"/>
         <content type="html">&lt;h1 id=&#34;springboot原理篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot原理篇&#34;&gt;#&lt;/a&gt; SpringBoot 原理篇&lt;/h1&gt;
-&lt;p&gt;​		在学习前面三篇的时候，好多小伙伴一直在 B 站评论区嚷嚷着期待原理篇，今天可以正式的宣布了，他来了他来了他脚踏祥云进来了（此处请自行脑补 BGM）。&lt;/p&gt;
+&lt;p&gt;​		原理篇来辣！&lt;/p&gt;
 &lt;p&gt;​		其实从本人的角度出发，看了这么多学习 java 的小伙伴的学习过程，个人观点，不建议小伙伴过早的去研究技术的原理。原因有二：一，&lt;strong&gt;先应用熟练&lt;/strong&gt;，&lt;strong&gt;培养技术应用的条件反射&lt;/strong&gt;，然后再学原理。大把的学习者天天还纠结于这里少写一个这，那里少写一个那，程序都跑不下去，要啥原理，要啥自行车。这里要说一句啊，懂不懂啥意思那不叫原理，原理是抽象到顶层设计层面的东西。知道为什么写这句话，知道错误的原因和懂原理是两码事。二， &lt;strong&gt;原理真不是看源码&lt;/strong&gt;，源码只能称作原理的落地实现方式，当好的落地实现方式出现后，就会有新旧版本的迭代，底层实现方式也会伴随着更新升级。但是原理不变，只是找到了更好的实现最初目标的路径。一个好的课程，一位好的老师，不会用若干行云里雾里的源代码把学习者带到沟里，然后爬不出来，深陷泥潭。一边沮丧的看着源码，一边舔着老师奉其为大神，这就叫不干人事。原理就应该使用最通俗易懂的语言，把设计思想讲出来，至于看源码，只是因为目前的技术原创人员只想到了当前这种最笨的设计方案，还没有更好的。比如 spirng 程序，写起来很费劲，springboot 出来以后就简单轻松了很多，实现方案变了，原理不变。但凡你想通过下面的课程学习去读懂若干行代码，然后特别装逼的告诉自己，我懂原理了。我只能告诉你，你选了一条成本最高的路线，看源码仅仅是验证原理，源码仅对应程序流程，不对应原理。原理是思想级的，不是代码级的，原理是原本的道理。&lt;/p&gt;
 &lt;p&gt;​		springboot 技术本身就是为了加速 spring 程序的开发的，可以大胆的说，springboot 技术没有自己的原理层面的设计，仅仅是实现方案进行了改进。将 springboot 定位成工具，你就不会去想方设法的学习其原理了。就像是将木头分割成若干份，我们可以用斧子，用锯子，用刀，用火烧或者一脚踹断它，这些都是方式方法，而究其本质底层原理是植物纤维的组织方式，研究完这个，你再看前述的各种工具，都是基于这个原理在说如何变更破坏这种植物纤维的方式。所以不要一张嘴说了若干种技术，然后告诉自己，这就是 spirngboot 的原理。没有的事，springboot 作为一款工具，压根就没有原理。我们下面要学习的其实就是 spirngboot 程序的工作流程。&lt;/p&gt;
 &lt;p&gt;​		下面就开始学习原理篇，因为没有想出来特别好的名字，所以还是先称作原理篇吧。原理篇中包含如下内容：&lt;/p&gt;
@@ -400,10 +400,11 @@
 &lt;li&gt;整体流程采用事件监听的机制进行过程控制，开发者可以根据需要自行扩展，添加对应的监听器绑定具体事件，就可以在事件触发位置执行开发者的业务代码&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;原理篇完结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原理篇完结&#34;&gt;#&lt;/a&gt; 原理篇完结&lt;/h2&gt;
-&lt;p&gt;​		原理篇到这里就要结束了，springboot2 整套课程的基础篇、实用篇和原理篇就全部讲完了。至于后面的番外篇由于受 B 站视频上传总量不得超过 200 个视频的约束，番外篇的内容不会在当前课程中发布了，会重新定义一个课程继续发布，至于具体时间，暂时还无法给到各位小伙伴。&lt;/p&gt;
+&lt;p&gt;​		原理篇到这里就要结束了，springboot2 整套课程的基础篇、实用篇和原理篇就全部讲完了。&lt;/p&gt;
 &lt;p&gt;​		原理篇个人感觉略微有点偷懒，怎么说呢？学习原理篇需要的前置铺垫知识太多，比如最后一节讲到启动流程时，看到 reflush 方法时我就想现在在看这套课程的小伙伴是否真的懂这个过程呢？但是如果把这些东西都讲了，那估计要补充的知识就太多了，就是将 spring 的很多知识加入到这里面重新讲解了，会出现喧宾夺主的现象。很纠结，(´・︵・`)&lt;/p&gt;
 &lt;p&gt;​		课程做到这里就要和各位小伙伴先 say 顾拜了，感谢各位小伙伴的支持，也欢迎各位小伙伴持续关注黑马程序员出品的各种视频教程。黑马程序员的每位老师做课程都是认真的，都是为了各位致力于 IT 研发事业的小伙伴能够学习之路上少遇沟沟坎坎，顺利到达成功的彼岸。&lt;/p&gt;
-&lt;p&gt;​		番外篇，さようなら！ 안녕히 계십시오！แล้วเจอกัน！До свидания ！خداحافظ ！&lt;/p&gt;
+&lt;p&gt;#致谢&lt;/p&gt;
+&lt;p&gt;​		再次感谢黑马程序员老师的课程支持，有兴趣的小伙伴可以自行查看&lt;/p&gt;
 </content>
         <category term="学习" />
         <category term="教程" />
@@ -412,13 +413,11 @@
         <updated>2022-09-02T14:28:45.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E7%AF%87/</id>
+        <id>http://laz0825.cn/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E7%AF%87/</id>
         <title>SpringBoot讲义-开发实用篇</title>
-        <link rel="alternate" href="http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E7%AF%87/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E7%AF%87/"/>
         <content type="html">&lt;h1 id=&#34;springboot开发实用篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot开发实用篇&#34;&gt;#&lt;/a&gt; SpringBoot 开发实用篇&lt;/h1&gt;
-&lt;p&gt;​		怀着忐忑的心情，开始了开发实用篇文档的编写。为什么忐忑？特喵的债欠的太多，不知道从何写起。哎，不煽情了，开工。&lt;/p&gt;
-&lt;p&gt;​		运维实用篇完结以后，开发实用篇采用日更新的形式发布给各位小伙伴，基本上是每天一集，目前已经发布完毕。看评论区，好多小伙伴在求文档，所以赶紧来补文档，加班加点把开发实用篇的文档刨出来。&lt;/p&gt;
-&lt;p&gt;​		开发实用篇中因为牵扯到 SpringBoot 整合各种各样的技术，由于不是每个小伙伴对各种技术都有所掌握，所以在整合每一个技术之前，都会做一个快速的普及，这样的话内容整个开发实用篇所包含的内容就会比较多。各位小伙伴在学习的时候，如果对某一个技术不是很清楚，可以先跳过对应章节，或者先补充一下技术知识，然后再来看对应的课程。开发实用篇具体包含的内容如下：&lt;/p&gt;
+&lt;p&gt;​				开发实用篇中因为牵扯到 SpringBoot 整合各种各样的技术，由于不是每个小伙伴对各种技术都有所掌握，所以在整合每一个技术之前，都会做一个快速的普及，这样的话内容整个开发实用篇所包含的内容就会比较多。各位小伙伴在学习的时候，如果对某一个技术不是很清楚，可以先跳过对应章节，或者先补充一下技术知识，然后再来看对应的课程。开发实用篇具体包含的内容如下：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;热部署&lt;/li&gt;
 &lt;li&gt;配置高级&lt;/li&gt;
@@ -2208,7 +2207,8 @@
 &lt;p&gt;​		整体开发实用篇中讲解的内容可以分为两大类知识：实用性知识与经验性知识。&lt;/p&gt;
 &lt;p&gt;​		实用性知识就是新知识了，springboot 整合各种技术，每种技术整合中都有一些特殊操作，整体来说其实就是三句话。加坐标做配置调接口。经验性知识是对前面两篇中出现的一些知识的补充，在学习基础篇时如果将精力放在这些东西上就有点学偏了，容易钻牛角尖，放到实用开发篇中结合实际开发说一些不常见的但是对系统功能又危害的操作解决方案，提升理解。&lt;/p&gt;
 &lt;p&gt;​		开发实用篇做到这里就告一段落，下面就要着手准备原理篇了。市面上很多课程原理篇讲的过于高深莫测，在新手还没明白 123 的时候就开始讲微积分了，着实让人看了着急。至于原理篇我讲成什么样子？一起期待吧。&lt;/p&gt;
-&lt;h1 id&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h1&gt;
+&lt;p&gt;#致谢&lt;/p&gt;
+&lt;p&gt;​		再次感谢黑马程序员老师的课程支持，有兴趣的小伙伴可以自行查看&lt;/p&gt;
 </content>
         <category term="学习" />
         <category term="教程" />
@@ -2217,11 +2217,10 @@
         <updated>2022-09-02T14:28:33.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/</id>
+        <id>http://laz0825.cn/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/</id>
         <title>SpringBoot讲义-运维实用篇</title>
-        <link rel="alternate" href="http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87/"/>
         <content type="html">&lt;h1 id=&#34;springboot运维实用篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot运维实用篇&#34;&gt;#&lt;/a&gt; SpringBoot 运维实用篇&lt;/h1&gt;
-&lt;p&gt;​		基础篇发布以后，看到了很多小伙伴在网上的留言，也帮助超过 100 位小伙伴解决了一些遇到的问题，并且已经发现了部分问题具有典型性，预计将有些问题在后面篇章的合适位置添加到本套课程中，作为解决方案提供给大家。&lt;/p&gt;
 &lt;p&gt;​		从此刻开始，咱们就要进入到实用篇的学习了。实用篇是在基础篇的根基之上，补全 SpringBoot 的知识图谱。比如在基础篇中只给大家讲了 yaml 的语法格式，但是具体写 yaml 文件的时候还有很多实用开发过程中的坑，这些在实用篇中都要进行学习。&lt;/p&gt;
 &lt;p&gt;​		实用篇共分为两块内容，分别是运维实用篇和开发实用篇。其实划分的标准是我自己制定的，因为这里面的知识有一些还是比较散的，做两个阶段的划分是为了更好的将同类知识点进行归类，帮助学习者找到知识之间的关联性，这样有助于知识的记忆存储转换，经过一系列的知识反复出现与强化练习，将临时记忆转换成永久性记忆。做课程嘛，不能仅以讲完为目标，要以学习者的学习收获为目标，这也是我这么多年教学秉承的基本理念。&lt;/p&gt;
 &lt;p&gt;​		下面就从运维实用篇开始讲，在运维实用篇中，我给学习者的定位是玩转配置，为开发实用篇中做各种技术的整合做好准备工作。与开发实用篇相比，运维实用篇的内容显得略微单薄，并且有部分知识模块在运维实用篇和开发实用篇中都要讲一部分，这些内容都后置到开发实用篇中了。废话不说了，先看看运维实用篇中都包含哪些内容：&lt;/p&gt;
@@ -2599,7 +2598,8 @@
 &lt;h2 id=&#34;运维实用篇完结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运维实用篇完结&#34;&gt;#&lt;/a&gt; 运维实用篇完结&lt;/h2&gt;
 &lt;p&gt;​		运维实用篇到这里就要先告一段落了，为什么不说结束呢？因为运维篇中还有一些知识，但是现在讲解过于分散了。所以要把这些知识与开发实用篇的知识结合在一起讲，也是本课程的教学设计的体现。&lt;/p&gt;
 &lt;p&gt;​		在整体运维实用篇中带着大家学习了 4 块内容，首先学习了如何运行 SpringBoot 程序，也就是程序的打包与运行，接下来对配置进行了升级学习，不再局限在配置文件中进行设置，通过临时属性，外部配置文件对项目的配置进行管控。在多环境开发中给大家介绍了多种多环境开发的格式，其实掌握一种即可，此外还给大家讲了多环境开发的一些技巧以及与 maven 的冲突解决方案。最后给大家介绍了日志系统，老实说日志这里讲的相当的潦草，因为大部分日志相关的知识都不应该在这门课中学习，这里只是告诉大家如何整合实用而已。&lt;/p&gt;
-&lt;p&gt;​		看了各位小伙伴的评论，知道你们再催更，我也在加油，一起努力吧，实用开发篇再会。实用开发篇会提高更新频度，不全部做完给大家更新了，我先把做好的一部分开放出来，随后做完一点就更新一点，额，好吧，就说到这里吧。&lt;/p&gt;
+&lt;p&gt;#致谢&lt;/p&gt;
+&lt;p&gt;​		再次感谢黑马程序员老师的课程支持，有兴趣的小伙伴可以自行查看&lt;/p&gt;
 </content>
         <category term="学习" />
         <category term="教程" />
@@ -2608,59 +2608,10 @@
         <updated>2022-09-02T14:28:22.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
+        <id>http://laz0825.cn/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
         <title>SpringBoot讲义-基础篇</title>
-        <link rel="alternate" href="http://example.com/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+        <link rel="alternate" href="http://laz0825.cn/passages/SpringBoot%E8%AE%B2%E4%B9%89-%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
         <content type="html">&lt;h1 id=&#34;springboot&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot&#34;&gt;#&lt;/a&gt; SpringBoot&lt;/h1&gt;
-&lt;h3 id=&#34;文档更新日志&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文档更新日志&#34;&gt;#&lt;/a&gt; 文档更新日志&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;版本&lt;/th&gt;
-&lt;th&gt;更新日期&lt;/th&gt;
-&lt;th&gt;操作&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;v1.0&lt;/td&gt;
-&lt;td&gt;2021/11/14&lt;/td&gt;
-&lt;td&gt;A&lt;/td&gt;
-&lt;td&gt;基础篇&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;v1.0.1&lt;/td&gt;
-&lt;td&gt;2021/11/30&lt;/td&gt;
-&lt;td&gt;U&lt;/td&gt;
-&lt;td&gt;更新基础篇错别字若干，不涉及内容变更&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;v2.0&lt;/td&gt;
-&lt;td&gt;2021/12/01&lt;/td&gt;
-&lt;td&gt;A&lt;/td&gt;
-&lt;td&gt;运维实用篇&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;V3.0&lt;/td&gt;
-&lt;td&gt;2022/2/21&lt;/td&gt;
-&lt;td&gt;A&lt;/td&gt;
-&lt;td&gt;开发实用篇&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;V4.0&lt;/td&gt;
-&lt;td&gt;2022/3/29&lt;/td&gt;
-&lt;td&gt;A&lt;/td&gt;
-&lt;td&gt;原理篇&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;V5.0&lt;/td&gt;
-&lt;td&gt;2022/9/2&lt;/td&gt;
-&lt;td&gt;A&lt;/td&gt;
-&lt;td&gt;个人白嫖信息等&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
 &lt;h3 id=&#34;前言白嫖发言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言白嫖发言&#34;&gt;#&lt;/a&gt; 前言（白嫖发言）&lt;/h3&gt;
 &lt;p&gt;​		这个笔记是从黑马老师那里嫖来的，放在这里是为了方便查看，没有商用的意思，转载请标明&lt;strong&gt;黑马程序员&lt;/strong&gt;以及链接。&lt;/p&gt;
 &lt;h3 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h3&gt;
