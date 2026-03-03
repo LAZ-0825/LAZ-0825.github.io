@@ -17,8 +17,10 @@
             "url": "http://laz0825.cn/passages/27/",
             "title": "newPage",
             "date_published": "2024-10-27T05:40:14.000Z",
-            "content_html": "<p>NEW PAGE TEST</p>\n",
-            "tags": []
+            "content_html": "<p>NEW PAGE TEST</p>\n<p>NEW PAGE TEST2</p>\n",
+            "tags": [
+                "教程"
+            ]
         },
         {
             "id": "http://laz0825.cn/passages/26/",

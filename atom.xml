@@ -5,8 +5,8 @@
     <link href="http://laz0825.cn" />
     <updated>2026-03-01T06:06:56.515Z</updated>
     <category term="杂记" />
-    <category term="算法作业" />
     <category term="算法基础课" />
+    <category term="算法作业" />
     <category term="数据库" />
     <category term="Java" />
     <category term="学习" />
@@ -40,7 +40,9 @@
         <title>newPage</title>
         <link rel="alternate" href="http://laz0825.cn/passages/27/"/>
         <content type="html">&lt;p&gt;NEW PAGE TEST&lt;/p&gt;
+&lt;p&gt;NEW PAGE TEST2&lt;/p&gt;
 </content>
+        <category term="教程" />
         <updated>2024-10-27T05:40:14.000Z</updated>
     </entry>
     <entry>
