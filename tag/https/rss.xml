@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>LXR的小站 • Posts by &#34;https&#34; tag</title>
+        <link>http://laz0825.cn</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 27 Oct 2024 13:40:14 +0800</pubDate>
+        <lastBuildDate>Sun, 27 Oct 2024 13:40:14 +0800</lastBuildDate>
+        <category>算法作业</category>
+        <category>杂记</category>
+        <category>算法基础课</category>
+        <category>学习</category>
+        <category>教程</category>
+        <category>数据库</category>
+        <category>Java</category>
+        <category>SpringBoot</category>
+        <category>料理</category>
+        <category>菜谱</category>
+        <category>博客</category>
+        <category>https</category>
+        <category>服务器</category>
+        <item>
+            <guid isPermalink="true">http://laz0825.cn/passages/27/</guid>
+            <title>关于解决本站“不安全”角标的那些事</title>
+            <link>http://laz0825.cn/passages/27/</link>
+            <category>教程</category>
+            <category>博客</category>
+            <category>https</category>
+            <category>服务器</category>
+            <pubDate>Sun, 27 Oct 2024 13:40:14 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;这里是某 &lt;s&gt;铸币&lt;/s&gt; 作者 LXR 与陈年 bug 斗智斗勇的一条总结 &lt;s&gt;绝对不是 BUG 忘记了之类的&lt;/s&gt; 。&lt;/p&gt;
+&lt;h1 id=&#34;故事开端&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#故事开端&#34;&gt;#&lt;/a&gt; 故事开端&lt;/h1&gt;
+&lt;p&gt;LXR 是在步入大学的第二年才开始配置自己的小博客的，俗话说的好， &lt;s&gt;故事的开始总是极具温柔&lt;/s&gt; 万事开头难，某人忙活了一个多月总算是给网站好了，不能说有多好，只能说是 &lt;s&gt;光鲜亮丽&lt;/s&gt; 初具人型。&lt;/p&gt;
+&lt;p&gt;后来在后续进行了一系列 &lt;s&gt;猛男&lt;/s&gt; 风格美化之后，网站中于是看起来丰富了许多，于是就陆陆续续的开始写一些小文章（ &lt;s&gt;虽然没什么人看&lt;/s&gt; ）。&lt;/p&gt;
+&lt;h1 id=&#34;我们的初见&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#我们的初见&#34;&gt;#&lt;/a&gt; 我们的初见&lt;/h1&gt;
+&lt;p&gt;就在 LXR 初步完成博客的建设并开始兴奋的与大家互换友链的时候，LXR 发现了一个问题：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“为什么我的网址前面总是会提示不安全？”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;刚开始因为课业不少 + 每天还有其他事情比如各种的培训、学习、活动 &lt;s&gt;、打游戏&lt;/s&gt; 之类的事情，所以一直没时间管。于是一直安慰自己说：” 没事的只是一个角标，浏览的时候又看不见，眼不见心不烦 “。&lt;/p&gt;
+&lt;p&gt;等后来 LXR 没那么忙了之后，她越看越觉得这个 “不安全” 标识很刺眼 &lt;s&gt;也是被某学姐吐槽说怎么你的博客还顶了个不安全标识，速速去修一下&lt;/s&gt; 。&lt;/p&gt;
+&lt;p&gt;于是 LXR 开始寻找问题的根本原因。&lt;/p&gt;
+&lt;h1 id=&#34;第一次着手解决&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一次着手解决&#34;&gt;#&lt;/a&gt; 第一次着手解决&lt;/h1&gt;
+&lt;p&gt;LXR 在越看越不顺眼的情况下，查阅了一些资料并在服务器控制台，发现可能是证书过期导致的 &lt;s&gt;后来想了下最开始的时候他就存在的话，其实是跟证书过期没直接关系的，铸币 LXR&lt;/s&gt; ，于是她决定部署一下免费 SSL 证书（这东西一年 20 张，到期记得换就行）。&lt;/p&gt;
+&lt;p&gt;就当 LXR 按部就班的购买证书、配置并签发证书、下载证书之后，她发现了一个至关重要的问题：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“tnd 我证书存放路径我给设置哪去了？”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这里就不得不说一句 “铸币 LXR” 了。因为 LXR 最开始配置的时候是自己配置 &lt;s&gt;中间卡住了就请教学姐版&lt;/s&gt; 的，所以有一些配置并没有沿用自带的默认配置，就导致 &lt;s&gt;铸币&lt;/s&gt; LXR 忘记了自己的 nginx 下存放 ssl 整数的路径是哪里，同时也没找到 nginx 配置文件放哪里了 &lt;s&gt;因为 nginx 安装目录和可执行文件目录也是自定义的，全搞忘了&lt;/s&gt; ，于是在经历了一系列找寻和尝试之后最后还是暂时搁置了 （确实是找了好久没找到 and 又忙起来了所以选择暂时搁置下来 &lt;s&gt;攫夺不是因为 LXR 懒&lt;/s&gt; ）。&lt;/p&gt;
+&lt;h1 id=&#34;第二次见面并解决一部分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第二次见面并解决一部分&#34;&gt;#&lt;/a&gt; 第二次见面并解决一部分&lt;/h1&gt;
+&lt;p&gt;时光荏苒岁月如梭 &lt;s&gt;总之就是 LXR 懒了很久之后&lt;/s&gt; ，一眨眼 LXR 都毕业步入社会开始工作了。&lt;/p&gt;
+&lt;p&gt;在这段时间里，LXR 还是会陆陆续续的更新自己的小站（虽然后面开始更新美食食谱和经验分享了），让它看起来不会太冷清，但是那个 “不安全” 角标总是像一根刺一样时不时扎眼睛一下令人难受。&lt;/p&gt;
+&lt;p&gt;于是就在最近，LXR 没那么忙的时候就开始着手彻底解决这个问题。&lt;/p&gt;
+&lt;p&gt;第一步，当然就是换一个新的免费 SSL 证书了（当然不是 LXR 扣，有没有用得先试了才知道，不然不是白买了 &lt;s&gt;当然修好了估计也不会买&lt;/s&gt; ）。于是在新一轮的购买证书、配置并签发证书、下载证书之后，她又回到了问题的起点：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“tnd 我证书存放路径在哪？上次就没找见。”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;好在此时的 LXR 并不是最开始的菜鸟 LXR 了 &lt;s&gt;虽然现在来说也没有强到哪里去&lt;/s&gt; ，她使用了&lt;strong&gt; which 命令&lt;/strong&gt;来查找她想要的东西。&lt;/p&gt;
+&lt;p&gt;此时我们应该来了解一下 which 命令了：&lt;/p&gt;
+&lt;h2 id=&#34;which是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#which是什么&#34;&gt;#&lt;/a&gt; which 是什么&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;which&lt;/code&gt;  命令是 &lt;code&gt;Linux&lt;/code&gt;  中的一项文件操作，用于定位系统中的可执行文件。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;which&lt;/code&gt;  指令会在环境变量 &lt;code&gt;PATH&lt;/code&gt;  设置的目录里查找符合条件的文件。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;which&lt;/code&gt;  命令在所有主流的 Linux 发行版中都是可用的，并且在大多数系统中， &lt;code&gt;which&lt;/code&gt;  命令都是预安装的，无需额外安装。&lt;/p&gt;
+&lt;h2 id=&#34;which命令的基本语法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#which命令的基本语法&#34;&gt;#&lt;/a&gt; which 命令的基本语法&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;which&lt;/code&gt;  命令的语法非常简单&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;which&lt;/span&gt; filename&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这里的 &lt;code&gt;filename&lt;/code&gt;  就是你要查找的文件名或命令名。&lt;/p&gt;
+&lt;h3 id=&#34;查找单个命令的位置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查找单个命令的位置&#34;&gt;#&lt;/a&gt; 查找单个命令的位置&lt;/h3&gt;
+&lt;p&gt;例如，你要查找 &lt;code&gt;java&lt;/code&gt;  命令的位置，你将使用下面这段指令：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;which&lt;/span&gt; java&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;输出可能是这样的：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;/usr/bin/java&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这告诉我们 &lt;code&gt;java&lt;/code&gt;  命令的位置在 &lt;code&gt;/usr/bin/java&lt;/code&gt; 。&lt;/p&gt;
+&lt;h3 id=&#34;查找多个命令的位置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查找多个命令的位置&#34;&gt;#&lt;/a&gt; 查找多个命令的位置&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;which&lt;/span&gt; man java python nada&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;输出可能是这样的：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;/usr/bin/man&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;/usr/bin/java&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;/usr/bin/python&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这告诉我们 &lt;code&gt;man&lt;/code&gt; 、 &lt;code&gt;java&lt;/code&gt;  和 &lt;code&gt;python&lt;/code&gt;  命令的位置，而 &lt;code&gt;nada&lt;/code&gt;  命令没有找到&lt;/p&gt;
+&lt;h2 id=&#34;which命令的常用选项或参数说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#which命令的常用选项或参数说明&#34;&gt;#&lt;/a&gt; which 命令的常用选项或参数说明&lt;/h2&gt;
+&lt;p&gt;which 命令的语法格式如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;which&lt;/span&gt; 参数 文件名&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;常用参数见下表：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;选项&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;th&gt;选项&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-a&lt;/td&gt;
+&lt;td&gt;显示 PATH 变量中所有匹配的可执行文件&lt;/td&gt;
+&lt;td&gt;–help&lt;/td&gt;
+&lt;td&gt;显示帮助信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-n&lt;/td&gt;
+&lt;td&gt;设置文件名长度（不含路径）&lt;/td&gt;
+&lt;td&gt;–read-functions&lt;/td&gt;
+&lt;td&gt;从标准输入中读取 shell 函数定义&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-p&lt;/td&gt;
+&lt;td&gt;设置文件名长度（含路径）&lt;/td&gt;
+&lt;td&gt;–show-tilde&lt;/td&gt;
+&lt;td&gt;使用波浪线代替路径中的家目录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-V&lt;/td&gt;
+&lt;td&gt;显示版本信息&lt;/td&gt;
+&lt;td&gt;–skip-dot&lt;/td&gt;
+&lt;td&gt;跳过 PATH 变量中以点号开头的目录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-w&lt;/td&gt;
+&lt;td&gt;设置输出时栏位的宽度&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;例如，当我们要查找所有匹配的路径时，我们可以使用 &lt;code&gt;-a&lt;/code&gt;  参数来进行查找：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;which&lt;/span&gt; -a program&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;输出可能是这样的：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;/usr/bin/program&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;/usr/&lt;span class=&#34;built_in&#34;&gt;local&lt;/span&gt;/bin/program&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这表示 &lt;code&gt;program&lt;/code&gt;  在这两个地方都有可执行文件。&lt;/p&gt;
+&lt;h2 id=&#34;which命令的注意事项&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#which命令的注意事项&#34;&gt;#&lt;/a&gt; which 命令的注意事项&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;which&lt;/code&gt;  命令只适用于可执行文件。&lt;/li&gt;
+&lt;li&gt;如果 &lt;code&gt;which&lt;/code&gt;  命令在当前路径中找不到可执行文件，它将返回空。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;第二次见面的最终处置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第二次见面的最终处置&#34;&gt;#&lt;/a&gt; 第二次见面的最终处置&lt;/h1&gt;
+&lt;p&gt;问题的处置还在继续。&lt;/p&gt;
+&lt;p&gt;在使用了 &lt;code&gt;which&lt;/code&gt;  命令后，LXR 顺利找到了 nginx 的安装路径，并找到了 nginx 的证书配置文件，在这里找到了 SSL 证书的存放路径。&lt;/p&gt;
+&lt;p&gt;欣喜若狂的 LXR 通过 winSCP 将下载好的证书文件上传至服务器指定路径，修改配置文件并重启 nginx 服务后，她开始验证重新部署的证书是否有用。&lt;/p&gt;
+&lt;p&gt;当她使用浏览器打开本站时，她发现：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“tnd 怎么这个不安全标志还在？”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;后面怀疑是浏览器缓存导致的问题，索性使用 InPrivate 无痕浏览来访问网站，果然发现了问题原因。&lt;/p&gt;
+&lt;p&gt;居然是因为网站不支持 HTTPS 访问导致的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/passages/27/NoHTTPS.png&#34; alt=&#34;NoHTTPS&#34;&gt;&lt;/p&gt;
+&lt;p&gt;于是 LXR 开始着手调查此事。&lt;/p&gt;
+&lt;h1 id=&#34;解决不支持https的问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解决不支持https的问题&#34;&gt;#&lt;/a&gt; 解决不支持 HTTPS 的问题&lt;/h1&gt;
+&lt;p&gt;。。。未完待续（实际上是还没写完，下班了回来写哇。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
