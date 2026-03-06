@@ -7,13 +7,13 @@
         <language>zh-CN</language>
         <pubDate>Sun, 28 Aug 2022 13:49:59 +0800</pubDate>
         <lastBuildDate>Sun, 28 Aug 2022 13:49:59 +0800</lastBuildDate>
-        <category>算法作业</category>
         <category>杂记</category>
         <category>算法基础课</category>
-        <category>学习</category>
-        <category>教程</category>
+        <category>算法作业</category>
         <category>数据库</category>
         <category>Java</category>
+        <category>学习</category>
+        <category>教程</category>
         <category>SpringBoot</category>
         <category>料理</category>
         <category>菜谱</category>
@@ -24,9 +24,9 @@
             <guid isPermalink="true">http://laz0825.cn/passages/20/</guid>
             <title>MySql基础篇</title>
             <link>http://laz0825.cn/passages/20/</link>
+            <category>数据库</category>
             <category>学习</category>
             <category>教程</category>
-            <category>数据库</category>
             <pubDate>Sun, 28 Aug 2022 13:49:59 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;一-sql&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-sql&#34;&gt;#&lt;/a&gt; 一、SQL&lt;/h1&gt;
 &lt;blockquote&gt;

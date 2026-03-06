@@ -4,13 +4,13 @@
     <title>LXR的小站 • Posts by &#34;教程&#34; tag</title>
     <link href="http://laz0825.cn" />
     <updated>2024-10-27T05:40:14.000Z</updated>
-    <category term="算法作业" />
     <category term="杂记" />
     <category term="算法基础课" />
-    <category term="学习" />
-    <category term="教程" />
+    <category term="算法作业" />
     <category term="数据库" />
     <category term="Java" />
+    <category term="学习" />
+    <category term="教程" />
     <category term="SpringBoot" />
     <category term="料理" />
     <category term="菜谱" />
@@ -130,7 +130,46 @@
 &lt;p&gt;&lt;img src=&#34;/passages/27/NoHTTPS.png&#34; alt=&#34;NoHTTPS&#34;&gt;&lt;/p&gt;
 &lt;p&gt;于是 LXR 开始着手调查此事。&lt;/p&gt;
 &lt;h1 id=&#34;解决不支持https的问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解决不支持https的问题&#34;&gt;#&lt;/a&gt; 解决不支持 HTTPS 的问题&lt;/h1&gt;
-&lt;p&gt;。。。未完待续（实际上是还没写完，下班了回来写哇。&lt;/p&gt;
+&lt;p&gt;最开始怀疑是 443 端口未开放，索性在安全组里面寻找 443 端口，发现安全组已经配置了 443。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/passages/27/safe443.png&#34; alt=&#34;safe443&#34;&gt;&lt;/p&gt;
+&lt;p&gt;之后在 nginx 配置文件中补齐 443 端口配置（类比 80 端口），再次重启 nginx 服务发现依旧不支持 HTTPS，于是在服务器上找问题。&lt;/p&gt;
+&lt;h2 id=&#34;在服务器找寻问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#在服务器找寻问题&#34;&gt;#&lt;/a&gt; 在服务器找寻问题&lt;/h2&gt;
+&lt;h3 id=&#34;服务器443端口是否监听&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#服务器443端口是否监听&#34;&gt;#&lt;/a&gt; 服务器 443 端口是否监听&lt;/h3&gt;
+&lt;p&gt;首先怀疑服务器 443 端口是否监听，于是使用  &lt;code&gt;netstat -ntlp&lt;/code&gt;  命令来查看一下。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;netstat -ntlp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;netstat -ntlp&lt;/code&gt;  命令会显示所有 TCP 网络连接、监听端口，并显示对应的进程名和 PID。&lt;/p&gt;
+&lt;p&gt;返回结果如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/passages/27/listen443.png&#34; alt=&#34;listen443&#34;&gt;&lt;/p&gt;
+&lt;p&gt;说明 443 和 80 端口一样已被监听。&lt;/p&gt;
+&lt;h3 id=&#34;查询防火墙状态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查询防火墙状态&#34;&gt;#&lt;/a&gt; 查询防火墙状态&lt;/h3&gt;
+&lt;p&gt;排除端口未监听原因之后就该排查防火墙的问题了。&lt;s&gt;铸币&lt;/s&gt; LXR 曾在刚刚搭建本站时因为防火墙设置问题总是出现奇怪的访问问题，所以还是排查一下的好。&lt;/p&gt;
+&lt;p&gt;先使用  &lt;code&gt;systemctl status firewalld&lt;/code&gt;  命令查询防火墙运行状态。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;systemctl status firewalld&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;返回结果如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/passages/27/firewalld.png&#34; alt=&#34;firewalld&#34;&gt;&lt;/p&gt;
+&lt;p&gt;说明防火墙正在运行中并且配置了开机自启。&lt;/p&gt;
+&lt;h3 id=&#34;查询防火墙配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查询防火墙配置&#34;&gt;#&lt;/a&gt; 查询防火墙配置&lt;/h3&gt;
+&lt;p&gt;使用  &lt;code&gt;firewall-cmd--zone=public-list-all&lt;/code&gt;  命令查询防火墙中  &lt;code&gt;public&lt;/code&gt;  区域的所有配置详情。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;firewall-cmd--zone=public-list-all&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;返回结果如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/passages/27/firewalld-public.png&#34; alt=&#34;firewalld-public&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到只允许了 80 端口（HTTP）和 3306 端口（MySQL 数据库）的访问，并没有开放 443 端口。&lt;/p&gt;
+&lt;h3 id=&#34;配置防火墙&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置防火墙&#34;&gt;#&lt;/a&gt; 配置防火墙&lt;/h3&gt;
+&lt;p&gt;发现未配置 443 端口之后就好解决了，只需要给防火墙配置一下就行了。&lt;/p&gt;
+&lt;p&gt;使用如下代码来配置防火墙：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;firewall-cmd--permanent --add-port=443/tcp&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;firewall-cmd--reload&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这些指令的作用是，在防火墙中添加一条规则，允许 TCP 协议的 443 端口流量通过，并将配置写入永久规则，重启后依然生效；同时重新加载防火墙规则，让刚才添加的永久配置立即生效，而不需要重启整个防火墙服务。&lt;/p&gt;
+&lt;p&gt;在这之后，外部网络就可以正常的通过 HTTPS 访问网站。&lt;/p&gt;
+&lt;p&gt;Tip：记得为 443 端口配置 root 路径和 index 界面，不然 HTTPS 访问会直接跳转到 HTTP Server Test Page，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/passages/27/HTTPS-Test.png&#34; alt=&#34;HTTPS-Test&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h1&gt;
+&lt;p&gt;下面开始问题总结：&lt;/p&gt;
+&lt;p&gt;寻找文件 / 命令时可以通过  &lt;code&gt;while&lt;/code&gt;  命令来寻找。&lt;/p&gt;
+&lt;p&gt;通过配置文件配置 80/443 端口的访问路径与网站情况。&lt;/p&gt;
+&lt;p&gt;HTTPS 访问需要在服务器防火墙、nginx 配置文件以及服务器安全组中分别配置 443 端口，之后才能正常访问。&lt;/p&gt;
+&lt;p&gt;Tip：记性不好的小伙伴们可以在配置的时候将一些路径信息记下来，存放在显眼不会忘记的位置，这样就算忘了也可以查看一下。&lt;/p&gt;
+&lt;p&gt;顺带一提，铸币 LXR 前段时间给 GitHub 账号的 2FA 忘记了，最后翻邮件才找到的。&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;补药骂 LXR 是铸币了 T_T&lt;/s&gt;&lt;/p&gt;
 </content>
         <category term="教程" />
         <category term="博客" />
@@ -776,9 +815,9 @@
 &lt;p&gt;​		原理篇个人感觉略微有点偷懒，怎么说呢？学习原理篇需要的前置铺垫知识太多，比如最后一节讲到启动流程时，看到 reflush 方法时我就想现在在看这套课程的小伙伴是否真的懂这个过程呢？但是如果把这些东西都讲了，那估计要补充的知识就太多了，就是将 spring 的很多知识加入到这里面重新讲解了，会出现喧宾夺主的现象。很纠结，(´・︵・`)&lt;/p&gt;
 &lt;p&gt;​		课程做到这里就要和各位小伙伴先 say 顾拜了，感谢各位小伙伴的支持，也欢迎各位小伙伴持续关注黑马程序员出品的各种视频教程。黑马程序员的每位老师做课程都是认真的，都是为了各位致力于 IT 研发事业的小伙伴能够学习之路上少遇沟沟坎坎，顺利到达成功的彼岸。&lt;/p&gt;
 </content>
+        <category term="Java" />
         <category term="学习" />
         <category term="教程" />
-        <category term="Java" />
         <category term="SpringBoot" />
         <updated>2022-09-02T14:28:45.000Z</updated>
     </entry>
@@ -2581,9 +2620,9 @@
 &lt;p&gt;​		实用性知识就是新知识了，springboot 整合各种技术，每种技术整合中都有一些特殊操作，整体来说其实就是三句话。加坐标做配置调接口。经验性知识是对前面两篇中出现的一些知识的补充，在学习基础篇时如果将精力放在这些东西上就有点学偏了，容易钻牛角尖，放到实用开发篇中结合实际开发说一些不常见的但是对系统功能又危害的操作解决方案，提升理解。&lt;/p&gt;
 &lt;p&gt;​		开发实用篇做到这里就告一段落，下面就要着手准备原理篇了。市面上很多课程原理篇讲的过于高深莫测，在新手还没明白 123 的时候就开始讲微积分了，着实让人看了着急。至于原理篇我讲成什么样子？一起期待吧。&lt;/p&gt;
 </content>
+        <category term="Java" />
         <category term="学习" />
         <category term="教程" />
-        <category term="Java" />
         <category term="SpringBoot" />
         <updated>2022-09-02T14:28:33.000Z</updated>
     </entry>
@@ -2973,9 +3012,9 @@
 &lt;p&gt;​		运维实用篇到这里就要先告一段落了，为什么不说结束呢？因为运维篇中还有一些知识，但是现在讲解过于分散了。所以要把这些知识与开发实用篇的知识结合在一起讲，也是本课程的教学设计的体现。&lt;/p&gt;
 &lt;p&gt;​		在整体运维实用篇中带着大家学习了 4 块内容，首先学习了如何运行 SpringBoot 程序，也就是程序的打包与运行，接下来对配置进行了升级学习，不再局限在配置文件中进行设置，通过临时属性，外部配置文件对项目的配置进行管控。在多环境开发中给大家介绍了多种多环境开发的格式，其实掌握一种即可，此外还给大家讲了多环境开发的一些技巧以及与 maven 的冲突解决方案。最后给大家介绍了日志系统，老实说日志这里讲的相当的潦草，因为大部分日志相关的知识都不应该在这门课中学习，这里只是告诉大家如何整合实用而已。&lt;/p&gt;
 </content>
+        <category term="Java" />
         <category term="学习" />
         <category term="教程" />
-        <category term="Java" />
         <category term="SpringBoot" />
         <updated>2022-09-02T14:28:22.000Z</updated>
     </entry>
@@ -4434,9 +4473,9 @@
 &lt;h2 id=&#34;基础篇完结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基础篇完结&#34;&gt;#&lt;/a&gt; 基础篇完结&lt;/h2&gt;
 &lt;p&gt;​		基础篇到这里就全部结束了，在基础篇中带着大家学习了如何创建一个 SpringBoot 工程，然后学习了 SpringBoot 的基础配置语法格式，接下来对常见的市面上的实用技术做了整合，最后通过一个小的案例对前面学习的内容做了一个综合应用。整体来说就是一个最基本的入门，关于 SpringBoot 的实际开发其实接触的还是很少的，我们到实用篇和原理篇中继续吧，各位小伙伴，加油学习，再见。&lt;/p&gt;
 </content>
+        <category term="Java" />
         <category term="学习" />
         <category term="教程" />
-        <category term="Java" />
         <category term="SpringBoot" />
         <updated>2022-09-02T14:28:06.000Z</updated>
     </entry>
@@ -5931,9 +5970,9 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 </content>
+        <category term="数据库" />
         <category term="学习" />
         <category term="教程" />
-        <category term="数据库" />
         <updated>2022-08-28T05:49:59.000Z</updated>
     </entry>
     <entry>

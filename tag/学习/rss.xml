@@ -7,13 +7,13 @@
         <language>zh-CN</language>
         <pubDate>Fri, 02 Sep 2022 22:28:45 +0800</pubDate>
         <lastBuildDate>Fri, 02 Sep 2022 22:28:45 +0800</lastBuildDate>
-        <category>算法作业</category>
         <category>杂记</category>
         <category>算法基础课</category>
-        <category>学习</category>
-        <category>教程</category>
+        <category>算法作业</category>
         <category>数据库</category>
         <category>Java</category>
+        <category>学习</category>
+        <category>教程</category>
         <category>SpringBoot</category>
         <category>料理</category>
         <category>菜谱</category>
@@ -24,9 +24,9 @@
             <guid isPermalink="true">http://laz0825.cn/passages/24/</guid>
             <title>SpringBoot讲义-原理篇</title>
             <link>http://laz0825.cn/passages/24/</link>
+            <category>Java</category>
             <category>学习</category>
             <category>教程</category>
-            <category>Java</category>
             <category>SpringBoot</category>
             <pubDate>Fri, 02 Sep 2022 22:28:45 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;springboot原理篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot原理篇&#34;&gt;#&lt;/a&gt; SpringBoot 原理篇&lt;/h1&gt;
@@ -423,9 +423,9 @@
             <guid isPermalink="true">http://laz0825.cn/passages/23/</guid>
             <title>SpringBoot讲义-开发实用篇</title>
             <link>http://laz0825.cn/passages/23/</link>
+            <category>Java</category>
             <category>学习</category>
             <category>教程</category>
-            <category>Java</category>
             <category>SpringBoot</category>
             <pubDate>Fri, 02 Sep 2022 22:28:33 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;springboot开发实用篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot开发实用篇&#34;&gt;#&lt;/a&gt; SpringBoot 开发实用篇&lt;/h1&gt;
@@ -2228,9 +2228,9 @@
             <guid isPermalink="true">http://laz0825.cn/passages/22/</guid>
             <title>SpringBoot讲义-运维实用篇</title>
             <link>http://laz0825.cn/passages/22/</link>
+            <category>Java</category>
             <category>学习</category>
             <category>教程</category>
-            <category>Java</category>
             <category>SpringBoot</category>
             <pubDate>Fri, 02 Sep 2022 22:28:22 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;springboot运维实用篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot运维实用篇&#34;&gt;#&lt;/a&gt; SpringBoot 运维实用篇&lt;/h1&gt;
@@ -2620,9 +2620,9 @@
             <guid isPermalink="true">http://laz0825.cn/passages/21/</guid>
             <title>SpringBoot讲义-基础篇</title>
             <link>http://laz0825.cn/passages/21/</link>
+            <category>Java</category>
             <category>学习</category>
             <category>教程</category>
-            <category>Java</category>
             <category>SpringBoot</category>
             <pubDate>Fri, 02 Sep 2022 22:28:06 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;springboot&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot&#34;&gt;#&lt;/a&gt; SpringBoot&lt;/h1&gt;
@@ -4081,9 +4081,9 @@
             <guid isPermalink="true">http://laz0825.cn/passages/20/</guid>
             <title>MySql基础篇</title>
             <link>http://laz0825.cn/passages/20/</link>
+            <category>数据库</category>
             <category>学习</category>
             <category>教程</category>
-            <category>数据库</category>
             <pubDate>Sun, 28 Aug 2022 13:49:59 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;一-sql&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-sql&#34;&gt;#&lt;/a&gt; 一、SQL&lt;/h1&gt;
 &lt;blockquote&gt;
