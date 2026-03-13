@@ -10,10 +10,10 @@
         <category>杂记</category>
         <category>算法基础课</category>
         <category>算法作业</category>
-        <category>数据库</category>
-        <category>Java</category>
         <category>学习</category>
         <category>教程</category>
+        <category>数据库</category>
+        <category>Java</category>
         <category>SpringBoot</category>
         <category>料理</category>
         <category>菜谱</category>
@@ -43,7 +43,7 @@
 &lt;p&gt;LXR 在越看越不顺眼的情况下，查阅了一些资料并在服务器控制台，发现可能是证书过期导致的 &lt;s&gt;后来想了下最开始的时候他就存在的话，其实是跟证书过期没直接关系的，铸币 LXR&lt;/s&gt; ，于是她决定部署一下免费 SSL 证书（这东西一年 20 张，到期记得换就行）。&lt;/p&gt;
 &lt;p&gt;就当 LXR 按部就班的购买证书、配置并签发证书、下载证书之后，她发现了一个至关重要的问题：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;“tnd 我证书存放路径我给设置哪去了？”&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这里就不得不说一句 “铸币 LXR” 了。因为 LXR 最开始配置的时候是自己配置 &lt;s&gt;中间卡住了就请教学姐版&lt;/s&gt; 的，所以有一些配置并没有沿用自带的默认配置，就导致 &lt;s&gt;铸币&lt;/s&gt; LXR 忘记了自己的 nginx 下存放 ssl 整数的路径是哪里，同时也没找到 nginx 配置文件放哪里了 &lt;s&gt;因为 nginx 安装目录和可执行文件目录也是自定义的，全搞忘了&lt;/s&gt; ，于是在经历了一系列找寻和尝试之后最后还是暂时搁置了 （确实是找了好久没找到 and 又忙起来了所以选择暂时搁置下来 &lt;s&gt;攫夺不是因为 LXR 懒&lt;/s&gt; ）。&lt;/p&gt;
+&lt;p&gt;这里就不得不说一句 “铸币 LXR” 了。因为 LXR 最开始配置的时候是自己配置 &lt;s&gt;中间卡住了就请教学姐版&lt;/s&gt; 的，所以有一些配置并没有沿用自带的默认配置，就导致 &lt;s&gt;铸币&lt;/s&gt; LXR 忘记了自己的 nginx 下存放 ssl 整数的路径是哪里，同时也没找到 nginx 配置文件放哪里了 &lt;s&gt;因为 nginx 安装目录和可执行文件目录也是自定义的，全搞忘了&lt;/s&gt; ，于是在经历了一系列找寻和尝试之后最后还是暂时搁置了 （确实是找了好久没找到 and 又忙起来了所以选择暂时搁置下来 &lt;s&gt;绝对不是因为 LXR 懒&lt;/s&gt; ）。&lt;/p&gt;
 &lt;h1 id=&#34;第二次见面并解决一部分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第二次见面并解决一部分&#34;&gt;#&lt;/a&gt; 第二次见面并解决一部分&lt;/h1&gt;
 &lt;p&gt;时光荏苒岁月如梭 &lt;s&gt;总之就是 LXR 懒了很久之后&lt;/s&gt; ，一眨眼 LXR 都毕业步入社会开始工作了。&lt;/p&gt;
 &lt;p&gt;在这段时间里，LXR 还是会陆陆续续的更新自己的小站（虽然后面开始更新美食食谱和经验分享了），让它看起来不会太冷清，但是那个 “不安全” 角标总是像一根刺一样时不时扎眼睛一下令人难受。&lt;/p&gt;
@@ -429,9 +429,9 @@
             <guid isPermalink="true">http://laz0825.cn/passages/24/</guid>
             <title>SpringBoot讲义-原理篇</title>
             <link>http://laz0825.cn/passages/24/</link>
-            <category>Java</category>
             <category>学习</category>
             <category>教程</category>
+            <category>Java</category>
             <category>SpringBoot</category>
             <pubDate>Fri, 02 Sep 2022 22:28:45 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;springboot原理篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot原理篇&#34;&gt;#&lt;/a&gt; SpringBoot 原理篇&lt;/h1&gt;
@@ -828,9 +828,9 @@
             <guid isPermalink="true">http://laz0825.cn/passages/23/</guid>
             <title>SpringBoot讲义-开发实用篇</title>
             <link>http://laz0825.cn/passages/23/</link>
-            <category>Java</category>
             <category>学习</category>
             <category>教程</category>
+            <category>Java</category>
             <category>SpringBoot</category>
             <pubDate>Fri, 02 Sep 2022 22:28:33 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;springboot开发实用篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot开发实用篇&#34;&gt;#&lt;/a&gt; SpringBoot 开发实用篇&lt;/h1&gt;
@@ -2633,9 +2633,9 @@
             <guid isPermalink="true">http://laz0825.cn/passages/22/</guid>
             <title>SpringBoot讲义-运维实用篇</title>
             <link>http://laz0825.cn/passages/22/</link>
-            <category>Java</category>
             <category>学习</category>
             <category>教程</category>
+            <category>Java</category>
             <category>SpringBoot</category>
             <pubDate>Fri, 02 Sep 2022 22:28:22 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;springboot运维实用篇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot运维实用篇&#34;&gt;#&lt;/a&gt; SpringBoot 运维实用篇&lt;/h1&gt;
@@ -3025,9 +3025,9 @@
             <guid isPermalink="true">http://laz0825.cn/passages/21/</guid>
             <title>SpringBoot讲义-基础篇</title>
             <link>http://laz0825.cn/passages/21/</link>
-            <category>Java</category>
             <category>学习</category>
             <category>教程</category>
+            <category>Java</category>
             <category>SpringBoot</category>
             <pubDate>Fri, 02 Sep 2022 22:28:06 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;springboot&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#springboot&#34;&gt;#&lt;/a&gt; SpringBoot&lt;/h1&gt;
@@ -4486,9 +4486,9 @@
             <guid isPermalink="true">http://laz0825.cn/passages/20/</guid>
             <title>MySql基础篇</title>
             <link>http://laz0825.cn/passages/20/</link>
-            <category>数据库</category>
             <category>学习</category>
             <category>教程</category>
+            <category>数据库</category>
             <pubDate>Sun, 28 Aug 2022 13:49:59 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;一-sql&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-sql&#34;&gt;#&lt;/a&gt; 一、SQL&lt;/h1&gt;
 &lt;blockquote&gt;
